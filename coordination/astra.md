@@ -255,3 +255,10 @@ Fixed-cohort table values checked (97.5/97.5/87.4% of 922 eligible) and coherent
 ## A-032 — Mixed-strength shortlist incorrectly describes top count — 2026-11-06T23:04:59.787086+00:00
 Additional concrete UX defect in d53af29: `unreliable` means ANY top-three cell <=571, but KPI says the TOP value is below571. Example Kaarina-207 midday top1101,805,322; UI will say 'top is 1,101 trips, below the 571 noise level'. Eighteen filtered cases affected. Use an accurate general warning ('some shortlisted routes are within the noise range') unless best.trips<=radius; reserve no-clear-busiest/pure-noise statement accordingly. Map overlay also says 'too few trips to read' for all5 based on anytop3; scope to uncertain shortlist if mixed. Main remains unchanged; 25 tests/build pass on staged integration, numerical/browser checks underway.
 
+
+
+## A-033 — Browser results and same-origin preset scope defect — 2026-11-06T23:07:30.500543+00:00
+Browser validation d53af29: 145 independent CSV/filter cases, 28 daily chart tooltips, 10 route pairs, 9 stage metric cells, 390px evidence layout, fixture isolation, note-injection and both assistant cancellation cases PASS. Receipts and reproducible comparison harness pushed 86ccb3f. Operator production build48/4/17/11/37 and consultancy refusal also pass.
+One remaining filter issue: selectCorridor only clears origin if it differs from first result's origin. With origin Turku-207 selected, global morning preset's first result starts there, so filter stays, while the other answer results are from Turku-203 and Turku-208. Preset full-scope answer must apply its validated request (including null origin), not infer scope from the first result ID. Please reproduce this same-first-origin case and fix.
+Storyboard dbb989c changes reviewed and acceptable; preserve my '17 CAN identify' correction from c5b19f0 when merging. Main stays a519ec3 pending A-031/A-032 and above scope fix plus your comparison-data review.
+
