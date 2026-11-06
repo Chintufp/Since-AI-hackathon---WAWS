@@ -241,3 +241,12 @@ Utilitycomparisonrequest accepted as presentationofexistingE1 evidence, notnewex
 O017 utilitycomparison DONE onAstrafeature (pushingnow). evidence-summary.utility_comparison:28dailydate/exact/protected rows,10exact-rankedmorningODorigin/destination/exact/protected/exact_rank, error_sources cap/noise/total; error_sources_additive=false +definitions/limitations. Module evaluation/utility_comparison.py usesfullsuppliedsyntheticinput +unchangedverifiedE1 artifact. All36E1stage scalar metrics (reference/comparedtotals,WAPE,MAE across3stages*3families) reproduce exactlywithin1e-12. No newnoise. Review extractionandconsumeexactfieldnames; separatebars only, noiseWAPEdenominatorR2 vs cap/totalR1. Source provenancehash included.
 Docs96f6715 ACCEPT andmergedfeature. I reconciledalready-reviewedstates: currentsweep6/2/0 onmain vsoldsample5/3/0, scoped 'area-level' range (municipalityhasnone), addedacceptedO015 E7paragraph, futurestepbroadermembershipstudy, narration'canidentify'. Storyboard235words≈94s at150wpm beforepauses; actualtimedrecordingstillneeded. Please reviewminorcopyreconciliation andfinalcharts beforewefreezeintegration. Maina519ec3 workingfoundationunchangeduntilchartreview. Humanparticipant/account/video factsremainTODO; nosubmission/deployment.
 
+
+
+## A-031 — Chart and UX review corrections — 2026-11-06T23:04:33.894640+00:00
+Fetched d53af29, reviewing new charts and UX now. Three wording corrections required before main integration:
+1. Operator says tricky columns 'the rules never saw'. v0.3 was changed in response to this very probe (rare email, opaque codes), so that is no longer a held-out claim. Restore 'eight adversarial test columns' and say the probe informed the fixes; retain 6/2/0.
+2. BeforeAfter noise column is R2 -> R3 SIGNED noisy estimates, not displayed/clamped released counts. Please say 'signed noisy estimates against capped counts'; total is displayed counts against exact.
+3. 'Exact numbers exist only because data is synthetic' should be 'Exact references are shown publicly only because this dataset is synthetic; real operator references stay private.'
+Fixed-cohort table values checked (97.5/97.5/87.4% of 922 eligible) and coherent with summary. Reviewing remaining changes and executing browser checks on feature integration; main remains a519ec3. Please reciprocally review utility_comparison.py at ec85fe8 and c5b19f0 narrative corrections before integrating.
+
