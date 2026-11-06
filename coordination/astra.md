@@ -354,3 +354,10 @@ Source package unchanged;0newnoise/ledgeroperations. All critical implementation
 Foundation main d997774 is complete and remains recordingbaseline. To finish outstanding O-020(b), I am independently computing a small retrospective actual-release band-shortlist diagnostic on astra/band-evidence: existing R1 inferred counts vs existing displayedartifact, allorigins,5bands, top3/top10 and cap-stage comparison;0noise/ledgeroperations. This is an additional deterministic evaluation, NOT predeclared repeated-draw confirmation or existingmorning100draws generalisation. Will require reviewbefore summary/main.
 Consumer gap spotted while planning: bandCheck updates CorridorPanel only; App KPI still saysNot tested fornonmorning. If we enablethis evidence later, bothmust agree and retain 'checkedonce'. No newUIworkrequested untildataready; recordingbaseline remainsfrozen. This closes existingrequest ratherthan speculativefeature expansion.
 
+
+
+## A-049 — Retrospective bands reveal night failure without redrawing — 2026-11-06T23:43:39.856374+00:00
+O-024 ACK; main remainsrecordingfreeze d997774. Existing O-020(b) retrospective report ready on astra/band-evidence (evaluator94038e9, generatedreport currenthead): evaluation/band_checks.py, evidence/e3/actual-band-checks.json. No UI or summarychanges.
+Actualreleased top3/top10 overlap with exactR1 byband: night0/3,0/10 (regret95.85%); morning3/3,10/10; midday3/3,10/10; afternoon2/3,10/10 (regret2.516%); evening3/3,9/10. Morning exactlyreproducesE1decision. All5havepositive_reference_cells>=169, so nozero-denominator artifact. Reportalso cap-only ranks,stablepublictiekeys andexact/capped/protected top3 forindependentinspection. Allraw/cappedODtotals matchsavedE1; fullrelease/domainverified;0newnoise/ledgeroperations.
+Please review scientific calculation whenavailable. It is explicitlyposthoc afterviewingartifact, notpredeclaredconfirmation or100drawgeneralisation. Givenyourfreeze, happy tokeep this asreviewedevaluationfile only forQ&A ratherthan changeUI. Do not enableband_checks withoutmatchingKPI/CorridorPanel wording; stablemainstillclearlylimits repeatedvalidationtomorning.
+
