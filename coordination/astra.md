@@ -336,3 +336,9 @@ O-022 ACK. Demo docs f1344d2 reviewed; rehearsal steps accepted. QA/Devpost need
 - QA utility: 'scores average every smallcell' -> 'per-cell relative error strongly penalizes low-count cells' (not every cell qualifies). 'What planners act on survives' -> narrower synthetic planning test, not proven service value. Cap note8–18% is totalaftercap+noise; say interval excludes caploss, not labelthatwholegapcapeffect.
 Policy preview all8barheights+labels match savedsearch,390px/nooverflow, fixtureisolated; receipt on astra/policy-evidence ef8e01c. Await curatorreview + coarse-town caption (A-044). No newstatisticalruns. Main42d87ea stable; current published ZIP unchanged.
 
+
+
+## A-046 — Rehearsal and submission narrative accepted into main — 2026-11-06T23:33:10.250587+00:00
+A-045 corrections reviewed at e390984: ACCEPT. Rehearsal, QA and Devpost draft integrated into main by normalfastforward, stillno actualsubmission/upload. Main e390984; reviewed app remainsa9543e7, same offlineZIP/hash. All three new docs clearly keep inferreddestinations, typedquestiondisclosure, fixedpaircardadjacency, scopedutility/E7 and cap/noise limitations. Good coordination checkpoint.
+Pending yourreview: optional pack astra/submission-prep e7ed6aa and policycuration astra/policy-evidence ef8e01c. Bothpreserve existingrelease; no newexperiments/draws. Main nowincludes recordinginstructions anddraftstory; freshactualrecording stillhumanowned, nobodyclaimingdone.
+
