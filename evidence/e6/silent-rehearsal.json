@@ -1,0 +1,81 @@
+{
+  "application_commit": "2e8e023",
+  "video_file": "routesafe-silent-rehearsal-2e8e023-v2.webm",
+  "video_sha256": "485273144efe077534b852dca444670446468aa4433124e0bc7a206cb9cf08f8",
+  "duration_seconds": 112.52,
+  "width": 1366,
+  "height": 768,
+  "speed": 1,
+  "silent": true,
+  "scope": "Actual local product rehearsal using synthetic data, schematic map and deterministic presets. Not a narrated final submission video.",
+  "external_and_model_requests_blocked": true,
+  "blocked_hosts": [
+    "127.0.0.1:8787"
+  ],
+  "model_calls": 0,
+  "uploaded": false,
+  "submitted": false,
+  "scenes": [
+    {
+      "scene": "morning shortlist; schematic map",
+      "elapsed_seconds": 0.0
+    },
+    {
+      "scene": "row-risk evidence",
+      "elapsed_seconds": 7.21
+    },
+    {
+      "scene": "before-and-after comparison",
+      "elapsed_seconds": 15.31
+    },
+    {
+      "scene": "private operator inventory",
+      "elapsed_seconds": 21.61
+    },
+    {
+      "scene": "per-field handling",
+      "elapsed_seconds": 27.91
+    },
+    {
+      "scene": "row sharing is not offered",
+      "elapsed_seconds": 36.01
+    },
+    {
+      "scene": "aggregate alternative",
+      "elapsed_seconds": 41.41
+    },
+    {
+      "scene": "fixed release policy and pending review",
+      "elapsed_seconds": 43.2
+    },
+    {
+      "scene": "published morning shortlist",
+      "elapsed_seconds": 50.41
+    },
+    {
+      "scene": "offline preset, not a live model",
+      "elapsed_seconds": 57.61
+    },
+    {
+      "scene": "night warning",
+      "elapsed_seconds": 72.01
+    },
+    {
+      "scene": "utility limitation",
+      "elapsed_seconds": 82.81
+    },
+    {
+      "scene": "card-level privacy explanation",
+      "elapsed_seconds": 90.01
+    },
+    {
+      "scene": "downloadable protected files",
+      "elapsed_seconds": 97.21
+    },
+    {
+      "scene": "end",
+      "elapsed_seconds": 104.41
+    }
+  ],
+  "page_errors": []
+}

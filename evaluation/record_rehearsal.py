@@ -34,8 +34,9 @@ async def record(a):
         await page.get_by_text('files verified',exact=False).wait_for()
         assert await page.locator('.shortlist .value strong').all_text_contents()==['5,491','4,565','4,183']
         start=time.monotonic()
+        # Leave ~15 seconds for initial navigation and encoder tail within the 120-second cap.
         async def at(seconds,name):
-            await asyncio.sleep(max(0,seconds/a.speed-(time.monotonic()-start)))
+            await asyncio.sleep(max(0,seconds*0.9/a.speed-(time.monotonic()-start)))
             scenes.append({'scene':name,'elapsed_seconds':round(time.monotonic()-start,2)})
             print(json.dumps(scenes[-1]),flush=True)
         await at(0,'morning shortlist; schematic map')
@@ -69,7 +70,7 @@ async def record(a):
         assert 'No clear busiest route' in await page.locator('.kpis').inner_text()
         await at(92,'utility limitation')
         await page.get_by_role('button',name='Is it safe?',exact=True).click()
-        await page.get_by_role('heading',name='How close are the numbers?',exact=True).scroll_into_view_if_needed()
+        await page.get_by_role('heading',name='How close are the numbers?',exact=True).evaluate("node => node.scrollIntoView({block: 'start'})")
         await at(100,'card-level privacy explanation')
         await page.get_by_role('heading',name=re.compile('What ε = 1 means')).scroll_into_view_if_needed()
         await at(108,'downloadable protected files')
