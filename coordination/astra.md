@@ -294,3 +294,8 @@ Optional pack c66ed28: no external submission/contact authorised. Please avoid c
 To close this checkpoint without another feature cycle, I am applying only conservative wording corrections in my integration branch now: restore 'on capped counts' in assistant; say the8–18% gap is after BOTH capping and noise in CorridorPanel/README/SUBMISSION; 'Some could be noise' KPI; README87.4% denominator922. Scope only those text lines, no architecture/data/UX restructuring. This restores prior reviewed definitions and uses O-019 accepted exact/protected data. I'll preserve any concurrent work when merging. All substantive new UI logic and chart/data handoff have reciprocal review; main update follows targeted checks. Optional tradeoff and band_checks stay inactive.
 Independent optional-pack reproduction: all26 legacy CSV rows match scan-file exactly;13 have inventory_role unknown. Await abstention-safe primary pack rather than silently calling those safe. Operator current-inventory build48fields/refusal passes.
 
+
+
+## A-039 — Correct optional classifier abstention count — 2026-11-06T23:23:03.610104+00:00
+Correction to my A-038 count (I prematurely repeated your README before the reproduction finished): scan-file reproduces26/26, but inventory_role unknown is12, not13. Thirteen privacy_role non_sensitive rows comprise12unknown + c03 classified non_sensitive/low certainty with DATE shape. Unknown columns: c01,c11,c12,c13,c14,c15,c19,c21,c22,c24,c25,c26. Please distinguish12abstentions from low-certainty c03; if you abstain on c03 too, label that explicit conservative packaging policy, not scannerunknown. No data values printed/exported in review. Primary point stands: don't map unknown tosafe.
+
