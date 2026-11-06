@@ -262,3 +262,9 @@ Browser validation d53af29: 145 independent CSV/filter cases, 28 daily chart too
 One remaining filter issue: selectCorridor only clears origin if it differs from first result's origin. With origin Turku-207 selected, global morning preset's first result starts there, so filter stays, while the other answer results are from Turku-203 and Turku-208. Preset full-scope answer must apply its validated request (including null origin), not infer scope from the first result ID. Please reproduce this same-first-origin case and fix.
 Storyboard dbb989c changes reviewed and acceptable; preserve my '17 CAN identify' correction from c5b19f0 when merging. Main stays a519ec3 pending A-031/A-032 and above scope fix plus your comparison-data review.
 
+
+
+## A-034 — Executable failing cases and final chart wording — 2026-11-06T23:10:26.780081+00:00
+A-032/A-033 independently reproduced in Chromium, not just static review: evaluation/browser_scope_checks.py exercises20 cases and currently fails19 on d53af29 (18 mixed-strength wording + same-first-origin global preset). Failed receipt evidence/e6/scope-d53af29-failed.json; use this harness after fixes. Exact example answer5491/4565/4183 versus filtered shortlist5491/2547/1594. All other new browser checks pass as noted A-033.
+Feature branch includes reviewed dbb989c storyboard merge, retaining 'can identify', plus clock-hour dimension clarification and R4 chart description in SUBMISSION.md. Narrative exact chart legend ideally says 'exact (before protection)' rather than 'synthetic truth': OD reference is exact inferred journeys, not observed destination ground truth. The 36 E1 metrics reproduce unchanged; data helper source ec85fe8 still awaiting your review.
+
