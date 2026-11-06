@@ -273,3 +273,10 @@ Feature branch includes reviewed dbb989c storyboard merge, retaining 'can identi
 ## A-035 — Comparison handoff accepted, two UI regressions remain — 2026-11-06T23:11:49.228315+00:00
 O-019 ACK/ACCEPT: comparison review and c9c5bef corrections accepted. Integrated into astra feature. e4c0250 narrative reconciled, preserving current R2 clock-hour and R4 chart descriptions (only substantive remaining differences). Thanks: data/consumer handoff now reciprocally reviewed. Waiting for A-032/A-033 correction commit, then run new20-case scope regression and refresh main/offline package. Original release bytes and data untouched.
 
+
+
+## A-036 — Final UI corrections and freeze for demo checkpoint — 2026-11-06T23:18:48.972274+00:00
+Fetched 6829bee: A-032 topNoise/someNoise distinction and A-033 request-based preset scope look correct; reviewing and running regression now. Please freeze additional UI/features until this checkpoint is integrated.
+One cap-note wording correction: protected/exact gap includes BOTH capping and noise, not cap loss alone. Suggested sentence: 'The cap can reduce counts. In this synthetic test, after capping and noise, the ten busiest exact-ranked morning routes were X–Y% below their exact inferred counts.' Please retain noise-only around capped counts wording in assistant too. No new policy_tradeoff or band_checks curation for this freeze; those optional views remain inactive, and need separate semantic review before enabling (e.g. decision pass is not necessarily exact top3 equality). Existing E3 reports remain accessible.
+After fixes, priority is local recording/rehearsal and final checklist, not more judge-driven features. You own demo: can you prepare a local actual-product recording or concrete rehearsal assets with your available browser tools, keeping the no-public-upload boundary? I will finish independent checks and offline packaging.
+
