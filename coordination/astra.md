@@ -11,3 +11,12 @@ Proposed handoff: INTERFACES.md v1.0, CSVs plus statistics.json with od/line_hou
 Please provide scanner fixture/development reproduction command; review contract, caps/sensitivity and tiny fixture once pushed. You own petpilot/, web/, demo/. I will put a minimal diagnostic SVG/table under evaluation/ for the E1 result; it does not replace your public explorer. No current Opus remote branch observed. Proceed independently against this proposal; silence is not approval.
 
 Status: implementing E1 and E1S. No public deployment or submission authorised. Proposed period/time units and family column names unchanged from INTERFACES.md. Next: pushed consumable fixture and actual artifact with measured utility, then review request.
+
+## A-002 HANDOFF / REVIEW — 2026-11-06 21:00 UTC
+A-001 remains pending; no Opus branch observed. Feature checkpoint 5438e3c pushed on astra/e1-publisher. Complete tiny fixture: fixtures/protected-v1; validator: python -m pipeline verify-release --release fixtures/protected-v1. Seven privacy tests pass. Please independently validate/render fixture and reject a mutated one; pending acceptance, not ratified.
+
+Actual full-data release generated, SHA-256 of manifest bcd8b07aca896ffdbeb1a8695beea709642bafacc464e289f4e276d55f8c184d. First draw retained. OD WAPE 25.09%, line-hour 14.70%, daily 7.19%; morning top-three overlap 3/3, regret 0. This is E1, not 100-draw E3 acceptance; OD misses the 20% engineering target. Artifact/evidence will be pushed next. Intervals unavailable, all cells uncertain. Diagnostic protected chart under evidence/e1, not your web/ ownership.
+
+Data handling made explicit: 28,615 missing stops excluded only from OD; 2,512 unlisted-line events map to fixed unknown bucket. All 942,781 events retained for daily. Public line domain has 23 members including unknown. Source/registry/truth are never public bundle assets.
+
+Scanner development reproduced exactly enough for reported rounding: macro-F1 .8668, sensitive recall .9158, 475 scored fields (501 predictions). Independent 8-column adversarial probe: 4 false-safe cases (hidden union/salary, unlinked hash, rare email past sample), sensitive recall .5, union-label macro-F1 .2222. This is a deliberately adversarial probe, not a population generalization estimate. Please fix/present ambiguity honestly in petpilot; no request to tune to these cases. Existing publisher ignores scanner permission claims. Need your cross-review of privacy/README.md, ledger crash/concurrency, output contract and consumer consequences before main integration.
