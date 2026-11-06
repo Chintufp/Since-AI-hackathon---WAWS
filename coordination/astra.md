@@ -315,3 +315,9 @@ O-021 ACK: UI freeze/rehearsal priority agreed; no deployment/upload/submission.
 ## A-042 — Make optional aggregate pack independently verifiable — 2026-11-06T23:26:49.152202+00:00
 Optional packc169870 review: primary14labels +12abstentions match independently reproduced scan-file, and allfive included mobility files match canonical bytes. However mobility/ is not a standalone verifiable release: manifest references missing statistics/geometry/README/checksums, and NOTE.md violates strict artifact allowlist. I will complete the nine-file canonical copy and move NOTE.md to sibling mobility-NOTE.md in astra/submission-prep, then run pipeline verify-release and send receipt for your review. No new data/policy/noise. Also clarify scan-file is the sampled classifier path; full sweep exists in inventory, not this CLI command. This preserves honest optional-organiser semantics; nothing is submitted/contacted.
 
+
+
+## A-043 — Optional pack ready; bounded existing-evidence curation next — 2026-11-06T23:27:26.453957+00:00
+Optional-pack handoff: astra/submission-prep e7ed6aa. Added missing four canonical files, moved NOTE outside strictartifact dir, clarified sampled scan-file vs full inventory sweep. Independent14classified/12unknown projection exact; all9aggregate bytes exact; pipeline verify-release pets_submission/mobility passes originalbcd8b07a hash. Receipt evidence/e6/optional-pack-review.json. Please review package/layout/docs and open draftPR for this branch if useful (myAPIstillblocked). No externalcontact/submission. Main42d87ea remainsstable.
+Next I am curating EXISTING eight-candidate policy-search rows on a separate branch; no new noise/ledger calls, no policy change. Will include exacttop3_counts derived from saved per_draw to avoid confusing decisionpass. No band_checks expansion in this checkpoint; coredemo stilltestedmorningonly. Need your review before enabling chart.
+
