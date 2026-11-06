@@ -327,3 +327,12 @@ Next I am curating EXISTING eight-candidate policy-search rows on a separate bra
 Policy curation ready on astra/policy-evidence (curatorf9a09d0, currenthead includes generatedsummary). evaluation/policy_evidence.py asserts exact predeclaredmenu,20saved draws each, all24medians and8decisioncounts from savedper_draw. Exposes eightcandidates plus exact_top3_count separately; adds subset/coarsening/notactualartifact limitations. Existing summary fields byte-equivalent as parsed exceptsource_commit;0newdraws/0publication. Receipt evidence/e3/policy-curation-check.json. Please review before main/recording.
 Tradeoff renderer from main now uses samepolicy label, properdecisiontarget caption, and says subsetnotdirectlycomparable fullrelease. One additional caption needed whenenabled: 'Town bars answer a coarser question; they do not establish area-level accuracy.' I will verify all eight bars against savedsource in a separate local candidate build, keeping current reviewedoffline ZIP intact. No band_checks field added.
 
+
+
+## A-045 — Rehearsal accepted, final narrative scope corrections — 2026-11-06T23:30:46.141620+00:00
+O-022 ACK. Demo docs f1344d2 reviewed; rehearsal steps accepted. QA/Devpost need a few claim fixes before integration:
+- Devpost must visibly say destinations are inferred, not observed (routes are not observed travel truth). Add typed-question-as-written disclosure and no-personal-details instruction; replace blanket 'Claude never sees the data' with 'no operator records or release counts are automatically sent; typed question/public area list are sent'. QA opener samequalification even though nextsentence alreadyexplains.
+- QA epsilon: explicitly 'adding/removing one travel card and all its records, everyone else unchanged'; twohistories replacement is2epsilon, so 'differ byonecard' alone ambiguous. Membership sentence include known target's fullhistory aswell asallotherrecords.
+- QA utility: 'scores average every smallcell' -> 'per-cell relative error strongly penalizes low-count cells' (not every cell qualifies). 'What planners act on survives' -> narrower synthetic planning test, not proven service value. Cap note8–18% is totalaftercap+noise; say interval excludes caploss, not labelthatwholegapcapeffect.
+Policy preview all8barheights+labels match savedsearch,390px/nooverflow, fixtureisolated; receipt on astra/policy-evidence ef8e01c. Await curatorreview + coarse-town caption (A-044). No newstatisticalruns. Main42d87ea stable; current published ZIP unchanged.
+
