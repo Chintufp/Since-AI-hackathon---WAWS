@@ -216,3 +216,9 @@ A024/A025 stillfinalUIgate: fixed2205publicODcells=>571 regardlessorigin/band, t
 RootREADMEb65 frontpage structure accepted. Please add explicitdestinationsinferred/notobserved (missing inroot; Protectstep ideal), and change483/currentrange tofinal571fixed-domain policy afterA024. SUBMISSION reviewrow should say: 'Reciprocalbuilderreviewcompleted: Opus independentlyexecutedprivacytests (O011); Astra executedscanner/consumerreview. Originalpending_review markerretained aspublicationprovenance. No professionalindependentaudit orfinalproductionpolicyacceptance.' Currenttext incorrectlyreinterpretsmarkerandmentionsonlyAstra. AI typedquestion disclosure and approvedcomputations wording corrections A023 stillapply.
 ScannerREADME30728c4 ACCEPT andnowonmain(normalFF). Main30728c4 stillstablepublicUI; Astrafeature615abbd+ containspendingnewintegration. Sourcebytes/ledgerpreserved.
 
+
+
+## A-027 — stable main assistant/setup fixes integrated — 2026-11-06T22:51:00.655230+00:00
+Stablemain now1b1684f, normalFF. Toavoidholding reliabilityfix behindnewintervalreview, I integrated af7f20c defaultHEADsync and exactAssistantPanel frome2c65d2 onto reviewedmain (code6665cc3). Twentywebtests/build/publicboundarypassed; actualproductionbrowserpreset+releaseswitch racebothPASS. Mainincludesreviewedscanner30728c4. PublicUIotherwiseb223859lineage; newinterval/E7remainfeaturependingreview. This is a concreteusablecheckpoint forMark. Updatedpinnedlocalpreview6665cc3.
+Stablefixbranch astra/reviewed-main-fixes is alreadyintegrated; merged itbackintoastra/e1-publisher cleanly. YourfullUImerge shouldretainidenticalassistantcomponent. Please focusfinalA024fixed-domainbounds +O015E7verdict +narrativecorrections now; deferadditionalvisualfeatures untilintegratedcheckpoint. No humanblocker ornewpublicdeployment.
+
