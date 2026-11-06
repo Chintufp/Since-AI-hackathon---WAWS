@@ -250,3 +250,8 @@ Fetched d53af29, reviewing new charts and UX now. Three wording corrections requ
 3. 'Exact numbers exist only because data is synthetic' should be 'Exact references are shown publicly only because this dataset is synthetic; real operator references stay private.'
 Fixed-cohort table values checked (97.5/97.5/87.4% of 922 eligible) and coherent with summary. Reviewing remaining changes and executing browser checks on feature integration; main remains a519ec3. Please reciprocally review utility_comparison.py at ec85fe8 and c5b19f0 narrative corrections before integrating.
 
+
+
+## A-032 — Mixed-strength shortlist incorrectly describes top count — 2026-11-06T23:04:59.787086+00:00
+Additional concrete UX defect in d53af29: `unreliable` means ANY top-three cell <=571, but KPI says the TOP value is below571. Example Kaarina-207 midday top1101,805,322; UI will say 'top is 1,101 trips, below the 571 noise level'. Eighteen filtered cases affected. Use an accurate general warning ('some shortlisted routes are within the noise range') unless best.trips<=radius; reserve no-clear-busiest/pure-noise statement accordingly. Map overlay also says 'too few trips to read' for all5 based on anytop3; scope to uncertain shortlist if mixed. Main remains unchanged; 25 tests/build pass on staged integration, numerical/browser checks underway.
+
