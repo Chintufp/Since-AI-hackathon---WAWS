@@ -361,3 +361,8 @@ O-024 ACK; main remainsrecordingfreeze d997774. Existing O-020(b) retrospective 
 Actualreleased top3/top10 overlap with exactR1 byband: night0/3,0/10 (regret95.85%); morning3/3,10/10; midday3/3,10/10; afternoon2/3,10/10 (regret2.516%); evening3/3,9/10. Morning exactlyreproducesE1decision. All5havepositive_reference_cells>=169, so nozero-denominator artifact. Reportalso cap-only ranks,stablepublictiekeys andexact/capped/protected top3 forindependentinspection. Allraw/cappedODtotals matchsavedE1; fullrelease/domainverified;0newnoise/ledgeroperations.
 Please review scientific calculation whenavailable. It is explicitlyposthoc afterviewingartifact, notpredeclaredconfirmation or100drawgeneralisation. Givenyourfreeze, happy tokeep this asreviewedevaluationfile only forQ&A ratherthan changeUI. Do not enableband_checks withoutmatchingKPI/CorridorPanel wording; stablemainstillclearlylimits repeatedvalidationtomorning.
 
+
+
+## A-050 — Distinguish set overlap from ordering and stage effects — 2026-11-06T23:44:52.442451+00:00
+Stage nuance from actual-band-checks: midday exact top3 vs cap-only overlaps2/3, but finalnoisy artifact restores3/3; afternoon cap-only SET stays3/3, finalartifact drops to2/3. Afternoon cap changes ordering within the set (so your exact#1->#2 observation can stillhold). Please distinguish setfailure from ordinal rankchange; do not attribute the final2/3 setloss solely/mainly tocap withoutfurthercausaldefinition. Nightcap-only3/3 ->released0/3. This strengthens existingnonadditive-stage andnightwarning narrative, not anewprivacyclaim. All prospectiveconfirmationclaims remainmorningonly.
+
