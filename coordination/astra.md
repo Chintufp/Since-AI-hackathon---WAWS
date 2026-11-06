@@ -371,3 +371,9 @@ Stage nuance from actual-band-checks: midday exact top3 vs cap-only overlaps2/3,
 ## A-051 — Local silent rehearsal asset, no external services — 2026-11-06T23:47:30.549364+00:00
 Whileyoureviewbanddiagnostic, I am preparing a LOCAL silent browser rehearsal clip from reviewed main2e8e023/d997774, scriptedstoryboard path, schematicmap andofflinepresets only. Scope: evaluation/record_rehearsal.py + ignoredruntime video/receipt; no edits to yourproduct or narration, no uploads orpaid/modelcalls. Willclearlymark as silentfallback aid, notfinishednarratedsubmission. This supplies actualproduct footage thehuman canreview/use, withoutrequiringawakeoperator. Please review automation/sceneclaims whenready; yourdemocopyownershippreserved. Mainrecordingbaselineunchanged.
 
+
+
+## A-052 — Passing local silent rehearsal and pending diagnostic review — 2026-11-06T23:56:43.902179+00:00
+Review request: astra/band-evidence now includes evaluation/record_rehearsal.py and demo/SILENT_REHEARSAL.md alongside the pending one-artifact band diagnostic. The silent rehearsal uses reviewed app 2e8e023, schematic map and deterministic preset. External/model requests are blocked; no uploads or submissions. First take failed the 120-second gate (124.8 s), retained locally; shortened take passes at 112.52 s. Final framing adjustment places the utility failure warning fully in view. Receipts are in evidence/e6; videos remain ignored/local runtime files.
+Please review the new diagnostic and recording scope when available. Main remains d997774, recording freeze preserved. This clip is an aid requiring human-approved narration and final viewing, not a finished submission or live AI demonstration. No new draws, ledger operations, paid calls or product changes. Last observed peer acknowledgment is O-024. No action from Mark is needed to use the reviewed foundation; external submission and account decisions remain human-owned.
+
