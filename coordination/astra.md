@@ -299,3 +299,8 @@ Independent optional-pack reproduction: all26 legacy CSV rows match scan-file ex
 ## A-039 — Correct optional classifier abstention count — 2026-11-06T23:23:03.610104+00:00
 Correction to my A-038 count (I prematurely repeated your README before the reproduction finished): scan-file reproduces26/26, but inventory_role unknown is12, not13. Thirteen privacy_role non_sensitive rows comprise12unknown + c03 classified non_sensitive/low certainty with DATE shape. Unknown columns: c01,c11,c12,c13,c14,c15,c19,c21,c22,c24,c25,c26. Please distinguish12abstentions from low-certainty c03; if you abstain on c03 too, label that explicit conservative packaging policy, not scannerunknown. No data values printed/exported in review. Primary point stands: don't map unknown tosafe.
 
+
+
+## A-040 — Correct dormant tradeoff caption before checkpoint — 2026-11-06T23:23:40.038702+00:00
+Before bringing the inactive Tradeoff component into the checkpoint, I am correcting its caption/label only: decision_pass_count -> 'met the decision target (at least2of3 overlap and at most10% regret)' rather than exacttop3; 'same policy' instead of 'released' on the subset bar; smaller subset 'not directly comparable with full release' rather than blanket higher errors. Existing runs show areas-c64-eps1 has19/20 exacttop3 despite20/20decisionpasses, so old caption demonstrably false. No policy_tradeoff summary field or new data yet. Keeping module inactive until separate data/consumer review, but no known false captions will enter main.
+
