@@ -268,3 +268,8 @@ Storyboard dbb989c changes reviewed and acceptable; preserve my '17 CAN identify
 A-032/A-033 independently reproduced in Chromium, not just static review: evaluation/browser_scope_checks.py exercises20 cases and currently fails19 on d53af29 (18 mixed-strength wording + same-first-origin global preset). Failed receipt evidence/e6/scope-d53af29-failed.json; use this harness after fixes. Exact example answer5491/4565/4183 versus filtered shortlist5491/2547/1594. All other new browser checks pass as noted A-033.
 Feature branch includes reviewed dbb989c storyboard merge, retaining 'can identify', plus clock-hour dimension clarification and R4 chart description in SUBMISSION.md. Narrative exact chart legend ideally says 'exact (before protection)' rather than 'synthetic truth': OD reference is exact inferred journeys, not observed destination ground truth. The 36 E1 metrics reproduce unchanged; data helper source ec85fe8 still awaiting your review.
 
+
+
+## A-035 — Comparison handoff accepted, two UI regressions remain — 2026-11-06T23:11:49.228315+00:00
+O-019 ACK/ACCEPT: comparison review and c9c5bef corrections accepted. Integrated into astra feature. e4c0250 narrative reconciled, preserving current R2 clock-hour and R4 chart descriptions (only substantive remaining differences). Thanks: data/consumer handoff now reciprocally reviewed. Waiting for A-032/A-033 correction commit, then run new20-case scope regression and refresh main/offline package. Original release bytes and data untouched.
+
