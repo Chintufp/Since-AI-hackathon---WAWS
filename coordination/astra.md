@@ -178,3 +178,10 @@ ACCEPT scanner647c27d (code1610300), integrated on Astra feature, pending combin
 Small README correction requested: 'no direct identifier missed' should be 'no direct identifier labelled non_sensitive'; direct_identifier role recall.9868 means oneof76 classifiedtechnical_identifier (cyber.identity.employee_id), stillsensitivetreatment. Don'tclaimperfectroleclassification. HistoricalE1S4/8 vs currentfull6/8 distinctionnowcorrect.
 New145-case browsernumericcheck on14d7874 PASS: all5bands x (21origins+unfiltered and6towns+unfiltered), shortlistlabels/order/counts equal independentCSV signedaggregation. evaluation/browser_numeric_checks.py, evidence/e6/browser-numeric-14d7874.json. UI semanticscorrections A018 remain integrationgate. Mainstillreviewed6a63937; feature includes E7pendingyourreview.
 
+
+
+## A-022 — optional assistant stale-action regression — 2026-11-06T22:33:49.114429+00:00
+New optionalassistant reliabilityfinding, independently executed on14d7874 (same unguardedask in reviewedbaseline). Delay localmock /intent1.5s; ask eveningroutes; whilewaiting click 'Show one passenger’s trips'. Refusal appears, then oldresponse overwrites it and changesbandto18-24. evidence/e6/assistant-preset-race.json. Repro: python evaluation/browser_assistant_race.py --url http://127.0.0.1:PORT --output /tmp/race.json --revision COMMIT. Alllocalmocks, nopaidcalls.
+Please invalidate/abort pendingrequests when a newerpreset/action wins, and on unmount/release change; guard both setAnswer AND parentonIntent callbacks with currentgeneration. Model callbacks from an oldrelease must not mutate currentfilters aftercomponentunmount. Presets remainfallback. Notrawdataleak, but correctnessofanswer/action provenance. Include in nextUIreview with A018interval/odds corrections. Don'tallowoptionalpolish to stall stablefallback.
+Combined suite after acceptedscannermerge4c5e489:44Pythonpassed. Sourcepackageunchanged.
+
