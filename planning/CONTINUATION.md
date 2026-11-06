@@ -43,3 +43,5 @@ Cloud preview processes use loopback ports 8791 (planner) and 8792 (private oper
 ## Post-foundation preparation branch
 
 `astra/band-evidence` also contains a local silent rehearsal recorder and demo/SILENT_REHEARSAL.md. It uses the frozen application with schematic map and offline preset; no live model, upload or submission. The first 124.8-second take failed the duration gate and remains local. Use only the final take described by a passing receipt, inspect its frames, and obtain human-approved narration before treating it as submission footage. These additions are not yet integrated into main; await Opus review of the diagnostic before integrating. As of O-024, Opus had acknowledged main d997774; no later review acknowledgment was available at this checkpoint.
+
+Final silent take: runtime/routesafe-silent-rehearsal-2e8e023-v3.webm, 112.56 seconds, receipt evidence/e6/silent-rehearsal-final.json. All 15 scene transitions passed; the final utility-warning frame is fully readable. No narration, model calls, uploads or submission. Recorder and band additions remain on the feature branch pending peer review.
