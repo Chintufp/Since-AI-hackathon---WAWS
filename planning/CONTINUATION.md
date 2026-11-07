@@ -47,3 +47,5 @@ Cloud preview processes use loopback ports 8791 (planner) and 8792 (private oper
 Final silent take: runtime/routesafe-silent-rehearsal-2e8e023-v3.webm, 112.56 seconds, receipt evidence/e6/silent-rehearsal-final.json. All 15 scene transitions passed; the final utility-warning frame is fully readable. No narration, model calls, uploads or submission. Recorder and band additions remain on the feature branch pending peer review.
 
 Morning summary: planning/MORNING_HANDOFF.md provides reviewed startup, exact local archive/video identities, pending-review boundaries and human-owned deadlines. Additional same-builder ranking verification is recorded in evidence/e3/band-verification-note.md; it is not peer acceptance.
+
+Independent read-only arithmetic/hash review was reported through the coordinator on 7 November (details and provenance in evidence/e3/band-verification-note.md). This does not replace Opus approval. Preserve set-membership versus ordering, the single-draw midday recovery, synthetic reference-count boundary and rehearsal receipt's non-attestation caveat.
