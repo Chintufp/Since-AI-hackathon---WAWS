@@ -7,24 +7,36 @@ const output = document.getElementById("output");
 const filter = document.getElementById("filter");
 const example = document.getElementById("example");
 const pageId = crypto.randomUUID();
+const send = document.getElementById("send"), replySection = document.getElementById("reply-section");
+const reply = document.getElementById("reply"), revert = document.getElementById("revert");
+let previewId = null, sendingController = null, replyRaw = "", replyParts = [], replyDone = false;
+const motionAllowed = () => !window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+function post(path, body, signal) {
+  return fetch(path, { method: "POST", headers: { "Content-Type": "application/json", "X-Mask-Request": "send", "X-Mask-Client": pageId }, body: JSON.stringify(body), cache: "no-store", signal });
+}
 let exampleIndex = 0, revision = 0, controller = null, timers = [];
 function clearTimers() { timers.forEach(clearTimeout); timers = []; }
 function reset() {
+  if (sendingController && previewId) void post("/api/cancel", {preview_id: previewId}).catch(() => {});
+  sendingController?.abort(); sendingController = null;
+  previewId = null; send.hidden = true; send.disabled = false; send.classList.remove("sending");
+  replySection.hidden = true; reply.replaceChildren(); replyRaw = ""; replyParts = []; replyDone = false;
+  revert.disabled = true;
   revision++; controller?.abort(); controller = null; clearTimers();
   output.hidden = true; output.replaceChildren(); message.hidden = false;
   filter.textContent = "Filter"; filter.title = ""; filter.disabled = !message.value.trim();
   message.setAttribute("aria-busy", "false");
   void fetch("/api/reset", { method: "POST", headers: { "Content-Type": "application/json", "X-Mask-Request": "preview", "X-Mask-Client": pageId }, body: "{}" }).catch(() => {});
 }
-function showProtected(text) {
-  output.replaceChildren();
+function showProtected(text, target = output) {
+  target.replaceChildren();
   let cursor = 0;
   for (const match of text.matchAll(/\[[A-Z]+(?:_\d+)?\]/g)) {
-    output.append(document.createTextNode(text.slice(cursor, match.index)));
-    const token = document.createElement("span"); token.className = "token"; token.textContent = match[0]; output.append(token);
+    target.append(document.createTextNode(text.slice(cursor, match.index)));
+    const token = document.createElement("span"); token.className = "token"; token.textContent = match[0]; target.append(token);
     cursor = match.index + match[0].length;
   }
-  output.append(document.createTextNode(text.slice(cursor)));
+  target.append(document.createTextNode(text.slice(cursor)));
 }
 function transform(data, source, version) {
   message.hidden = true; output.hidden = false; output.replaceChildren();
@@ -33,6 +45,7 @@ function transform(data, source, version) {
     showProtected(data.protected_text); message.value = data.protected_text;
     filter.textContent = "Filter"; filter.disabled = true; controller = null;
     message.setAttribute("aria-busy", "false");
+    previewId = data.preview_id || null; send.hidden = !previewId; send.disabled = false;
   };
   const parts = data.protected_view?.message;
   if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches || !Array.isArray(parts) || !parts.some(p => Number.isInteger(p.start))) { finish(); return; }
@@ -89,3 +102,96 @@ function edit() {
 }
 output.addEventListener("click", edit);
 output.addEventListener("keydown", event => { if (event.key === "Enter") { event.preventDefault(); edit(); } });
+
+function revealReply() {
+  if (!replySection.hidden) return;
+  replySection.hidden = false;
+  requestAnimationFrame(() => {
+    if (!replySection.hidden) replySection.scrollIntoView({behavior: motionAllowed() ? "smooth" : "auto", block: "start"});
+  });
+}
+function renderRaw() {
+  const nearBottom = reply.scrollHeight - reply.scrollTop - reply.clientHeight < 60;
+  // Hold back an unfinished person token until its closing bracket arrives.
+  const partial = /\[(?:P(?:E(?:R(?:S(?:O(?:N(?:_\d*)?)?)?)?)?)?)?$/.exec(replyRaw);
+  showProtected(replyDone || !partial ? replyRaw : replyRaw.slice(0, partial.index), reply);
+  if (nearBottom) reply.scrollTop = reply.scrollHeight;
+}
+async function sendProtected() {
+  if (!previewId || send.disabled || sendingController) return;
+  const version = revision, id = previewId;
+  const active = new AbortController(); sendingController = active;
+  send.disabled = true; send.classList.add("sending"); send.title = "Waiting for Claude…";
+  replyRaw = ""; replyParts = []; replyDone = false; revert.disabled = true;
+  reply.replaceChildren(); replySection.hidden = true;
+  const timeout = setTimeout(() => active.abort(), 150000);
+  let reader, finished = false;
+  const live = () => version === revision && !active.signal.aborted;
+  function event(frame) {
+    let name = "", lines = [];
+    for (const line of frame.split("\n")) {
+      if (line.startsWith("event:")) name = line.slice(6).trim();
+      if (line.startsWith("data:")) lines.push(line.slice(5).trimStart());
+    }
+    const data = JSON.parse(lines.join("\n") || "{}");
+    if (name === "delta") {
+      if (typeof data.raw === "string") replyRaw += data.raw;
+      if (Array.isArray(data.segments)) replyParts.push(...data.segments);
+      revealReply(); reply.classList.add("reply-streaming"); renderRaw();
+    } else if (name === "done") {
+      if (!replyRaw.trim()) throw new Error("Claude returned no text. Try sending again.");
+      finished = true; replyDone = true; renderRaw();
+      revert.disabled = !replyParts.some(part => typeof part.alias === "string");
+      revert.title = data.stop_reason === "max_tokens" ? "The reply reached its length limit." : "Restore known person names on this device only.";
+    } else if (name === "error") throw new Error(data.message || "Claude could not finish. Try sending again.");
+    else if (name === "cancelled") throw new Error("Reply stopped. Try sending again.");
+  }
+  try {
+    const response = await post("/api/send", {preview_id:id}, active.signal);
+    if (!live()) return;
+    if (!response.ok) { const data = await response.json(); throw new Error(data.error || "Could not reach Claude."); }
+    if (!response.body) throw new Error("Streaming is unavailable in this browser.");
+    reader = response.body.getReader(); const decoder = new TextDecoder(); let buffer = "";
+    while (!finished) {
+      const {value,done} = await reader.read(); if (!live()) return;
+      buffer += done ? decoder.decode() : decoder.decode(value,{stream:true});
+      let cut;
+      while (!finished && (cut=buffer.indexOf("\n\n")) >= 0) {
+        const frame=buffer.slice(0,cut); buffer=buffer.slice(cut+2); if(frame.trim()) event(frame);
+      }
+      if(done) break;
+    }
+    if(!finished) throw new Error("Reply interrupted. Try sending again.");
+  } catch(error) {
+    if(version !== revision) return;
+    replyDone=false; replyParts=[]; revert.disabled=true;
+    revealReply(); renderRaw();
+    reply.append(document.createTextNode((replyRaw ? "\n\n" : "") + (active.signal.aborted ? "Claude timed out. Try sending again." : error.message)));
+    send.disabled=false;
+    void post("/api/cancel",{preview_id:id}).catch(()=>{});
+  } finally {
+    clearTimeout(timeout);
+    if(!finished) { try { await reader?.cancel(); } catch {} }
+    if(version===revision) { sendingController=null;send.classList.remove("sending");send.title="Send this protected message to Claude";reply.classList.remove("reply-streaming"); }
+  }
+}
+send.addEventListener("click",()=>void sendProtected());
+revert.addEventListener("click",()=>{
+  if(!replyDone || revert.disabled) return;
+  revert.disabled=true; const version=revision; reply.replaceChildren();
+  let index=0;
+  for(const part of replyParts) {
+    if(!part.alias) {reply.append(document.createTextNode(part.text));continue;}
+    const name=document.createElement("span"); name.className=motionAllowed()?"token":"restored";
+    name.textContent=motionAllowed()?part.alias:part.text; name.title="Restored locally from "+part.alias;
+    reply.append(name);
+    if(motionAllowed()) timers.push(setTimeout(()=>{
+      if(version!==revision)return;
+      name.textContent=part.text;name.className="restored morph";
+    },180+Math.min(index++,5)*65));
+  }
+});
+window.addEventListener("pagehide",()=>{
+  if(sendingController && previewId) void post("/api/cancel",{preview_id:previewId}).catch(()=>{});
+  sendingController?.abort();
+});

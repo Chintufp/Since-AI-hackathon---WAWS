@@ -1,16 +1,22 @@
 # Mask local round trip
 
-The page contains only one message box, a **Filter** button underneath, and a small **try an example** button above.
-The example button alternates between the exact medical-record and support-ticket messages supplied for the demo.
-There are no layout modes, context field, send button, reply pane, headings, or other visible controls.
+The initial page contains one message box, a **Filter** button underneath, and a small **try an example** button above.
+The example button alternates between the supplied medical-record and support-ticket messages. The box is wider,
+uses slightly tighter text spacing, and sizes itself to the viewport; long content scrolls inside it.
 
-Filtering is explicit, runs locally, and replaces the text in the same box. Identifiers morph into placeholders;
-actual model-selected DROP ranges dissolve. The opening line supplies local task context while the complete message
-is scanned. The examples contain only source input; authored target outputs are never substituted for predictions.
-Clicking the filtered box permits editing its resulting text. Changing text or choosing an example cancels obsolete
-work. Errors use the existing Filter button, preserving the original message. Reduced-motion preferences skip animations.
+Filtering is explicit and local. The same box shows actual model substitutions and DROP animations. The opening line
+supplies task context while the complete input is scanned. The examples contain source inputs only, never substituted
+expected answers. Clicking the filtered box allows editing. Editing or loading an example invalidates previous work.
 
-The existing provider backend remains available for other integrations, but this page never calls it.
+After filtering, a small arrow appears beside Filter. Clicking it sends only the stored approved preview ID to the
+existing Claude adapter. The first response text reveals a matching box underneath, labelled **chatbots reply:**,
+and smoothly scrolls the page to it. Streaming keeps person placeholders intact. The matching **Revert details locally**
+button restores known person names only after it is clicked, without another cloud call. Generic unnumbered placeholders,
+removed sections, and generalized facts are not restored. Replies and names are rendered as text, never HTML.
+
+Provider failures appear inside the reply box and allow retry with the same send arrow. Changing input cancels an old
+request and ignores obsolete responses. Reduced-motion preferences skip animations and smooth scrolling. The initial
+page has no headings, context field, mode selector, or other controls.
 
 ## Run
 

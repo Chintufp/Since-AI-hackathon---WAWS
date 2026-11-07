@@ -16,7 +16,12 @@
       <textarea id="message" aria-label="Your message" placeholder="Your message" maxlength="4000" spellcheck="false" autocomplete="off"></textarea>
       <div id="output" role="textbox" aria-label="Filtered message" aria-readonly="true" tabindex="0" hidden></div>
     </div>
-    <button id="filter" type="button" disabled>Filter</button>
+    <div class="actions"><button id="filter" class="action-button" type="button" disabled>Filter</button><button id="send" type="button" aria-label="Send protected message" title="Send this protected message to Claude" hidden><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
+    <section id="reply-section" aria-label="Chatbot reply" hidden>
+      <p id="reply-label">chatbots reply:</p>
+      <div class="box"><div id="reply" role="region" aria-label="Chatbot response" tabindex="0"></div></div>
+      <button id="revert" class="action-button" type="button" disabled>Revert details locally</button>
+    </section>
   </main>
 </body>
 </html>
