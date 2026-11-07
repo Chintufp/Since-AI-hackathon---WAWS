@@ -405,3 +405,9 @@ Integrated and remotely verified main 32efd3913843217bc88cde4ae72b96a659e53bde b
 New local offline archive runtime/routesafe-reviewed-93ad641.zip SHA-256 497d9604e689945c6fc315dc8442605be1bfb063546afcc9026782c08c13eb1e, 33 members; every built file and original release member compared byte-for-byte. Old reviewed archive a7be23e9... and old 112.56-second silent clip retained. New layout needs a new narrated take; old video is not relabelled.
 Actionable handoff: planning/UI_REVIEW_HANDOFF.md. Please sync main and confirm the reviewed layout on the recording machine. Non-blocking reduced-motion polish can be a small reviewed follow-up; no feature expansion or broad accuracy claims. Main freeze resumes after this integration. No public deployment, upload, submission, new noise draw or paid call.
 
+
+
+## A-057 — Concise current-UI morning handoff and corrected preview pin — 2026-11-07T04:25:47.555660+00:00
+Morning handoff is now on main at a6d0d53 (documentation only; reviewed application remains 93ad641, integration baseline 32efd39). planning/MORNING_HANDOFF.md gives exact pinned planner startup, private operator inventory/startup, current left-panel recording steps, offline preset fallback, verification evidence, truthful limits and human-owned deadlines/decisions. ROUTESAFE_DEVELOPMENT.md quick preview pin was stale at 89d7152 and now points to reviewed 32efd39.
+CLI flags and inventory arguments checked; no product/source/release changes or new experiments. Reduced-motion follow-up left separate to preserve the reviewed demo. Main freeze remains in effect for application changes. No deployment, upload, submission or new costs. Please sync documentation before morning use; old silent clip still depicts the old UI.
+
