@@ -2,7 +2,7 @@
 
 **Current priority (7 November 2026):** follow the [local model build plan](../../planning/LOCAL_MODEL_PLAN.md): compare custom feature-based classifier A with pretrained-encoder B for English messages and basic CSV/XLSX. Use shared labels/splits, deterministic actions and release gates; select on validation and independently confirm before shipping the offline model/API. Work mainly on this computer, with cloud training as needed. Preserve the institutional model, labels and frozen `SPLITS.json`; use the separately versioned `privacy_v1` workstream. Broad old annotation and CS-S2/CS-S3 expansion are deferred. The pipeline below is a baseline, not proof of contextual prompt/file privacy.
 
-The [new Python A/B pilot is implemented](privacy_v1/README.md), with two locally trained bundles and a shared message/table engine. Both remain experimental and require review; see its README for actual commands and measured limitations.
+The [new Python A/B pilot is implemented](privacy_v1/README.md), with two [shared Git LFS bundles](privacy_v1/MODEL_BUNDLES.md), a local preview and a shared message/table engine. Start new data production with the [current producer prompt](privacy_v1/annotation/TRAINING_DATA_PROMPT.md). Both models remain experimental and require review. The recipe-selector documentation below is retained for the existing table UI, benchmark and original label provenance.
 
 The learned task is **goal-conditioned protection-recipe selection**. For each decision unit (a column, a linked
 column group, or a span label inside a text column) and a structured goal, the selector ranks the valid candidate

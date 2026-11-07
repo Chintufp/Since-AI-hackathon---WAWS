@@ -1,6 +1,6 @@
 # Mask
 
-**Current priority (7 November 2026):** build the [small local English privacy model](../planning/LOCAL_MODEL_PLAN.md) for messages and basic CSV/XLSX, with independently evaluated treatment decisions and offline inference. Work mainly on this computer; cloud training is available. Read [the current implementation brief](../planning/CLAUDE_BUILD_BRIEF.md) before following the old queue below. Preserve this app; UI/provider integration, broad Team B annotation and CS-S2/CS-S3 expansion are deferred. The following sections describe the existing institutional-data baseline, not completed consumer capabilities.
+**Current priority (7 November 2026):** improve the [local English privacy models](../planning/LOCAL_MODEL_PLAN.md) with reviewed training data and independent evaluation. The [message preview](web/README.md) and [Python models/API](ml/privacy_v1/README.md) are implemented; [current pilot bundles](ml/privacy_v1/MODEL_BUNDLES.md) are included through Git LFS. This table-review UI remains intact and uses its separate institutional pipeline. Provider forwarding, broad Team B annotation and CS-S2/CS-S3 expansion are deferred. The following sections document this runnable table baseline.
 
 Purpose-aware data protection for the TrustED PETs challenge. Describe the analysis and who receives the data, import CSV tables, review exactly how each column and text span will be transformed, and export the approved result with a sanitised report. Everything runs in the browser (TypeScript, Vite, React); a Web Worker owns the session.
 

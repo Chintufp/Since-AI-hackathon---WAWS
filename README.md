@@ -2,32 +2,44 @@
 
 **Useful AI conversations. Less unnecessary personal disclosure.**
 
-**Current priority:** a readable local privacy demo for approximately 100-word English messages within the user's under-19-hour deadline. Prefer stable person labels inside useful text, and remove genuinely unnecessary sections cleanly. Quality comes before size/speed optimisation. Follow the [current demo profile and longer-term model plan](planning/LOCAL_MODEL_PLAN.md); a minimal review UI is in scope, while full release criteria remain unachieved. Work is centred on this computer, with cloud compute and AI-assisted synthetic data generation available.
+Mask is a local privacy-editor prototype. It identifies private details, substitutes stable labels such as `[PERSON_1]`, and proposes task-dependent edits while preserving useful facts. The current focus is readable English messages around 100 words. Outputs require review; there is no automatic forwarding to a cloud AI or validated anonymity claim.
 
-The plan requires a fair comparison of our custom feature-based classifier and a pretrained-encoder model. Both use the same task data, transformations and release gates; choose the deployed model from measured validation quality, footprint and latency, with independent final confirmation.
+Both model approaches are implemented: custom sparse classifiers and a fine-tuned MiniLM encoder. They share the edit pipeline, file adapters and evaluation contracts. The current pilot weights and synthetic pilot dataset are included; better reviewed training data and independent evaluation are the next steps.
 
-Mask's current direction is a hackathon prototype of local prompt-protection middleware: paste context, ask a question, review faithful semantic substitutions, and send only the protected request to an external AI.
+## Run the local message demo
 
-The existing application already processes CSV datasets in the browser with detection, transformation proposals, editable previews and exact export. The consumer prompt/send path is the next build, not an implemented capability claim. A development learned selector loads, but has no held-out validation/test results for the new task.
+From the repository root:
 
-## Start here
+```sh
+git lfs install
+git lfs pull --include="mask/ml/privacy_v1/artifacts/**"
+python3 -m venv mask/ml/privacy_v1/.venv
+mask/ml/privacy_v1/.venv/bin/python -m pip install -r mask/ml/privacy_v1/requirements.lock
+mask/ml/privacy_v1/.venv/bin/python -m mask.web.server
+```
 
-- [Current Claude implementation brief](planning/CLAUDE_BUILD_BRIEF.md)
-- [Local model architecture, training and readiness criteria](planning/LOCAL_MODEL_PLAN.md)
-- [Pivot assessment, architecture and prioritised work](planning/PROMPT_PRIVACY_PIVOT.md)
-- [Run the existing application](mask/README.md)
-- [Existing ML pipeline](mask/ml/README.md)
-- [Benchmark adapter](mask/bench/README.md)
-- [Challenge materials](MATERIALS.md)
+Open **http://127.0.0.1:8787**. Paste a message and optionally provide its intended use; the proposed protected payload appears beside it. Blank intended use uses the message itself as context. The payload includes a short instruction allowing the receiving AI to reuse placeholders. All inference stays local.
 
-## Delivery scope
+The default bundle is encoder B. See [model setup and provenance](mask/ml/privacy_v1/MODEL_BUNDLES.md) to run custom A. Python APIs and CLI adapters also support bounded CSV and values-only XLSX.
 
-First improve the local message path and connect a minimal review demonstration. Use stable references inside useful text and clean removal of irrelevant sections across everyday goals; keep rehearsed examples separate from unfamiliar-message checks. The full local model bundle, spreadsheet coverage and independent release evaluation remain later completion requirements. Semantic substitution must not invent facts or promise anonymity, and a successful demo does not establish full release readiness.
+## Existing table-review demo
 
-## Preserved components
+The original table UI remains intact, including typography, divider, highlights, explanations, review controls and export:
 
-`mask/` holds the current browser application and ML/evaluation tooling. `petpilot/` is an older generic column-detector baseline. The complete supplied synthetic challenge package remains under `TRUSTED_SinceAI2026_FINAL/`, including the original mobility benchmark material. The former bus application is no longer the product.
+```sh
+npm ci --prefix mask
+npm run dev --prefix mask
+```
 
-Challenge data/documentation retain upstream CC BY 4.0 attribution; supplied toolkit code retains its MIT license. See the package notices and materials guide.
+Open **http://localhost:5173**. This interface uses the existing institutional table pipeline; it is separate from the new Python message models. Its code, fixtures, learned selector, label provenance and benchmark adapter remain available. Both servers have entries in `.claude/launch.json`.
 
-The prior transport project is recoverable from Git at `23eedc29d6f2a3cd945cac2a4307e91e6427af77`. Its local runtime files were moved to `/private/tmp/mask-retired-bfz9ordp` during the earlier reset; that temporary directory is not durable storage.
+## Work and evidence
+
+- [Current model plan](planning/LOCAL_MODEL_PLAN.md) and [implementation brief](planning/CLAUDE_BUILD_BRIEF.md)
+- [Shared training-data producer prompt](mask/ml/privacy_v1/annotation/TRAINING_DATA_PROMPT.md) and [annotation contract](mask/ml/privacy_v1/annotation/README.md)
+- [Python model/API/CLI instructions](mask/ml/privacy_v1/README.md)
+- [Latest pipeline results and known failures](evidence/privacy-v1/pipeline-v2/REPORT.md)
+- [Table UI](mask/README.md), [institutional ML baseline](mask/ml/README.md), [benchmark adapter](mask/bench/README.md)
+- [Challenge materials and licences](MATERIALS.md)
+
+The unused standalone scanner, duplicate challenge ZIP/presentation files and superseded plans have been removed from the active tree. The supplied unpacked evaluation package and measured outcomes remain available. Earlier work is recoverable in Git history.

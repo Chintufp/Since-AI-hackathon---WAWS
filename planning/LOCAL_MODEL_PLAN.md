@@ -249,4 +249,4 @@ Reuse the current detection rules, public synthetic source material for developm
 
 Defer UI polish, direct ChatGPT website integration, additional institutional scenarios, arbitrary PDF/OCR/formulas, Finnish/Swedish release claims and training a generative language model. `pets-eval` remains useful for compatible regression slices, but table k-anonymity and composite scores do not establish contextual prompt privacy.
 
-This model-first plan supersedes the earlier prompt-demo sequence. The [consumer pivot](PROMPT_PRIVACY_PIVOT.md) remains product background; integration resumes once this artifact is usable and evaluated.
+This is the authoritative current plan. Superseded pivot and institutional build plans were removed from the active tree; their history remains in Git. Both the local message preview and the existing table-review UI remain available for the demo. Continue implementation from the current status and requirements above.

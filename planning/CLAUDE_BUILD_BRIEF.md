@@ -2,6 +2,8 @@
 
 Updated 7 November 2026. **Immediate priority: readable, useful output for approximately 100-word English messages within the user's under-19-hour demo deadline.** Speed and model size are secondary for this milestone. Follow the immediate demo profile in [LOCAL_MODEL_PLAN.md](LOCAL_MODEL_PLAN.md); the full local-model release remains the longer-term objective.
 
+**Current status:** both pilot models, the corrected edit pipeline, optional-intended-use message preview, file adapters and data-authoring tools are implemented. The pilot bundles are shared through Git LFS. Start with [reviewed synthetic data production](../mask/ml/privacy_v1/annotation/TRAINING_DATA_PROMPT.md), then train/evaluate both tracks. See [the current report](../evidence/privacy-v1/pipeline-v2/REPORT.md). Preserve both demo UIs (`mask/src/` and `mask/web/`) and their assets. The broader sequence below describes the full objective, including gates that remain unfinished.
+
 ## Latest demo requirements
 
 - Preserve useful wording and relationships, replacing private names with stable numbered references. The user's expected transformation is `My partner, Mateo Silva, recorded my blood pressure.` → `My partner, [PERSON_1], recorded my blood pressure.` Do not remove the person reference as the default name treatment.

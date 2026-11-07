@@ -105,4 +105,4 @@ First visible row is the schema/header row; hidden header rows are unsupported. 
 5. Export/compare ONNX and INT8 with parity checks; B's current float bundle exceeds the 100 MiB asset target. Benchmark named-machine latency, peak memory and full table throughput.
 6. Freeze both finalists and the validation-selected candidate before opening independent final-test labels. Ship only after every applicable gate in `configs/acceptance.json` passes.
 
-Generated data and local model binaries are ignored by Git. Their generator, pinned source revision, dependency lock, code, metadata and evidence are retained. Neither cloud compute nor external LLM labelling was needed for this engineering pilot.
+The current synthetic pilot dataset and both trained pilot bundles are versioned; large weights use Git LFS. Follow [the shared-bundle setup](MODEL_BUNDLES.md) after cloning. Other generated model experiments, exports, environments and caches remain ignored. The generator, pinned source revision, dependency lock, metadata and evidence are retained. Neither cloud compute nor external LLM labelling was needed for the original engineering pilot.
