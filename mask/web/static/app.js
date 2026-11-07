@@ -195,3 +195,19 @@ window.addEventListener("pagehide",()=>{
   if(sendingController && previewId) void post("/api/cancel",{preview_id:previewId}).catch(()=>{});
   sendingController?.abort();
 });
+
+const themeButton = document.getElementById("theme");
+function setTheme(theme) {
+  document.documentElement.dataset.theme = theme;
+  const label = theme === "light" ? "Switch to dark mode" : "Switch to light mode";
+  themeButton.setAttribute("aria-label", label); themeButton.title = label;
+  themeButton.setAttribute("aria-pressed", String(theme === "light"));
+}
+let savedTheme;
+try { savedTheme = localStorage.getItem("mask-theme"); } catch {}
+setTheme(savedTheme === "light" ? "light" : "dark");
+themeButton.addEventListener("click", () => {
+  const theme = document.documentElement.dataset.theme === "light" ? "dark" : "light";
+  setTheme(theme);
+  try { localStorage.setItem("mask-theme", theme); } catch {}
+});
