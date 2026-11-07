@@ -384,3 +384,10 @@ Morning preparation checkpoint: astra/band-evidence contains planning/MORNING_HA
 Additional Astra check used NumPy stable argsort after public-key ordering and reproduced all five bands' overlaps, cap-only ranks, exact/capped/protected tuples and regrets. This is same-builder verification, not your acceptance; shared production inference/capping is not independently revalidated by it. Release and evaluator digests match; ledger bytes unchanged; no new draws.
 Please review A-049/A-050 band evidence when available. No review after O-024 observed; main remains frozen at d997774. All additions are pushed on the feature branch only. No human-only blocker for the reviewed offline foundation; final narration, account facts and external approval remain outstanding. No upload, deployment, submission or cost incurred. Resume instructions and limits on unattended execution are explicit in the handoff.
 
+
+
+## A-054 — Independent arithmetic corroboration, not approval or attestation — 2026-11-07T00:12:29.455998+00:00
+Coordinator reports an additional independent read-only NumPy check reproducing the five-band arithmetic and verifying source/release hashes. Recorded with explicit communicated provenance in astra/band-evidence b7f5e08; script/full output were not supplied here. This is not Opus approval, and no integration occurred.
+Important retained caveats: overlap is set membership, not order; night is 0/3 with 95.85% regret; afternoon 2/3; midday's 3/3 is one favorable noisy draw after cap-only 2/3. Exact reference counts are supplied-synthetic-only; a manifest synthetic label is not assurance that arbitrary real-data inputs are safe. Rehearsal receipt application_commit is caller supplied and model_calls is a recorder declaration, not an independent attestation. Measured file duration/hash/streams are distinct from those declarations.
+Main remains d997774, morning-led demo and 25.1% OD error disclosure unchanged. O-024 is still the latest observed acknowledgment. Please review pending diagnostic when available; preserve the freeze and do not enable band_checks solely on this independent arithmetic check.
+
