@@ -32,8 +32,11 @@ function reset() {
 }
 function showProtected(text, target = output) {
   target.replaceChildren();
+  appendProtected(text, target);
+}
+function appendProtected(text, target) {
   let cursor = 0;
-  for (const match of text.matchAll(/\[[A-Z]+(?:_\d+)?\]/g)) {
+  for (const match of text.matchAll(/\[[A-Z]+(?:_[A-Z]+)*(?:_\d+)?\]/g)) {
     target.append(document.createTextNode(text.slice(cursor, match.index)));
     const token = document.createElement("span"); token.className = "token"; token.textContent = match[0]; target.append(token);
     cursor = match.index + match[0].length;
@@ -114,8 +117,8 @@ function revealReply() {
 }
 function renderRaw() {
   const nearBottom = reply.scrollHeight - reply.scrollTop - reply.clientHeight < 60;
-  // Hold back an unfinished person token until its closing bracket arrives.
-  const partial = /\[(?:P(?:E(?:R(?:S(?:O(?:N(?:_\d*)?)?)?)?)?)?)?$/.exec(replyRaw);
+  // Buffer incomplete placeholders, including multi-word types such as ACCOUNT_ID.
+  const partial = /\[[A-Z][A-Z_0-9]*$|\[$/.exec(replyRaw);
   showProtected(replyDone || !partial ? replyRaw : replyRaw.slice(0, partial.index), reply);
   if (nearBottom) reply.scrollTop = reply.scrollHeight;
 }
@@ -184,9 +187,10 @@ send.addEventListener("click",()=>void sendProtected());
 revert.addEventListener("click",()=>{
   if(!replyDone || revert.disabled) return;
   revert.disabled=true; const version=revision; reply.replaceChildren();
-  let index=0;
+  let index=0, pendingText="";
   for(const part of replyParts) {
-    if(!part.alias) {reply.append(document.createTextNode(part.text));continue;}
+    if(!part.alias) {pendingText += part.text;continue;}
+    appendProtected(pendingText, reply); pendingText="";
     const name=document.createElement("span"); name.className=motionAllowed()?"token":"restored";
     name.textContent=motionAllowed()?part.alias:part.text; name.title="Restored locally from "+part.alias;
     reply.append(name);
@@ -195,6 +199,7 @@ revert.addEventListener("click",()=>{
       name.textContent=part.text;name.className="restored morph";
     },180+Math.min(index++,5)*65));
   }
+  appendProtected(pendingText, reply);
 });
 window.addEventListener("pagehide",()=>{
   if(sendingController && previewId) void post("/api/cancel",{preview_id:previewId}).catch(()=>{});

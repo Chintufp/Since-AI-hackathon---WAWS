@@ -98,3 +98,18 @@ test('HTML in replies and local restored values is inert',async()=>{
  assert.equal(ui.$('reply').querySelector('script,img'),null);assert.match(ui.$('reply').textContent,/<script>/);
  }finally{ui.close();}
 });
+
+test('multi-word placeholders stay highlighted after animation, streaming and name restoration',async()=>{
+ const text='[PERSON_1] [ACCOUNT_ID_1] [ACCOUNT_ID] [EMAIL]';
+ const data={...result,protected_text:text,protected_view:{message:[{text,start:0,end:4,action:'ALIAS'}]}};
+ const events=[['delta',{raw:'[PERSON_1] [ACCOUNT_',segments:[{text:'Emma',alias:'[PERSON_1]'},{text:' [ACCOUNT_'}]}],['delta',{raw:'ID_1] [ACCOUNT_ID] [EMAIL]',segments:[{text:'ID_1] [ACCOUNT_ID] [EMAIL]'}]}],['done',{}]];
+ const ui=setup(async()=>({ok:true,json:async()=>data}),true,()=>stream(events));try{
+ ui.type('Emma');ui.$('filter').click();await new Promise(resolve=>setTimeout(resolve,900));
+ const tokens=id=>Array.from(ui.$(id).querySelectorAll('.token'),el=>el.textContent);
+ assert.deepEqual(tokens('output'),['[PERSON_1]','[ACCOUNT_ID_1]','[ACCOUNT_ID]','[EMAIL]']);
+ ui.$('send').click();await flush();assert.deepEqual(tokens('reply'),tokens('output'));
+ ui.$('revert').click();await new Promise(resolve=>setTimeout(resolve,600));
+ assert.deepEqual(tokens('reply'),['[ACCOUNT_ID_1]','[ACCOUNT_ID]','[EMAIL]']);
+ assert.equal(ui.$('reply').textContent,'Emma [ACCOUNT_ID_1] [ACCOUNT_ID] [EMAIL]');
+ }finally{ui.close();}
+});
