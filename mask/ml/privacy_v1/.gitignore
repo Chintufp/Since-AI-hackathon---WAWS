@@ -1,0 +1,10 @@
+.venv/
+artifacts/*
+!artifacts/custom-a-pilot/
+!artifacts/encoder-b-pilot/
+!data/
+data/*
+!data/pilot.jsonl
+!data/pilot.manifest.json
+__pycache__/
+.pytest_cache/
