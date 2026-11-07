@@ -18,3 +18,7 @@ main{max-width:1000px;padding:26px 32px 32px}.box{height:clamp(280px,calc(100dvh
 @media(max-width:640px){main{padding:20px 18px 26px}.box{height:clamp(280px,calc(100dvh - 145px),640px)}textarea,#output,#reply{font-size:13px;line-height:1.6;padding:20px}.action-button,#filter{padding:11px 16px}#reply-section{margin-top:24px;scroll-margin-top:14px}}
 #filter,.action-button{padding:12px 20px;font-size:12px}
 @media(max-width:640px){#filter,.action-button{padding:11px 16px}}
+/* Guide the next available action without adding another UI element. */
+#filter:not(:disabled),#send:not(:disabled):not([hidden]),#revert:not(:disabled){background:#183760;border-color:#4a83d0;color:#eef5ff;animation:next-action 2.4s ease-in-out infinite}
+#filter:not(:disabled):hover,#send:not(:disabled):hover,#revert:not(:disabled):hover{background:#214a7c;border-color:#78aaff}
+@keyframes next-action{0%,100%{box-shadow:0 0 0 0 rgba(66,139,245,.08);border-color:#416da5}50%{box-shadow:0 0 0 4px rgba(66,139,245,.12),0 0 18px rgba(66,139,245,.14);border-color:#79acfa}}
