@@ -1,23 +1,16 @@
 # Mask local round trip
 
-A minimal dark interface based on `simple_ui.html`, with an **Inline / Compare** switch. No landing-page copy,
-example buttons, header, or dashboard. The optional intended-use field remains available.
+The page contains only one message box, a **Filter** button underneath, and a small **try an example** button above.
+The example button alternates between the exact medical-record and support-ticket messages supplied for the demo.
+There are no layout modes, context field, send button, reply pane, headings, or other visible controls.
 
-- **Inline (default):** one message box with a Filter button built into its bottom edge. Filtering runs only when
-  clicked. Identifiers morph into placeholders; actual model-selected DROP sections dissolve and disappear.
-  The animation uses Unicode code-point edit ranges against the source already in the browser, never guessed
-  string matching. Send stays disabled until the animation finishes. Edit returns to the original input.
-- **Compare:** original and protected text side by side, with automatic local previews after typing pauses.
-  Switching layouts preserves a completed preview and reply. Both layouts send the same approved server payload.
+Filtering is explicit, runs locally, and replaces the text in the same box. Identifiers morph into placeholders;
+actual model-selected DROP ranges dissolve. The opening line supplies local task context while the complete message
+is scanned. The examples contain only source input; authored target outputs are never substituted for predictions.
+Clicking the filtered box permits editing its resulting text. Changing text or choosing an example cancels obsolete
+work. Errors use the existing Filter button, preserving the original message. Reduced-motion preferences skip animations.
 
-The small arrow sends only the reviewed protected message to Claude. Its reply slides in as another box, streaming
-with placeholders intact. **Restore names** performs a local reveal when clicked; **Show placeholders** returns to
-the raw reply. Restoration never sends another API request. The **Request** control shows the exact outgoing
-system instruction and protected user message. Stop/Escape cancels generation; **Try again** prepares a new preview.
-Editing either input cancels obsolete work. Reduced-motion preferences skip the visual animations.
-
-The removal animation represents only actual DROP edits produced by the model. It never invents deletions or uses
-an authored expected output as the prediction. Model quality is unchanged by this interface.
+The existing provider backend remains available for other integrations, but this page never calls it.
 
 ## Run
 
