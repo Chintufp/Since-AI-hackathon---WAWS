@@ -1,0 +1,26 @@
+{
+  "site": "https://mask-local-demo.netlify.app",
+  "deploy_id": "6aefa410010ec151038f0e9c",
+  "model": "deberta-v3-base-d78a8b857c68",
+  "browser": "Codex in-app browser on macOS",
+  "checks": {
+    "production_model_warmup": true,
+    "cached_reload_ready": true,
+    "local_filter_synthetic_name_and_email": true,
+    "claude_stream_completed": true,
+    "local_name_restoration": true,
+    "edit_invalidates_previous_preview": true,
+    "clear_session": true,
+    "browser_console_errors": 0,
+    "public_env_file_http_status": 404,
+    "public_qa_page_http_status": 404,
+    "deployment_contains_api_key": false,
+    "local_key_mode": "0600",
+    "local_key_git_ignored": true,
+    "frontend_tests_passed": 9,
+    "relay_tests_passed": 2
+  },
+  "limitations": [
+    "Only macOS Chromium independently exercised; other desktop browsers still require verification."
+  ]
+}
