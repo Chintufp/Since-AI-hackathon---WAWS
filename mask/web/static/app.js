@@ -7,6 +7,8 @@ const output = document.getElementById("output");
 const filter = document.getElementById("filter");
 const example = document.getElementById("example");
 const pageId = crypto.randomUUID();
+const sendNote = document.getElementById("send-note");
+const replyLabel = document.getElementById("reply-label");
 const send = document.getElementById("send"), replySection = document.getElementById("reply-section");
 const reply = document.getElementById("reply"), revert = document.getElementById("revert");
 let previewId = null, sendingController = null, replyRaw = "", replyParts = [], replyDone = false;
@@ -19,7 +21,7 @@ function clearTimers() { timers.forEach(clearTimeout); timers = []; }
 function reset() {
   if (sendingController && previewId) void post("/api/cancel", {preview_id: previewId}).catch(() => {});
   sendingController?.abort(); sendingController = null;
-  previewId = null; send.hidden = true; send.disabled = false; send.classList.remove("sending");
+  previewId = null; send.hidden = true; sendNote.hidden = true; send.disabled = false; send.classList.remove("sending");
   replySection.hidden = true; reply.replaceChildren(); replyRaw = ""; replyParts = []; replyDone = false;
   revert.disabled = true;
   revision++; controller?.abort(); controller = null; clearTimers();
@@ -45,7 +47,7 @@ function transform(data, source, version) {
     showProtected(data.protected_text); message.value = data.protected_text;
     filter.textContent = "Filter"; filter.disabled = true; controller = null;
     message.setAttribute("aria-busy", "false");
-    previewId = data.preview_id || null; send.hidden = !previewId; send.disabled = false;
+    previewId = data.preview_id || null; send.hidden = !previewId; sendNote.hidden = !previewId; send.disabled = false;
   };
   const parts = data.protected_view?.message;
   if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches || !Array.isArray(parts) || !parts.some(p => Number.isInteger(p.start))) { finish(); return; }
@@ -124,6 +126,7 @@ async function sendProtected() {
   send.disabled = true; send.classList.add("sending"); send.title = "Waiting for Claude…";
   replyRaw = ""; replyParts = []; replyDone = false; revert.disabled = true;
   reply.replaceChildren(); replySection.hidden = true;
+  replyLabel.textContent = "Claude is replying…"; revealReply();
   const timeout = setTimeout(() => active.abort(), 150000);
   let reader, finished = false;
   const live = () => version === revision && !active.signal.aborted;
@@ -135,6 +138,7 @@ async function sendProtected() {
     }
     const data = JSON.parse(lines.join("\n") || "{}");
     if (name === "delta") {
+      replyLabel.textContent = "Claude’s reply";
       if (typeof data.raw === "string") replyRaw += data.raw;
       if (Array.isArray(data.segments)) replyParts.push(...data.segments);
       revealReply(); reply.classList.add("reply-streaming"); renderRaw();
@@ -165,6 +169,7 @@ async function sendProtected() {
   } catch(error) {
     if(version !== revision) return;
     replyDone=false; replyParts=[]; revert.disabled=true;
+    replyLabel.textContent = "Claude’s reply";
     revealReply(); renderRaw();
     reply.append(document.createTextNode((replyRaw ? "\n\n" : "") + (active.signal.aborted ? "Claude timed out. Try sending again." : error.message)));
     send.disabled=false;
