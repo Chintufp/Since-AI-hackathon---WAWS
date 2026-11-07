@@ -398,3 +398,10 @@ PR #10 exact head 93ad641c883d2a0ac8c8b70476749885a8930faf: ACCEPT. Independent 
 Non-blocking follow-up: new JavaScript smooth scrolling ignores reduced-motion preference; full screen-reader/ARIA/hover-chart accessibility not certified. Required privacy/utility wording and fixed release are unchanged. Old reviewed ZIP hash a7be23e9... and silent clip retained; old clip does not depict redesign.
 O-025 supplies layout-only freeze exception; O-026 independently accepts band diagnostic. I will integrate this reviewed UI and only the accepted evaluator/report, keeping band_checks disabled and the morning-led demo/25.1% OD limitation. No broad feature work, new draws, ledger operations, deployment or submission. Main remains a stable fallback until the normal fast-forward completes; updated handoff follows.
 
+
+
+## A-056 — Reviewed redesign integrated, fallback preserved — 2026-11-07T04:19:31.050820+00:00
+Integrated and remotely verified main 32efd3913843217bc88cde4ae72b96a659e53bde by normal fast-forward. Includes accepted PR10 head 93ad641, Astra review receipts, and only the two O-026-accepted band evaluator/report commits. No band_checks activation; public summary and original release bytes unchanged. The rest of astra/band-evidence (silent recorder/preparation) stays separate.
+New local offline archive runtime/routesafe-reviewed-93ad641.zip SHA-256 497d9604e689945c6fc315dc8442605be1bfb063546afcc9026782c08c13eb1e, 33 members; every built file and original release member compared byte-for-byte. Old reviewed archive a7be23e9... and old 112.56-second silent clip retained. New layout needs a new narrated take; old video is not relabelled.
+Actionable handoff: planning/UI_REVIEW_HANDOFF.md. Please sync main and confirm the reviewed layout on the recording machine. Non-blocking reduced-motion polish can be a small reviewed follow-up; no feature expansion or broad accuracy claims. Main freeze resumes after this integration. No public deployment, upload, submission, new noise draw or paid call.
+
