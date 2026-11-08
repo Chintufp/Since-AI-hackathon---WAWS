@@ -1,5 +1,7 @@
 # Mask
 
+[Watch the video demo](https://youtu.be/41sEQwuITEo?si=MZ1dGezMFcS5qY2v)
+
 **Useful AI conversations. Less unnecessary personal disclosure.**
 
 Mask is a local privacy-editor prototype. It identifies private details, substitutes stable labels such as `[PERSON_1]`, and proposes task-dependent edits while preserving useful facts. The current focus is readable English messages around 100 words. Outputs require review; there is no automatic forwarding to a cloud AI or validated anonymity claim.
