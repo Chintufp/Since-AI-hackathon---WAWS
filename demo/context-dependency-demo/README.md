@@ -1,6 +1,6 @@
 # Context-dependency demo: same notes, different task
 
-Use this fictional 69-word clinic note as a pasted health-portal extract. A return-to-work email is a credible reason to paste it, and the medication summary gives a clear second purpose. The source text stays identical throughout.
+Use this fictional 80-word message: the user adds a brief introduction and their manager's work-from-home agreement, then pastes the GP's appointment summary. A return-to-work email is a credible reason to paste it, and the medication summary gives a clear second purpose. The source text stays identical throughout.
 
 ## Record the demo
 
@@ -34,9 +34,9 @@ Verified on 8 November 2026 with the downloaded **DeBERTa-v3 Base epoch 2** bund
 
 Use the new model with its section-removal pipeline and supply the intended task separately. This check did not exercise the deployed browser or send a provider request; a browser using the old model/export will not necessarily reproduce these outputs.
 
-The example is synthetic and selected for presentation after testing four note formats with two task pairs. All 16 candidate outputs are retained in [candidate-results.json](../../evidence/privacy-v1/context-demo-20261108/candidate-results.json). This is a demonstrated example, not an independent accuracy benchmark; prior tests showed sensitivity to task wording.
+The example is synthetic and selected for presentation after testing four note formats with two task pairs. Two further introductions were tested for this wording revision; all four resulting outputs are in [revision-2/candidate-results.json](../../evidence/privacy-v1/context-demo-20261108/revision-2/candidate-results.json). The original 16 candidate outputs are retained in [candidate-results.json](../../evidence/privacy-v1/context-demo-20261108/candidate-results.json). This is a demonstrated example, not an independent accuracy benchmark; prior tests showed sensitivity to task wording.
 
-The [verification report](../../evidence/privacy-v1/context-demo-20261108/preview/verification.json) records exact input, task, model-manifest hash, timings, checks and app previews. To replay, use the project ML environment and a new output directory:
+The [verification report](../../evidence/privacy-v1/context-demo-20261108/revision-2/preview/verification.json) records exact input, task, model-manifest hash, timings, checks and app previews. To replay, use the project ML environment and a new output directory:
 
 ```sh
 python demo/context-dependency-demo/verify.py \

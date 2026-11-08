@@ -35,7 +35,7 @@ def main():
     required = (
         'Fit to return to desk duties from 18 November.',
         'No lifting over 5 kg or standing for more than twenty minutes until review on 9 December.',
-        'Home working on Tuesdays and Thursdays agreed.',
+        'My manager said working from home on Tuesdays and Thursdays would be fine.',
     )
     medical = text.split('\n\n')[-1]
     outputs = []
@@ -73,7 +73,7 @@ def main():
         'source': text, 'word_count': len(text.split()), 'device': 'cpu', 'threads': 4,
         'switch_back_reproduces_manager_output': True,
         'limitations': [
-            'Synthetic example selected after trying four source formats and two pairs of tasks.',
+            'Synthetic demo revised after testing two more natural introductions with both tasks.',
             'Complete local Python application preview; no live browser or provider request.',
             'No model weights, thresholds or production defaults changed.',
         ],
