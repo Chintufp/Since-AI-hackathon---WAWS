@@ -2,7 +2,7 @@
 
 Replace the budget scene at **1:05–1:30**. This makes the consumer scene demonstrate context-dependent filtering after the corporate scene has established basic identifier masking.
 
-The recording page is [context-animation/index.html](context-animation/index.html). Open it in a browser and use **Space** or **Right arrow** to advance through the three steps. **Left arrow** goes back, **R** restarts, **F** enters fullscreen, and **H** hides the controls. The page is a single chat-style message box: original message, filtered for the manager, then the task retyped and filtered for the GP with the caption. See [playback instructions](context-animation/README.md).
+The recording page is [video/context-animation/index.html](video/context-animation/index.html). Open it in a browser and use **Space** or **Right arrow** to advance through the three steps. **Left arrow** goes back, **R** restarts, **F** enters fullscreen, and **H** hides the controls. The page is a single chat-style message box: original message, filtered for the manager, then the task retyped and filtered for the GP with the caption. See [playback instructions](video/context-animation/README.md).
 
 Use the exact 80-word synthetic appointment note and tasks in [context-dependency-demo](context-dependency-demo/README.md). The files were brought into this checkout unchanged from commit `a42c884ba5477377f56268dcbbc1a33ab12a6ba7` on `codex/base-demo-check-20261108`.
 
