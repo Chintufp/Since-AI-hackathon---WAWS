@@ -1,0 +1,1845 @@
+{
+  "evaluation_role": "fresh_diagnostics_frozen_before_inference",
+  "counts": {
+    "cases": 12,
+    "identifier_misses": 1,
+    "lost_expected_facts": 0,
+    "missed_expected_sections": 3,
+    "inconsistent_person_groups": 2,
+    "erroneous_person_merges": 0
+  },
+  "outputs": [
+    {
+      "id": "fresh-health-employer",
+      "word_count": 121,
+      "text": "Could you help me turn these appointment notes into a clear message? My name is Mei Tan. I had knee surgery on 2 November and the physiotherapist expects a gradual return to work from 18 November. I can sit at a desk, but I must not lift more than 5 kg or stand for longer than twenty minutes until the review on 9 December. Working from home is possible on Tuesdays and Thursdays. My psychiatrist diagnosed bipolar II in 2021, and I take lamotrigine 100 mg every evening. I have slept poorly for three nights but have not changed the dose. The clinic can reach me at mei.tan@example.org. My manager needs an update before Friday so the rota can be arranged.",
+      "task": "Draft an email requesting temporary desk duties, covering the return date, restrictions and available work-from-home days.",
+      "result": {
+        "status": "needs_review",
+        "protected_text": "Could you help me turn these appointment notes into a clear message? My name is [PERSON_1]. I had knee surgery on 2 November and the physiotherapist expects a gradual return to work from 18 November. I can sit at a desk, but I must not lift more than 5 kg or stand for longer than twenty minutes until the review on 9 December. Working from home is possible on Tuesdays and Thursdays. My psychiatrist diagnosed bipolar II in 2021, and I take lamotrigine 100 mg every evening. I have slept poorly for three nights but have not changed the dose. The clinic can reach me at [EMAIL]. My manager needs an update before Friday so the rota can be arranged.",
+        "model_version": "deberta-v3-base",
+        "edits": [
+          {
+            "start": 80,
+            "end": 87,
+            "label": "PERSON",
+            "action": "ALIAS",
+            "replacement": "[PERSON_1]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          },
+          {
+            "start": 568,
+            "end": 587,
+            "label": "EMAIL",
+            "action": "PLACEHOLDER",
+            "replacement": "[EMAIL]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          }
+        ],
+        "retained_sensitive": [
+          {
+            "start": 382,
+            "end": 471,
+            "label": "HEALTH",
+            "reason": "essential_fact"
+          }
+        ],
+        "review_reasons": [
+          "experimental_model_not_release_validated",
+          "unconfirmed_detection_requires_review"
+        ],
+        "coverage": {
+          "scanned_characters": 658,
+          "total_characters": 658,
+          "complete": true,
+          "offset_unit": "unicode_code_point",
+          "history_messages_scanned": 0,
+          "task_scanned": true
+        },
+        "protected_task": "Draft an email requesting temporary desk duties, covering the return date, restrictions and available work-from-home days.",
+        "protected_history": [],
+        "pending_reviews": [
+          {
+            "start": 89,
+            "end": 110,
+            "label": "HEALTH",
+            "reason": "unconfirmed_context_boundary"
+          },
+          {
+            "start": 111,
+            "end": 121,
+            "label": "DATE",
+            "reason": "unconfirmed_entity_shape"
+          },
+          {
+            "start": 122,
+            "end": 178,
+            "label": "HEALTH",
+            "reason": "unconfirmed_context_boundary"
+          },
+          {
+            "start": 184,
+            "end": 195,
+            "label": "DATE",
+            "reason": "unconfirmed_entity_shape"
+          },
+          {
+            "start": 222,
+            "end": 272,
+            "label": "HEALTH",
+            "reason": "unconfirmed_context_boundary"
+          },
+          {
+            "start": 278,
+            "end": 292,
+            "label": "HEALTH",
+            "reason": "unconfirmed_context_boundary"
+          },
+          {
+            "start": 299,
+            "end": 309,
+            "label": "HEALTH",
+            "reason": "unconfirmed_context_boundary"
+          },
+          {
+            "start": 313,
+            "end": 323,
+            "label": "DATE",
+            "reason": "unconfirmed_entity_shape"
+          }
+        ],
+        "context_reports": [
+          {
+            "component": "task",
+            "index": null,
+            "edits": [],
+            "retained_sensitive": [],
+            "pending_reviews": [],
+            "coverage": {
+              "scanned_characters": 122,
+              "total_characters": 122,
+              "complete": true,
+              "offset_unit": "unicode_code_point"
+            }
+          }
+        ],
+        "runtime_versions": {
+          "pipeline": "privacy-edit-pipeline.2",
+          "section_mode": "legacy",
+          "policy": "consumer-v1-pilot.2",
+          "model_training_policy": "consumer-v1-pilot.2",
+          "model_bundle_sha256": "2cb1fb04e9cda1701deecaeb68391c45bafe910fdbfad80b3611ef41c5c8bc42"
+        },
+        "section_diagnostics": [
+          {
+            "start": 382,
+            "end": 471,
+            "candidate_mode": "legacy",
+            "probes": [
+              {
+                "start": 382,
+                "end": 471,
+                "label": "HEALTH",
+                "proposed_action": "KEEP",
+                "action_score": 0.9986962342783848,
+                "relevance": {
+                  "essential": 0.9971064925193787,
+                  "unnecessary": 0.001895907218568027,
+                  "uncertain": 0.000997663359157741
+                },
+                "scores_calibrated": false,
+                "applied_action": "KEEP",
+                "gate_reason": "essential_fact"
+              }
+            ],
+            "outcome": "KEEP",
+            "reason": "essential_fact"
+          }
+        ],
+        "receiving_ai_instruction": "Privacy note: Labels such as [PERSON_1] represent redacted references. You may use these labels verbatim in your reply. Do not guess or invent the hidden values."
+      },
+      "identifier_misses": [],
+      "lost_expected_facts": [],
+      "missed_expected_sections": [
+        "My psychiatrist diagnosed bipolar II in 2021, and I take lamotrigine 100 mg every evening."
+      ],
+      "person_group_aliases": [
+        [
+          "[PERSON_1]"
+        ]
+      ],
+      "inconsistent_person_groups": 0,
+      "erroneous_person_merge": false,
+      "expected_no_edit": false,
+      "no_edit": false,
+      "real_app_supported": true,
+      "real_app_protected_text": "Could you help me turn these appointment notes into a clear message? My name is [PERSON_1]. I had knee surgery on 2 November and the physiotherapist expects a gradual return to work from 18 November. I can sit at a desk, but I must not lift more than 5 kg or stand for longer than twenty minutes until the review on 9 December. Working from home is possible on Tuesdays and Thursdays. My psychiatrist diagnosed bipolar II in 2021, and I take lamotrigine 100 mg every evening. I have slept poorly for three nights but have not changed the dose. The clinic can reach me at [EMAIL]. My manager needs an update before Friday so the rota can be arranged.",
+      "local_mock_reply": "[PERSON_1] [PERSON_999] [EMAIL]",
+      "locally_restored_reply": "Mei Tan [PERSON_999] [EMAIL]"
+    },
+    {
+      "id": "fresh-health-clinician",
+      "word_count": 121,
+      "text": "Could you help me turn these appointment notes into a clear message? My name is Mei Tan. I had knee surgery on 2 November and the physiotherapist expects a gradual return to work from 18 November. I can sit at a desk, but I must not lift more than 5 kg or stand for longer than twenty minutes until the review on 9 December. Working from home is possible on Tuesdays and Thursdays. My psychiatrist diagnosed bipolar II in 2021, and I take lamotrigine 100 mg every evening. I have slept poorly for three nights but have not changed the dose. The clinic can reach me at mei.tan@example.org. My manager needs an update before Friday so the rota can be arranged.",
+      "task": "Prepare a summary of my current health, medicines, recent sleep and recovery restrictions for a medication review with my clinician.",
+      "result": {
+        "status": "needs_review",
+        "protected_text": "Could you help me turn these appointment notes into a clear message? My name is [PERSON_1]. I had knee surgery on 2 November and the physiotherapist expects a gradual return to work from 18 November. I can sit at a desk, but I must not lift more than 5 kg or stand for longer than twenty minutes until the review on 9 December. Working from home is possible on Tuesdays and Thursdays. My psychiatrist diagnosed bipolar II in 2021, and I take lamotrigine 100 mg every evening. I have slept poorly for three nights but have not changed the dose. The clinic can reach me at [EMAIL]. My manager needs an update before Friday so the rota can be arranged.",
+        "model_version": "deberta-v3-base",
+        "edits": [
+          {
+            "start": 80,
+            "end": 87,
+            "label": "PERSON",
+            "action": "ALIAS",
+            "replacement": "[PERSON_1]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          },
+          {
+            "start": 568,
+            "end": 587,
+            "label": "EMAIL",
+            "action": "PLACEHOLDER",
+            "replacement": "[EMAIL]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          }
+        ],
+        "retained_sensitive": [
+          {
+            "start": 382,
+            "end": 471,
+            "label": "HEALTH",
+            "reason": "essential_fact"
+          }
+        ],
+        "review_reasons": [
+          "experimental_model_not_release_validated",
+          "unconfirmed_detection_requires_review"
+        ],
+        "coverage": {
+          "scanned_characters": 658,
+          "total_characters": 658,
+          "complete": true,
+          "offset_unit": "unicode_code_point",
+          "history_messages_scanned": 0,
+          "task_scanned": true
+        },
+        "protected_task": "Prepare a summary of my current health, medicines, recent sleep and recovery restrictions for a medication review with my clinician.",
+        "protected_history": [],
+        "pending_reviews": [
+          {
+            "start": 89,
+            "end": 110,
+            "label": "HEALTH",
+            "reason": "unconfirmed_context_boundary"
+          },
+          {
+            "start": 111,
+            "end": 121,
+            "label": "DATE",
+            "reason": "unconfirmed_entity_shape"
+          },
+          {
+            "start": 122,
+            "end": 178,
+            "label": "HEALTH",
+            "reason": "unconfirmed_context_boundary"
+          },
+          {
+            "start": 184,
+            "end": 195,
+            "label": "DATE",
+            "reason": "unconfirmed_entity_shape"
+          },
+          {
+            "start": 222,
+            "end": 272,
+            "label": "HEALTH",
+            "reason": "unconfirmed_context_boundary"
+          },
+          {
+            "start": 278,
+            "end": 292,
+            "label": "HEALTH",
+            "reason": "unconfirmed_context_boundary"
+          },
+          {
+            "start": 299,
+            "end": 309,
+            "label": "HEALTH",
+            "reason": "unconfirmed_context_boundary"
+          },
+          {
+            "start": 313,
+            "end": 323,
+            "label": "DATE",
+            "reason": "unconfirmed_entity_shape"
+          }
+        ],
+        "context_reports": [
+          {
+            "component": "task",
+            "index": null,
+            "edits": [],
+            "retained_sensitive": [
+              {
+                "start": 0,
+                "end": 131,
+                "label": "HEALTH",
+                "reason": "essential_fact"
+              }
+            ],
+            "pending_reviews": [],
+            "coverage": {
+              "scanned_characters": 132,
+              "total_characters": 132,
+              "complete": true,
+              "offset_unit": "unicode_code_point"
+            }
+          }
+        ],
+        "runtime_versions": {
+          "pipeline": "privacy-edit-pipeline.2",
+          "section_mode": "legacy",
+          "policy": "consumer-v1-pilot.2",
+          "model_training_policy": "consumer-v1-pilot.2",
+          "model_bundle_sha256": "2cb1fb04e9cda1701deecaeb68391c45bafe910fdbfad80b3611ef41c5c8bc42"
+        },
+        "section_diagnostics": [
+          {
+            "start": 382,
+            "end": 471,
+            "candidate_mode": "legacy",
+            "probes": [
+              {
+                "start": 382,
+                "end": 471,
+                "label": "HEALTH",
+                "proposed_action": "KEEP",
+                "action_score": 0.9988409530155797,
+                "relevance": {
+                  "essential": 0.997649610042572,
+                  "unnecessary": 0.0015152806881815195,
+                  "uncertain": 0.0008351735305041075
+                },
+                "scores_calibrated": false,
+                "applied_action": "KEEP",
+                "gate_reason": "essential_fact"
+              }
+            ],
+            "outcome": "KEEP",
+            "reason": "essential_fact"
+          }
+        ],
+        "receiving_ai_instruction": "Privacy note: Labels such as [PERSON_1] represent redacted references. You may use these labels verbatim in your reply. Do not guess or invent the hidden values."
+      },
+      "identifier_misses": [],
+      "lost_expected_facts": [],
+      "missed_expected_sections": [],
+      "person_group_aliases": [
+        [
+          "[PERSON_1]"
+        ]
+      ],
+      "inconsistent_person_groups": 0,
+      "erroneous_person_merge": false,
+      "expected_no_edit": false,
+      "no_edit": false,
+      "real_app_supported": true,
+      "real_app_protected_text": "Could you help me turn these appointment notes into a clear message? My name is [PERSON_1]. I had knee surgery on 2 November and the physiotherapist expects a gradual return to work from 18 November. I can sit at a desk, but I must not lift more than 5 kg or stand for longer than twenty minutes until the review on 9 December. Working from home is possible on Tuesdays and Thursdays. My psychiatrist diagnosed bipolar II in 2021, and I take lamotrigine 100 mg every evening. I have slept poorly for three nights but have not changed the dose. The clinic can reach me at [EMAIL]. My manager needs an update before Friday so the rota can be arranged.",
+      "local_mock_reply": "[PERSON_1] [PERSON_999] [EMAIL]",
+      "locally_restored_reply": "Mei Tan [PERSON_999] [EMAIL]"
+    },
+    {
+      "id": "fresh-boiler-engineer",
+      "word_count": 125,
+      "text": "I need to get this organised before the weather gets colder. I am Daniel Rios, and the flat is at 26 Rowan Court, Bellford. The boiler stops after about ten minutes and shows E14; resetting it twice did not solve the problem. The engineer can visit on Wednesday between 09:00 and 11:00, and I can be home during that window. The repair quote is 940 euros, but it excludes any replacement pump. Since my partner lost her job, our household income has fallen to 1,450 euros a month and our savings are down to 600 euros. Rent is 740 euros and groceries are usually 260 euros. Please do not approve any extra work until I receive an itemised quote. My number is +44 7700 900416.",
+      "task": "Draft a repair appointment confirmation explaining the fault, access time and requirement to approve an itemised quote before extra work.",
+      "result": {
+        "status": "needs_review",
+        "protected_text": "I need to get this organised before the weather gets colder. I am [PERSON_1], and the flat is at [ADDRESS]. The boiler stops after about ten minutes and shows E14; resetting it twice did not solve the problem. The engineer can visit on Wednesday between 09:00 and 11:00, and I can be home during that window. The repair quote is 940 euros, but it excludes any replacement pump. Since my partner lost her job, our household income has fallen to 1,450 euros a month and our savings are down to 600 euros. Rent is 740 euros and groceries are usually 260 euros. Please do not approve any extra work until I receive an itemised quote. My number is [PHONE].",
+        "model_version": "deberta-v3-base",
+        "edits": [
+          {
+            "start": 66,
+            "end": 77,
+            "label": "PERSON",
+            "action": "ALIAS",
+            "replacement": "[PERSON_1]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          },
+          {
+            "start": 98,
+            "end": 122,
+            "label": "ADDRESS",
+            "action": "PLACEHOLDER",
+            "replacement": "[ADDRESS]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          },
+          {
+            "start": 659,
+            "end": 674,
+            "label": "PHONE",
+            "action": "PLACEHOLDER",
+            "replacement": "[PHONE]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          }
+        ],
+        "retained_sensitive": [
+          {
+            "start": 394,
+            "end": 517,
+            "label": "FINANCIAL",
+            "reason": "essential_fact"
+          },
+          {
+            "start": 394,
+            "end": 517,
+            "label": "FAMILY",
+            "reason": "essential_fact"
+          },
+          {
+            "start": 519,
+            "end": 572,
+            "label": "FINANCIAL",
+            "reason": "essential_fact"
+          }
+        ],
+        "review_reasons": [
+          "experimental_model_not_release_validated",
+          "unconfirmed_detection_requires_review"
+        ],
+        "coverage": {
+          "scanned_characters": 675,
+          "total_characters": 675,
+          "complete": true,
+          "offset_unit": "unicode_code_point",
+          "history_messages_scanned": 0,
+          "task_scanned": true
+        },
+        "protected_task": "Draft a repair appointment confirmation explaining the fault, access time and requirement to approve an itemised quote before extra work.",
+        "protected_history": [],
+        "pending_reviews": [
+          {
+            "start": 345,
+            "end": 354,
+            "label": "FINANCIAL",
+            "reason": "unconfirmed_context_boundary"
+          },
+          {
+            "start": 416,
+            "end": 423,
+            "label": "HEALTH",
+            "reason": "unconfirmed_context_boundary"
+          }
+        ],
+        "context_reports": [
+          {
+            "component": "task",
+            "index": null,
+            "edits": [],
+            "retained_sensitive": [],
+            "pending_reviews": [],
+            "coverage": {
+              "scanned_characters": 137,
+              "total_characters": 137,
+              "complete": true,
+              "offset_unit": "unicode_code_point"
+            }
+          }
+        ],
+        "runtime_versions": {
+          "pipeline": "privacy-edit-pipeline.2",
+          "section_mode": "legacy",
+          "policy": "consumer-v1-pilot.2",
+          "model_training_policy": "consumer-v1-pilot.2",
+          "model_bundle_sha256": "2cb1fb04e9cda1701deecaeb68391c45bafe910fdbfad80b3611ef41c5c8bc42"
+        },
+        "section_diagnostics": [
+          {
+            "start": 394,
+            "end": 517,
+            "candidate_mode": "legacy",
+            "probes": [
+              {
+                "start": 394,
+                "end": 517,
+                "label": "FINANCIAL",
+                "proposed_action": "KEEP",
+                "action_score": 0.9658787776387406,
+                "relevance": {
+                  "essential": 0.9223628640174866,
+                  "unnecessary": 0.06493853777647018,
+                  "uncertain": 0.012698597274720669
+                },
+                "scores_calibrated": false,
+                "applied_action": "KEEP",
+                "gate_reason": "essential_fact"
+              },
+              {
+                "start": 394,
+                "end": 517,
+                "label": "FAMILY",
+                "proposed_action": "KEEP",
+                "action_score": 0.9647069116344728,
+                "relevance": {
+                  "essential": 0.9178285598754883,
+                  "unnecessary": 0.06879507750272751,
+                  "uncertain": 0.013376402668654919
+                },
+                "scores_calibrated": false,
+                "applied_action": "KEEP",
+                "gate_reason": "essential_fact"
+              }
+            ],
+            "outcome": "KEEP",
+            "reason": "essential_fact"
+          },
+          {
+            "start": 519,
+            "end": 572,
+            "candidate_mode": "legacy",
+            "probes": [
+              {
+                "start": 519,
+                "end": 572,
+                "label": "FINANCIAL",
+                "proposed_action": "KEEP",
+                "action_score": 0.9679704146674329,
+                "relevance": {
+                  "essential": 0.9299468398094177,
+                  "unnecessary": 0.05840521678328514,
+                  "uncertain": 0.011647905223071575
+                },
+                "scores_calibrated": false,
+                "applied_action": "KEEP",
+                "gate_reason": "essential_fact"
+              }
+            ],
+            "outcome": "KEEP",
+            "reason": "essential_fact"
+          }
+        ],
+        "receiving_ai_instruction": "Privacy note: Labels such as [PERSON_1] represent redacted references. You may use these labels verbatim in your reply. Do not guess or invent the hidden values."
+      },
+      "identifier_misses": [],
+      "lost_expected_facts": [],
+      "missed_expected_sections": [
+        "Since my partner lost her job, our household income has fallen to 1,450 euros a month and our savings are down to 600 euros."
+      ],
+      "person_group_aliases": [
+        [
+          "[PERSON_1]"
+        ]
+      ],
+      "inconsistent_person_groups": 0,
+      "erroneous_person_merge": false,
+      "expected_no_edit": false,
+      "no_edit": false,
+      "real_app_supported": true,
+      "real_app_protected_text": "I need to get this organised before the weather gets colder. I am [PERSON_1], and the flat is at [ADDRESS]. The boiler stops after about ten minutes and shows E14; resetting it twice did not solve the problem. The engineer can visit on Wednesday between 09:00 and 11:00, and I can be home during that window. The repair quote is 940 euros, but it excludes any replacement pump. Since my partner lost her job, our household income has fallen to 1,450 euros a month and our savings are down to 600 euros. Rent is 740 euros and groceries are usually 260 euros. Please do not approve any extra work until I receive an itemised quote. My number is [PHONE].",
+      "local_mock_reply": "[PERSON_1] [PERSON_999] [EMAIL]",
+      "locally_restored_reply": "Daniel Rios [PERSON_999] [EMAIL]"
+    },
+    {
+      "id": "fresh-boiler-budget",
+      "word_count": 125,
+      "text": "I need to get this organised before the weather gets colder. I am Daniel Rios, and the flat is at 26 Rowan Court, Bellford. The boiler stops after about ten minutes and shows E14; resetting it twice did not solve the problem. The engineer can visit on Wednesday between 09:00 and 11:00, and I can be home during that window. The repair quote is 940 euros, but it excludes any replacement pump. Since my partner lost her job, our household income has fallen to 1,450 euros a month and our savings are down to 600 euros. Rent is 740 euros and groceries are usually 260 euros. Please do not approve any extra work until I receive an itemised quote. My number is +44 7700 900416.",
+      "task": "Work out whether this household can afford the boiler repair from current income and savings, and explain what costs are still uncertain.",
+      "result": {
+        "status": "needs_review",
+        "protected_text": "I need to get this organised before the weather gets colder. I am [PERSON_1], and the flat is at [ADDRESS]. The boiler stops after about ten minutes and shows E14; resetting it twice did not solve the problem. The engineer can visit on Wednesday between 09:00 and 11:00, and I can be home during that window. The repair quote is 940 euros, but it excludes any replacement pump. Since my partner lost her job, our household income has fallen to 1,450 euros a month and our savings are down to 600 euros. Rent is 740 euros and groceries are usually 260 euros. Please do not approve any extra work until I receive an itemised quote. My number is [PHONE].",
+        "model_version": "deberta-v3-base",
+        "edits": [
+          {
+            "start": 66,
+            "end": 77,
+            "label": "PERSON",
+            "action": "ALIAS",
+            "replacement": "[PERSON_1]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          },
+          {
+            "start": 98,
+            "end": 122,
+            "label": "ADDRESS",
+            "action": "PLACEHOLDER",
+            "replacement": "[ADDRESS]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          },
+          {
+            "start": 659,
+            "end": 674,
+            "label": "PHONE",
+            "action": "PLACEHOLDER",
+            "replacement": "[PHONE]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          }
+        ],
+        "retained_sensitive": [
+          {
+            "start": 394,
+            "end": 517,
+            "label": "FINANCIAL",
+            "reason": "essential_fact"
+          },
+          {
+            "start": 394,
+            "end": 517,
+            "label": "FAMILY",
+            "reason": "essential_fact"
+          },
+          {
+            "start": 519,
+            "end": 572,
+            "label": "FINANCIAL",
+            "reason": "essential_fact"
+          }
+        ],
+        "review_reasons": [
+          "experimental_model_not_release_validated",
+          "unconfirmed_detection_requires_review"
+        ],
+        "coverage": {
+          "scanned_characters": 675,
+          "total_characters": 675,
+          "complete": true,
+          "offset_unit": "unicode_code_point",
+          "history_messages_scanned": 0,
+          "task_scanned": true
+        },
+        "protected_task": "Work out whether this household can afford the boiler repair from current income and savings, and explain what costs are still uncertain.",
+        "protected_history": [],
+        "pending_reviews": [
+          {
+            "start": 345,
+            "end": 354,
+            "label": "FINANCIAL",
+            "reason": "unconfirmed_context_boundary"
+          },
+          {
+            "start": 416,
+            "end": 423,
+            "label": "HEALTH",
+            "reason": "unconfirmed_context_boundary"
+          }
+        ],
+        "context_reports": [
+          {
+            "component": "task",
+            "index": null,
+            "edits": [],
+            "retained_sensitive": [
+              {
+                "start": 0,
+                "end": 136,
+                "label": "FINANCIAL",
+                "reason": "essential_fact"
+              }
+            ],
+            "pending_reviews": [],
+            "coverage": {
+              "scanned_characters": 137,
+              "total_characters": 137,
+              "complete": true,
+              "offset_unit": "unicode_code_point"
+            }
+          }
+        ],
+        "runtime_versions": {
+          "pipeline": "privacy-edit-pipeline.2",
+          "section_mode": "legacy",
+          "policy": "consumer-v1-pilot.2",
+          "model_training_policy": "consumer-v1-pilot.2",
+          "model_bundle_sha256": "2cb1fb04e9cda1701deecaeb68391c45bafe910fdbfad80b3611ef41c5c8bc42"
+        },
+        "section_diagnostics": [
+          {
+            "start": 394,
+            "end": 517,
+            "candidate_mode": "legacy",
+            "probes": [
+              {
+                "start": 394,
+                "end": 517,
+                "label": "FINANCIAL",
+                "proposed_action": "KEEP",
+                "action_score": 0.9691216747391407,
+                "relevance": {
+                  "essential": 0.9310377240180969,
+                  "unnecessary": 0.05713125690817833,
+                  "uncertain": 0.011831076815724373
+                },
+                "scores_calibrated": false,
+                "applied_action": "KEEP",
+                "gate_reason": "essential_fact"
+              },
+              {
+                "start": 394,
+                "end": 517,
+                "label": "FAMILY",
+                "proposed_action": "KEEP",
+                "action_score": 0.9676835381811818,
+                "relevance": {
+                  "essential": 0.926469624042511,
+                  "unnecessary": 0.06095875799655914,
+                  "uncertain": 0.012571568600833416
+                },
+                "scores_calibrated": false,
+                "applied_action": "KEEP",
+                "gate_reason": "essential_fact"
+              }
+            ],
+            "outcome": "KEEP",
+            "reason": "essential_fact"
+          },
+          {
+            "start": 519,
+            "end": 572,
+            "candidate_mode": "legacy",
+            "probes": [
+              {
+                "start": 519,
+                "end": 572,
+                "label": "FINANCIAL",
+                "proposed_action": "KEEP",
+                "action_score": 0.9703111586081491,
+                "relevance": {
+                  "essential": 0.9357219934463501,
+                  "unnecessary": 0.053248465061187744,
+                  "uncertain": 0.011029568500816822
+                },
+                "scores_calibrated": false,
+                "applied_action": "KEEP",
+                "gate_reason": "essential_fact"
+              }
+            ],
+            "outcome": "KEEP",
+            "reason": "essential_fact"
+          }
+        ],
+        "receiving_ai_instruction": "Privacy note: Labels such as [PERSON_1] represent redacted references. You may use these labels verbatim in your reply. Do not guess or invent the hidden values."
+      },
+      "identifier_misses": [],
+      "lost_expected_facts": [],
+      "missed_expected_sections": [],
+      "person_group_aliases": [
+        [
+          "[PERSON_1]"
+        ]
+      ],
+      "inconsistent_person_groups": 0,
+      "erroneous_person_merge": false,
+      "expected_no_edit": false,
+      "no_edit": false,
+      "real_app_supported": true,
+      "real_app_protected_text": "I need to get this organised before the weather gets colder. I am [PERSON_1], and the flat is at [ADDRESS]. The boiler stops after about ten minutes and shows E14; resetting it twice did not solve the problem. The engineer can visit on Wednesday between 09:00 and 11:00, and I can be home during that window. The repair quote is 940 euros, but it excludes any replacement pump. Since my partner lost her job, our household income has fallen to 1,450 euros a month and our savings are down to 600 euros. Rent is 740 euros and groceries are usually 260 euros. Please do not approve any extra work until I receive an itemised quote. My number is [PHONE].",
+      "local_mock_reply": "[PERSON_1] [PERSON_999] [EMAIL]",
+      "locally_restored_reply": "Daniel Rios [PERSON_999] [EMAIL]"
+    },
+    {
+      "id": "fresh-incident-engineering",
+      "word_count": 118,
+      "text": "Please turn the notes from our call into something I can send on. Customer lead Noura Haddad reported that the export service stopped producing CSV files at 10:20 after version 4.8 went live. It affects 48 accounts, but PDF exports still work. Engineering reproduced the failure with accented customer names and has a patch awaiting review. There is no confirmed deployment time. Users must not delete their original uploads because we need them to reproduce the issue. Our confidential renewal offer is 240,000 euros annually, and finance approved a 12,000-euro service credit only if the customer signs by 30 November. The account team needs an update at 16:00. Replies should go to noura.haddad@example.org; the incident reference is INC-6842.",
+      "task": "Write a technical handover for the next engineer, including scope, reproduction, workaround, missing deployment date and preservation of uploads.",
+      "result": {
+        "status": "needs_review",
+        "protected_text": "Please turn the notes from our call into something I can send on. Customer lead [PERSON_1] reported that the export service stopped producing CSV files at 10:20 after version 4.8 went live. It affects 48 accounts, but PDF exports still work. Engineering reproduced the failure with accented customer names and has a patch awaiting review. There is no confirmed deployment time. Users must not delete their original uploads because we need them to reproduce the issue. Our confidential renewal offer is 240,000 euros annually, and finance approved a 12,000-euro service credit only if the customer signs by 30 November. The account team needs an update at 16:00. Replies should go to [EMAIL]; the incident reference is [ACCOUNT_ID].",
+        "model_version": "deberta-v3-base",
+        "edits": [
+          {
+            "start": 80,
+            "end": 92,
+            "label": "PERSON",
+            "action": "ALIAS",
+            "replacement": "[PERSON_1]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          },
+          {
+            "start": 685,
+            "end": 709,
+            "label": "EMAIL",
+            "action": "PLACEHOLDER",
+            "replacement": "[EMAIL]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          },
+          {
+            "start": 737,
+            "end": 745,
+            "label": "ACCOUNT_ID",
+            "action": "PLACEHOLDER",
+            "replacement": "[ACCOUNT_ID]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          }
+        ],
+        "retained_sensitive": [],
+        "review_reasons": [
+          "experimental_model_not_release_validated",
+          "unconfirmed_detection_requires_review"
+        ],
+        "coverage": {
+          "scanned_characters": 746,
+          "total_characters": 746,
+          "complete": true,
+          "offset_unit": "unicode_code_point",
+          "history_messages_scanned": 0,
+          "task_scanned": true
+        },
+        "protected_task": "Write a technical handover for the next engineer, including scope, reproduction, workaround, missing deployment date and preservation of uploads.",
+        "protected_history": [],
+        "pending_reviews": [
+          {
+            "start": 504,
+            "end": 517,
+            "label": "FINANCIAL",
+            "reason": "unconfirmed_context_boundary"
+          },
+          {
+            "start": 551,
+            "end": 562,
+            "label": "FINANCIAL",
+            "reason": "unconfirmed_context_boundary"
+          },
+          {
+            "start": 611,
+            "end": 619,
+            "label": "DATE",
+            "reason": "unconfirmed_entity_shape"
+          }
+        ],
+        "context_reports": [
+          {
+            "component": "task",
+            "index": null,
+            "edits": [],
+            "retained_sensitive": [],
+            "pending_reviews": [],
+            "coverage": {
+              "scanned_characters": 145,
+              "total_characters": 145,
+              "complete": true,
+              "offset_unit": "unicode_code_point"
+            }
+          }
+        ],
+        "runtime_versions": {
+          "pipeline": "privacy-edit-pipeline.2",
+          "section_mode": "legacy",
+          "policy": "consumer-v1-pilot.2",
+          "model_training_policy": "consumer-v1-pilot.2",
+          "model_bundle_sha256": "2cb1fb04e9cda1701deecaeb68391c45bafe910fdbfad80b3611ef41c5c8bc42"
+        },
+        "section_diagnostics": [],
+        "receiving_ai_instruction": "Privacy note: Labels such as [PERSON_1] represent redacted references. You may use these labels verbatim in your reply. Do not guess or invent the hidden values."
+      },
+      "identifier_misses": [],
+      "lost_expected_facts": [],
+      "missed_expected_sections": [
+        "Our confidential renewal offer is 240,000 euros annually, and finance approved a 12,000-euro service credit only if the customer signs by 30 November."
+      ],
+      "person_group_aliases": [
+        [
+          "[PERSON_1]"
+        ]
+      ],
+      "inconsistent_person_groups": 0,
+      "erroneous_person_merge": false,
+      "expected_no_edit": false,
+      "no_edit": false,
+      "real_app_supported": true,
+      "real_app_protected_text": "Please turn the notes from our call into something I can send on. Customer lead [PERSON_1] reported that the export service stopped producing CSV files at 10:20 after version 4.8 went live. It affects 48 accounts, but PDF exports still work. Engineering reproduced the failure with accented customer names and has a patch awaiting review. There is no confirmed deployment time. Users must not delete their original uploads because we need them to reproduce the issue. Our confidential renewal offer is 240,000 euros annually, and finance approved a 12,000-euro service credit only if the customer signs by 30 November. The account team needs an update at 16:00. Replies should go to [EMAIL]; the incident reference is [ACCOUNT_ID].",
+      "local_mock_reply": "[PERSON_1] [PERSON_999] [EMAIL]",
+      "locally_restored_reply": "Noura Haddad [PERSON_999] [EMAIL]"
+    },
+    {
+      "id": "fresh-incident-commercial",
+      "word_count": 118,
+      "text": "Please turn the notes from our call into something I can send on. Customer lead Noura Haddad reported that the export service stopped producing CSV files at 10:20 after version 4.8 went live. It affects 48 accounts, but PDF exports still work. Engineering reproduced the failure with accented customer names and has a patch awaiting review. There is no confirmed deployment time. Users must not delete their original uploads because we need them to reproduce the issue. Our confidential renewal offer is 240,000 euros annually, and finance approved a 12,000-euro service credit only if the customer signs by 30 November. The account team needs an update at 16:00. Replies should go to noura.haddad@example.org; the incident reference is INC-6842.",
+      "task": "Prepare an internal renewal and credit briefing for finance, keeping the exact amounts, signing condition and operational impact.",
+      "result": {
+        "status": "needs_review",
+        "protected_text": "Please turn the notes from our call into something I can send on. Customer lead [PERSON_1] reported that the export service stopped producing CSV files at 10:20 after version 4.8 went live. It affects 48 accounts, but PDF exports still work. Engineering reproduced the failure with accented customer names and has a patch awaiting review. There is no confirmed deployment time. Users must not delete their original uploads because we need them to reproduce the issue. Our confidential renewal offer is 240,000 euros annually, and finance approved a 12,000-euro service credit only if the customer signs by 30 November. The account team needs an update at 16:00. Replies should go to [EMAIL]; the incident reference is [ACCOUNT_ID].",
+        "model_version": "deberta-v3-base",
+        "edits": [
+          {
+            "start": 80,
+            "end": 92,
+            "label": "PERSON",
+            "action": "ALIAS",
+            "replacement": "[PERSON_1]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          },
+          {
+            "start": 685,
+            "end": 709,
+            "label": "EMAIL",
+            "action": "PLACEHOLDER",
+            "replacement": "[EMAIL]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          },
+          {
+            "start": 737,
+            "end": 745,
+            "label": "ACCOUNT_ID",
+            "action": "PLACEHOLDER",
+            "replacement": "[ACCOUNT_ID]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          }
+        ],
+        "retained_sensitive": [],
+        "review_reasons": [
+          "experimental_model_not_release_validated",
+          "unconfirmed_detection_requires_review"
+        ],
+        "coverage": {
+          "scanned_characters": 746,
+          "total_characters": 746,
+          "complete": true,
+          "offset_unit": "unicode_code_point",
+          "history_messages_scanned": 0,
+          "task_scanned": true
+        },
+        "protected_task": "Prepare an internal renewal and credit briefing for finance, keeping the exact amounts, signing condition and operational impact.",
+        "protected_history": [],
+        "pending_reviews": [
+          {
+            "start": 504,
+            "end": 517,
+            "label": "FINANCIAL",
+            "reason": "unconfirmed_context_boundary"
+          },
+          {
+            "start": 551,
+            "end": 562,
+            "label": "FINANCIAL",
+            "reason": "unconfirmed_context_boundary"
+          },
+          {
+            "start": 611,
+            "end": 619,
+            "label": "DATE",
+            "reason": "unconfirmed_entity_shape"
+          }
+        ],
+        "context_reports": [
+          {
+            "component": "task",
+            "index": null,
+            "edits": [],
+            "retained_sensitive": [],
+            "pending_reviews": [],
+            "coverage": {
+              "scanned_characters": 129,
+              "total_characters": 129,
+              "complete": true,
+              "offset_unit": "unicode_code_point"
+            }
+          }
+        ],
+        "runtime_versions": {
+          "pipeline": "privacy-edit-pipeline.2",
+          "section_mode": "legacy",
+          "policy": "consumer-v1-pilot.2",
+          "model_training_policy": "consumer-v1-pilot.2",
+          "model_bundle_sha256": "2cb1fb04e9cda1701deecaeb68391c45bafe910fdbfad80b3611ef41c5c8bc42"
+        },
+        "section_diagnostics": [],
+        "receiving_ai_instruction": "Privacy note: Labels such as [PERSON_1] represent redacted references. You may use these labels verbatim in your reply. Do not guess or invent the hidden values."
+      },
+      "identifier_misses": [],
+      "lost_expected_facts": [],
+      "missed_expected_sections": [],
+      "person_group_aliases": [
+        [
+          "[PERSON_1]"
+        ]
+      ],
+      "inconsistent_person_groups": 0,
+      "erroneous_person_merge": false,
+      "expected_no_edit": false,
+      "no_edit": false,
+      "real_app_supported": true,
+      "real_app_protected_text": "Please turn the notes from our call into something I can send on. Customer lead [PERSON_1] reported that the export service stopped producing CSV files at 10:20 after version 4.8 went live. It affects 48 accounts, but PDF exports still work. Engineering reproduced the failure with accented customer names and has a patch awaiting review. There is no confirmed deployment time. Users must not delete their original uploads because we need them to reproduce the issue. Our confidential renewal offer is 240,000 euros annually, and finance approved a 12,000-euro service credit only if the customer signs by 30 November. The account team needs an update at 16:00. Replies should go to [EMAIL]; the incident reference is [ACCOUNT_ID].",
+      "local_mock_reply": "[PERSON_1] [PERSON_999] [EMAIL]",
+      "locally_restored_reply": "Noura Haddad [PERSON_999] [EMAIL]"
+    },
+    {
+      "id": "fresh-ambiguous-person-links",
+      "word_count": 120,
+      "text": "I have two people to coordinate with for the flat inspection and their messages are getting mixed up. My sister, Sara Hale, will collect the spare keys on Tuesday, while the letting agent, Sara Nolan, will meet the plumber on Wednesday. Hale cannot arrive before 18:00 because her train gets in at 17:40. Nolan said the plumber's visit may take up to two hours, but it is not confirmed yet. The latest message just says Sara will call me, and I don't know which Sara that means. Please keep that uncertainty visible. The water needs to stay on until the plumber has tested the repair. I want one short plan with the confirmed arrangements first and the open questions underneath.",
+      "task": "Organise the arrangements and unresolved questions, keeping the two people distinct and the ambiguous caller unresolved.",
+      "result": {
+        "status": "needs_review",
+        "protected_text": "I have two people to coordinate with for the flat inspection and their messages are getting mixed up. My sister, [PERSON_1], will collect the spare keys on Tuesday, while the letting agent, [PERSON_2], will meet the plumber on Wednesday. [PERSON_3] cannot arrive before 18:00 because her train gets in at 17:40. [PERSON_4] said the plumber's visit may take up to two hours, but it is not confirmed yet. The latest message just says [PERSON_5] will call me, and I don't know which [PERSON_5] that means. Please keep that uncertainty visible. The water needs to stay on until the plumber has tested the repair. I want one short plan with the confirmed arrangements first and the open questions underneath.",
+        "model_version": "deberta-v3-base",
+        "edits": [
+          {
+            "start": 113,
+            "end": 122,
+            "label": "PERSON",
+            "action": "ALIAS",
+            "replacement": "[PERSON_1]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          },
+          {
+            "start": 189,
+            "end": 199,
+            "label": "PERSON",
+            "action": "ALIAS",
+            "replacement": "[PERSON_2]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          },
+          {
+            "start": 237,
+            "end": 241,
+            "label": "PERSON",
+            "action": "ALIAS",
+            "replacement": "[PERSON_3]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          },
+          {
+            "start": 305,
+            "end": 310,
+            "label": "PERSON",
+            "action": "ALIAS",
+            "replacement": "[PERSON_4]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          },
+          {
+            "start": 420,
+            "end": 424,
+            "label": "PERSON",
+            "action": "ALIAS",
+            "replacement": "[PERSON_5]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          },
+          {
+            "start": 462,
+            "end": 466,
+            "label": "PERSON",
+            "action": "ALIAS",
+            "replacement": "[PERSON_5]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          }
+        ],
+        "retained_sensitive": [],
+        "review_reasons": [
+          "experimental_model_not_release_validated"
+        ],
+        "coverage": {
+          "scanned_characters": 679,
+          "total_characters": 679,
+          "complete": true,
+          "offset_unit": "unicode_code_point",
+          "history_messages_scanned": 0,
+          "task_scanned": true
+        },
+        "protected_task": "Organise the arrangements and unresolved questions, keeping the two people distinct and the ambiguous caller unresolved.",
+        "protected_history": [],
+        "pending_reviews": [],
+        "context_reports": [
+          {
+            "component": "task",
+            "index": null,
+            "edits": [],
+            "retained_sensitive": [],
+            "pending_reviews": [],
+            "coverage": {
+              "scanned_characters": 120,
+              "total_characters": 120,
+              "complete": true,
+              "offset_unit": "unicode_code_point"
+            }
+          }
+        ],
+        "runtime_versions": {
+          "pipeline": "privacy-edit-pipeline.2",
+          "section_mode": "legacy",
+          "policy": "consumer-v1-pilot.2",
+          "model_training_policy": "consumer-v1-pilot.2",
+          "model_bundle_sha256": "2cb1fb04e9cda1701deecaeb68391c45bafe910fdbfad80b3611ef41c5c8bc42"
+        },
+        "section_diagnostics": [],
+        "receiving_ai_instruction": "Privacy note: Labels such as [PERSON_1] represent redacted references. You may use these labels verbatim in your reply. Do not guess or invent the hidden values."
+      },
+      "identifier_misses": [],
+      "lost_expected_facts": [],
+      "missed_expected_sections": [],
+      "person_group_aliases": [
+        [
+          "[PERSON_1]",
+          "[PERSON_3]"
+        ],
+        [
+          "[PERSON_2]",
+          "[PERSON_4]"
+        ]
+      ],
+      "inconsistent_person_groups": 2,
+      "erroneous_person_merge": false,
+      "expected_no_edit": false,
+      "no_edit": false,
+      "real_app_supported": true,
+      "real_app_protected_text": "I have two people to coordinate with for the flat inspection and their messages are getting mixed up. My sister, [PERSON_1], will collect the spare keys on Tuesday, while the letting agent, [PERSON_2], will meet the plumber on Wednesday. [PERSON_3] cannot arrive before 18:00 because her train gets in at 17:40. [PERSON_4] said the plumber's visit may take up to two hours, but it is not confirmed yet. The latest message just says [PERSON_5] will call me, and I don't know which [PERSON_5] that means. Please keep that uncertainty visible. The water needs to stay on until the plumber has tested the repair. I want one short plan with the confirmed arrangements first and the open questions underneath.",
+      "local_mock_reply": "[PERSON_1] [PERSON_2] [PERSON_3] [PERSON_4] [PERSON_5] [PERSON_999] [EMAIL]",
+      "locally_restored_reply": "Sara Hale Sara Nolan Hale Nolan Sara [PERSON_999] [EMAIL]"
+    },
+    {
+      "id": "fresh-credential-debugging",
+      "word_count": 114,
+      "text": "Can you help me explain this deployment failure to the on-call engineer? The staging worker starts normally but gets HTTP 401 when it requests /v2/invoices. The previous build succeeded at 08:15, and the first failure appeared after the secret rotation at 08:40. I copied the relevant environment line here: DATABASE_PASSWORD=SilverLeaf_demo_4829! The application log says token audience mismatch, not connection refused, and the database health check is still green. We have not rolled back because invoice uploads are queued safely and retrying every five minutes. Please focus on the order of checks and avoid recommending that we delete the queue. My colleague Owen Mercer owns the rotation, and he can join a call after 11:30.",
+      "task": "Summarise the failure and propose an investigation checklist preserving the evidence, timeline and queued invoices.",
+      "result": {
+        "status": "needs_review",
+        "protected_text": "Can you help me explain this deployment failure to the on-call engineer? The staging worker starts normally but gets HTTP 401 when it requests /v2/invoices. The previous build succeeded at 08:15, and the first failure appeared after the secret rotation at 08:40. I copied the relevant environment line here: DATABASE_PASSWORD=[SECRET]! The application log says token audience mismatch, not connection refused, and the database health check is still green. We have not rolled back because invoice uploads are queued safely and retrying every five minutes. Please focus on the order of checks and avoid recommending that we delete the queue. My colleague [PERSON_1] owns the rotation, and he can join a call after 11:30.",
+        "model_version": "deberta-v3-base",
+        "edits": [
+          {
+            "start": 326,
+            "end": 346,
+            "label": "SECRET",
+            "action": "PLACEHOLDER",
+            "replacement": "[SECRET]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          },
+          {
+            "start": 665,
+            "end": 676,
+            "label": "PERSON",
+            "action": "ALIAS",
+            "replacement": "[PERSON_1]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          }
+        ],
+        "retained_sensitive": [],
+        "review_reasons": [
+          "experimental_model_not_release_validated"
+        ],
+        "coverage": {
+          "scanned_characters": 731,
+          "total_characters": 731,
+          "complete": true,
+          "offset_unit": "unicode_code_point",
+          "history_messages_scanned": 0,
+          "task_scanned": true
+        },
+        "protected_task": "Summarise the failure and propose an investigation checklist preserving the evidence, timeline and queued invoices.",
+        "protected_history": [],
+        "pending_reviews": [],
+        "context_reports": [
+          {
+            "component": "task",
+            "index": null,
+            "edits": [],
+            "retained_sensitive": [],
+            "pending_reviews": [],
+            "coverage": {
+              "scanned_characters": 115,
+              "total_characters": 115,
+              "complete": true,
+              "offset_unit": "unicode_code_point"
+            }
+          }
+        ],
+        "runtime_versions": {
+          "pipeline": "privacy-edit-pipeline.2",
+          "section_mode": "legacy",
+          "policy": "consumer-v1-pilot.2",
+          "model_training_policy": "consumer-v1-pilot.2",
+          "model_bundle_sha256": "2cb1fb04e9cda1701deecaeb68391c45bafe910fdbfad80b3611ef41c5c8bc42"
+        },
+        "section_diagnostics": [],
+        "receiving_ai_instruction": "Privacy note: Labels such as [PERSON_1] represent redacted references. You may use these labels verbatim in your reply. Do not guess or invent the hidden values."
+      },
+      "identifier_misses": [
+        {
+          "value": "SilverLeaf_demo_4829!",
+          "start": 326,
+          "end": 347
+        }
+      ],
+      "lost_expected_facts": [],
+      "missed_expected_sections": [],
+      "person_group_aliases": [
+        [
+          "[PERSON_1]"
+        ]
+      ],
+      "inconsistent_person_groups": 0,
+      "erroneous_person_merge": false,
+      "expected_no_edit": false,
+      "no_edit": false,
+      "real_app_supported": true,
+      "real_app_protected_text": "Can you help me explain this deployment failure to the on-call engineer? The staging worker starts normally but gets HTTP 401 when it requests /v2/invoices. The previous build succeeded at 08:15, and the first failure appeared after the secret rotation at 08:40. I copied the relevant environment line here: DATABASE_PASSWORD=[SECRET]! The application log says token audience mismatch, not connection refused, and the database health check is still green. We have not rolled back because invoice uploads are queued safely and retrying every five minutes. Please focus on the order of checks and avoid recommending that we delete the queue. My colleague [PERSON_1] owns the rotation, and he can join a call after 11:30.",
+      "local_mock_reply": "[PERSON_1] [PERSON_999] [EMAIL]",
+      "locally_restored_reply": "Owen Mercer [PERSON_999] [EMAIL]"
+    },
+    {
+      "id": "fresh-benign-technical",
+      "word_count": 114,
+      "text": "Please turn these notes into a short checklist for our public documentation site. The migration changes /guides/install to /docs/install and needs a permanent 301 redirect. A normal page should return HTTP 200, while an unknown path should return 404. The staging server listens on port 8443, and the current release is version 2.14.7. The example invoice in the documentation has a subtotal of 80 euros and a delivery charge of 12 euros; it is an invented example, not a customer bill. Keep the headings in sentence case and the code snippets in fenced blocks. A redirect test must check that query parameters survive. We also need a keyboard-only navigation check before publishing the update.",
+      "task": "Create a checklist for the public documentation migration.",
+      "result": {
+        "status": "needs_review",
+        "protected_text": "Please turn these notes into a short checklist for our public documentation site. The migration changes /guides/install to /docs/install and needs a permanent 301 redirect. A normal page should return HTTP 200, while an unknown path should return 404. The staging server listens on port 8443, and the current release is version 2.14.7. The example invoice in the documentation has a subtotal of 80 euros and a delivery charge of 12 euros; it is an invented example, not a customer bill. Keep the headings in sentence case and the code snippets in fenced blocks. A redirect test must check that query parameters survive. We also need a keyboard-only navigation check before publishing the update.",
+        "model_version": "deberta-v3-base",
+        "edits": [],
+        "retained_sensitive": [],
+        "review_reasons": [
+          "experimental_model_not_release_validated",
+          "unconfirmed_detection_requires_review"
+        ],
+        "coverage": {
+          "scanned_characters": 695,
+          "total_characters": 695,
+          "complete": true,
+          "offset_unit": "unicode_code_point",
+          "history_messages_scanned": 0,
+          "task_scanned": true
+        },
+        "protected_task": "Create a checklist for the public documentation migration.",
+        "protected_history": [],
+        "pending_reviews": [
+          {
+            "start": 395,
+            "end": 403,
+            "label": "FINANCIAL",
+            "reason": "unconfirmed_context_boundary"
+          },
+          {
+            "start": 429,
+            "end": 437,
+            "label": "FINANCIAL",
+            "reason": "unconfirmed_context_boundary"
+          }
+        ],
+        "context_reports": [
+          {
+            "component": "task",
+            "index": null,
+            "edits": [],
+            "retained_sensitive": [],
+            "pending_reviews": [],
+            "coverage": {
+              "scanned_characters": 58,
+              "total_characters": 58,
+              "complete": true,
+              "offset_unit": "unicode_code_point"
+            }
+          }
+        ],
+        "runtime_versions": {
+          "pipeline": "privacy-edit-pipeline.2",
+          "section_mode": "legacy",
+          "policy": "consumer-v1-pilot.2",
+          "model_training_policy": "consumer-v1-pilot.2",
+          "model_bundle_sha256": "2cb1fb04e9cda1701deecaeb68391c45bafe910fdbfad80b3611ef41c5c8bc42"
+        },
+        "section_diagnostics": [],
+        "receiving_ai_instruction": "Privacy note: Labels such as [PERSON_1] represent redacted references. You may use these labels verbatim in your reply. Do not guess or invent the hidden values."
+      },
+      "identifier_misses": [],
+      "lost_expected_facts": [],
+      "missed_expected_sections": [],
+      "person_group_aliases": [],
+      "inconsistent_person_groups": 0,
+      "erroneous_person_merge": false,
+      "expected_no_edit": true,
+      "no_edit": true,
+      "real_app_supported": true,
+      "real_app_protected_text": "Please turn these notes into a short checklist for our public documentation site. The migration changes /guides/install to /docs/install and needs a permanent 301 redirect. A normal page should return HTTP 200, while an unknown path should return 404. The staging server listens on port 8443, and the current release is version 2.14.7. The example invoice in the documentation has a subtotal of 80 euros and a delivery charge of 12 euros; it is an invented example, not a customer bill. Keep the headings in sentence case and the code snippets in fenced blocks. A redirect test must check that query parameters survive. We also need a keyboard-only navigation check before publishing the update.",
+      "local_mock_reply": " [PERSON_999] [EMAIL]",
+      "locally_restored_reply": " [PERSON_999] [EMAIL]"
+    },
+    {
+      "id": "fresh-negation-school",
+      "word_count": 118,
+      "text": "I need a clear note for the school about my daughter, Maya Iqbal, after yesterday's appointment. The doctor said she does not have asthma, and the cough has settled without starting an inhaler. She can attend normal lessons, but she should not run or take part in PE until Monday. If the cough returns during class, the school should call me before arranging an early pickup. The note should not say that she needs antibiotics, because none were prescribed. Her teacher, Helen Ward, asked whether she could join the museum visit on Friday; the doctor said walking is fine if she can take breaks. I can be reached at maya.parent@example.org, but I cannot answer between 13:00 and 14:00.",
+      "task": "Write a school note preserving the diagnosis clarification, activity restrictions, museum advice and contact timing.",
+      "result": {
+        "status": "needs_review",
+        "protected_text": "I need a clear note for the school about my daughter, [PERSON_1], after yesterday's appointment. The doctor said she does not have asthma, and the cough has settled without starting an inhaler. She can attend normal lessons, but she should not run or take part in PE until Monday. If the cough returns during class, the school should call me before arranging an early pickup. The note should not say that she needs antibiotics, because none were prescribed. Her teacher, [PERSON_2], asked whether she could join the museum visit on Friday; the doctor said walking is fine if she can take breaks. I can be reached at [EMAIL], but I cannot answer between 13:00 and 14:00.",
+        "model_version": "deberta-v3-base",
+        "edits": [
+          {
+            "start": 54,
+            "end": 64,
+            "label": "PERSON",
+            "action": "ALIAS",
+            "replacement": "[PERSON_1]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          },
+          {
+            "start": 471,
+            "end": 481,
+            "label": "PERSON",
+            "action": "ALIAS",
+            "replacement": "[PERSON_2]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          },
+          {
+            "start": 616,
+            "end": 639,
+            "label": "EMAIL",
+            "action": "PLACEHOLDER",
+            "replacement": "[EMAIL]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          }
+        ],
+        "retained_sensitive": [
+          {
+            "start": 0,
+            "end": 95,
+            "label": "FAMILY",
+            "reason": "essential_fact"
+          },
+          {
+            "start": 97,
+            "end": 192,
+            "label": "HEALTH",
+            "reason": "essential_fact"
+          }
+        ],
+        "review_reasons": [
+          "experimental_model_not_release_validated",
+          "unconfirmed_detection_requires_review"
+        ],
+        "coverage": {
+          "scanned_characters": 685,
+          "total_characters": 685,
+          "complete": true,
+          "offset_unit": "unicode_code_point",
+          "history_messages_scanned": 0,
+          "task_scanned": true
+        },
+        "protected_task": "Write a school note preserving the diagnosis clarification, activity restrictions, museum advice and contact timing.",
+        "protected_history": [],
+        "pending_reviews": [
+          {
+            "start": 229,
+            "end": 243,
+            "label": "HEALTH",
+            "reason": "unconfirmed_context_boundary"
+          },
+          {
+            "start": 281,
+            "end": 314,
+            "label": "HEALTH",
+            "reason": "unconfirmed_context_boundary"
+          },
+          {
+            "start": 392,
+            "end": 395,
+            "label": "HEALTH",
+            "reason": "unconfirmed_context_boundary"
+          },
+          {
+            "start": 400,
+            "end": 457,
+            "label": "HEALTH",
+            "reason": "unconfirmed_context_boundary"
+          }
+        ],
+        "context_reports": [
+          {
+            "component": "task",
+            "index": null,
+            "edits": [],
+            "retained_sensitive": [
+              {
+                "start": 0,
+                "end": 115,
+                "label": "HEALTH",
+                "reason": "essential_fact"
+              }
+            ],
+            "pending_reviews": [],
+            "coverage": {
+              "scanned_characters": 116,
+              "total_characters": 116,
+              "complete": true,
+              "offset_unit": "unicode_code_point"
+            }
+          }
+        ],
+        "runtime_versions": {
+          "pipeline": "privacy-edit-pipeline.2",
+          "section_mode": "legacy",
+          "policy": "consumer-v1-pilot.2",
+          "model_training_policy": "consumer-v1-pilot.2",
+          "model_bundle_sha256": "2cb1fb04e9cda1701deecaeb68391c45bafe910fdbfad80b3611ef41c5c8bc42"
+        },
+        "section_diagnostics": [
+          {
+            "start": 0,
+            "end": 95,
+            "candidate_mode": "legacy",
+            "probes": [
+              {
+                "start": 0,
+                "end": 95,
+                "label": "FAMILY",
+                "proposed_action": "KEEP",
+                "action_score": 0.9984547115463183,
+                "relevance": {
+                  "essential": 0.997313916683197,
+                  "unnecessary": 0.001854363246820867,
+                  "uncertain": 0.0008317807805724442
+                },
+                "scores_calibrated": false,
+                "applied_action": "KEEP",
+                "gate_reason": "essential_fact"
+              }
+            ],
+            "outcome": "KEEP",
+            "reason": "essential_fact"
+          },
+          {
+            "start": 97,
+            "end": 192,
+            "candidate_mode": "legacy",
+            "probes": [
+              {
+                "start": 97,
+                "end": 192,
+                "label": "HEALTH",
+                "proposed_action": "KEEP",
+                "action_score": 0.9985920260948852,
+                "relevance": {
+                  "essential": 0.9973391890525818,
+                  "unnecessary": 0.0018196286400780082,
+                  "uncertain": 0.000841199595015496
+                },
+                "scores_calibrated": false,
+                "applied_action": "KEEP",
+                "gate_reason": "essential_fact"
+              }
+            ],
+            "outcome": "KEEP",
+            "reason": "essential_fact"
+          }
+        ],
+        "receiving_ai_instruction": "Privacy note: Labels such as [PERSON_1] represent redacted references. You may use these labels verbatim in your reply. Do not guess or invent the hidden values."
+      },
+      "identifier_misses": [],
+      "lost_expected_facts": [],
+      "missed_expected_sections": [],
+      "person_group_aliases": [
+        [
+          "[PERSON_1]"
+        ],
+        [
+          "[PERSON_2]"
+        ]
+      ],
+      "inconsistent_person_groups": 0,
+      "erroneous_person_merge": false,
+      "expected_no_edit": false,
+      "no_edit": false,
+      "real_app_supported": true,
+      "real_app_protected_text": "I need a clear note for the school about my daughter, [PERSON_1], after yesterday's appointment. The doctor said she does not have asthma, and the cough has settled without starting an inhaler. She can attend normal lessons, but she should not run or take part in PE until Monday. If the cough returns during class, the school should call me before arranging an early pickup. The note should not say that she needs antibiotics, because none were prescribed. Her teacher, [PERSON_2], asked whether she could join the museum visit on Friday; the doctor said walking is fine if she can take breaks. I can be reached at [EMAIL], but I cannot answer between 13:00 and 14:00.",
+      "local_mock_reply": "[PERSON_1] [PERSON_2] [PERSON_999] [EMAIL]",
+      "locally_restored_reply": "Maya Iqbal Helen Ward [PERSON_999] [EMAIL]"
+    },
+    {
+      "id": "fresh-vague-goal",
+      "word_count": 123,
+      "text": "These are my notes from this week and I am not sure how to put them together. My name is Elena Costa. The rent increased to 860 euros this month, and I have asked the landlord whether the increase can start next month instead. I also missed two shifts because of a migraine, although I have not received the revised payslip yet. My partner can cover the electricity bill if it stays below 90 euros, but we have not agreed what happens above that amount. The housing office offered an appointment on Thursday at 15:30. I need to bring the tenancy agreement and the last three payslips. The confirmation was sent to elena.costa@example.org. There may be a cancellation slot earlier in the week.",
+      "task": "Help me with this.",
+      "result": {
+        "status": "needs_review",
+        "protected_text": "These are my notes from this week and I am not sure how to put them together. My name is [PERSON_1]. The rent increased to 860 euros this month, and I have asked the landlord whether the increase can start next month instead. I also missed two shifts because of a migraine, although I have not received the revised payslip yet. My partner can cover the electricity bill if it stays below 90 euros, but we have not agreed what happens above that amount. The housing office offered an appointment on Thursday at 15:30. I need to bring the tenancy agreement and the last three payslips. The confirmation was sent to [EMAIL]. There may be a cancellation slot earlier in the week.",
+        "model_version": "deberta-v3-base",
+        "edits": [
+          {
+            "start": 89,
+            "end": 100,
+            "label": "PERSON",
+            "action": "ALIAS",
+            "replacement": "[PERSON_1]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          },
+          {
+            "start": 614,
+            "end": 637,
+            "label": "EMAIL",
+            "action": "PLACEHOLDER",
+            "replacement": "[EMAIL]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          }
+        ],
+        "retained_sensitive": [
+          {
+            "start": 102,
+            "end": 225,
+            "label": "FINANCIAL",
+            "reason": "essential_fact"
+          },
+          {
+            "start": 227,
+            "end": 327,
+            "label": "HEALTH",
+            "reason": "essential_fact"
+          },
+          {
+            "start": 329,
+            "end": 452,
+            "label": "FAMILY",
+            "reason": "essential_fact"
+          }
+        ],
+        "review_reasons": [
+          "experimental_model_not_release_validated",
+          "unconfirmed_detection_requires_review"
+        ],
+        "coverage": {
+          "scanned_characters": 692,
+          "total_characters": 692,
+          "complete": true,
+          "offset_unit": "unicode_code_point",
+          "history_messages_scanned": 0,
+          "task_scanned": true
+        },
+        "protected_task": "Help me with this.",
+        "protected_history": [],
+        "pending_reviews": [
+          {
+            "start": 389,
+            "end": 397,
+            "label": "FINANCIAL",
+            "reason": "unconfirmed_context_boundary"
+          }
+        ],
+        "context_reports": [
+          {
+            "component": "task",
+            "index": null,
+            "edits": [],
+            "retained_sensitive": [],
+            "pending_reviews": [],
+            "coverage": {
+              "scanned_characters": 18,
+              "total_characters": 18,
+              "complete": true,
+              "offset_unit": "unicode_code_point"
+            }
+          }
+        ],
+        "runtime_versions": {
+          "pipeline": "privacy-edit-pipeline.2",
+          "section_mode": "legacy",
+          "policy": "consumer-v1-pilot.2",
+          "model_training_policy": "consumer-v1-pilot.2",
+          "model_bundle_sha256": "2cb1fb04e9cda1701deecaeb68391c45bafe910fdbfad80b3611ef41c5c8bc42"
+        },
+        "section_diagnostics": [
+          {
+            "start": 102,
+            "end": 225,
+            "candidate_mode": "legacy",
+            "probes": [
+              {
+                "start": 102,
+                "end": 225,
+                "label": "FINANCIAL",
+                "proposed_action": "KEEP",
+                "action_score": 0.9965102008155862,
+                "relevance": {
+                  "essential": 0.9668620228767395,
+                  "unnecessary": 0.011749821715056896,
+                  "uncertain": 0.02138817124068737
+                },
+                "scores_calibrated": false,
+                "applied_action": "KEEP",
+                "gate_reason": "essential_fact"
+              }
+            ],
+            "outcome": "KEEP",
+            "reason": "essential_fact"
+          },
+          {
+            "start": 227,
+            "end": 327,
+            "candidate_mode": "legacy",
+            "probes": [
+              {
+                "start": 227,
+                "end": 327,
+                "label": "HEALTH",
+                "proposed_action": "KEEP",
+                "action_score": 0.9969716843303079,
+                "relevance": {
+                  "essential": 0.9723007082939148,
+                  "unnecessary": 0.009179074317216873,
+                  "uncertain": 0.018520237877964973
+                },
+                "scores_calibrated": false,
+                "applied_action": "KEEP",
+                "gate_reason": "essential_fact"
+              }
+            ],
+            "outcome": "KEEP",
+            "reason": "essential_fact"
+          },
+          {
+            "start": 329,
+            "end": 452,
+            "candidate_mode": "legacy",
+            "probes": [
+              {
+                "start": 329,
+                "end": 452,
+                "label": "FAMILY",
+                "proposed_action": "KEEP",
+                "action_score": 0.996546326943594,
+                "relevance": {
+                  "essential": 0.9627429842948914,
+                  "unnecessary": 0.012241380289196968,
+                  "uncertain": 0.025015627965331078
+                },
+                "scores_calibrated": false,
+                "applied_action": "KEEP",
+                "gate_reason": "essential_fact"
+              }
+            ],
+            "outcome": "KEEP",
+            "reason": "essential_fact"
+          }
+        ],
+        "receiving_ai_instruction": "Privacy note: Labels such as [PERSON_1] represent redacted references. You may use these labels verbatim in your reply. Do not guess or invent the hidden values."
+      },
+      "identifier_misses": [],
+      "lost_expected_facts": [],
+      "missed_expected_sections": [],
+      "person_group_aliases": [
+        [
+          "[PERSON_1]"
+        ]
+      ],
+      "inconsistent_person_groups": 0,
+      "erroneous_person_merge": false,
+      "expected_no_edit": false,
+      "no_edit": false,
+      "real_app_supported": true,
+      "real_app_protected_text": "These are my notes from this week and I am not sure how to put them together. My name is [PERSON_1]. The rent increased to 860 euros this month, and I have asked the landlord whether the increase can start next month instead. I also missed two shifts because of a migraine, although I have not received the revised payslip yet. My partner can cover the electricity bill if it stays below 90 euros, but we have not agreed what happens above that amount. The housing office offered an appointment on Thursday at 15:30. I need to bring the tenancy agreement and the last three payslips. The confirmation was sent to [EMAIL]. There may be a cancellation slot earlier in the week.",
+      "local_mock_reply": "[PERSON_1] [PERSON_999] [EMAIL]",
+      "locally_restored_reply": "Elena Costa [PERSON_999] [EMAIL]"
+    },
+    {
+      "id": "fresh-no-explicit-goal",
+      "word_count": 123,
+      "text": "These are my notes from this week and I am not sure how to put them together. My name is Elena Costa. The rent increased to 860 euros this month, and I have asked the landlord whether the increase can start next month instead. I also missed two shifts because of a migraine, although I have not received the revised payslip yet. My partner can cover the electricity bill if it stays below 90 euros, but we have not agreed what happens above that amount. The housing office offered an appointment on Thursday at 15:30. I need to bring the tenancy agreement and the last three payslips. The confirmation was sent to elena.costa@example.org. There may be a cancellation slot earlier in the week.",
+      "task": "",
+      "result": {
+        "status": "needs_review",
+        "protected_text": "These are my notes from this week and I am not sure how to put them together. My name is [PERSON_1]. The rent increased to 860 euros this month, and I have asked the landlord whether the increase can start next month instead. I also missed two shifts because of a migraine, although I have not received the revised payslip yet. My partner can cover the electricity bill if it stays below 90 euros, but we have not agreed what happens above that amount. The housing office offered an appointment on Thursday at 15:30. I need to bring the tenancy agreement and the last three payslips. The confirmation was sent to [EMAIL]. There may be a cancellation slot earlier in the week.",
+        "model_version": "deberta-v3-base",
+        "edits": [
+          {
+            "start": 89,
+            "end": 100,
+            "label": "PERSON",
+            "action": "ALIAS",
+            "replacement": "[PERSON_1]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          },
+          {
+            "start": 614,
+            "end": 637,
+            "label": "EMAIL",
+            "action": "PLACEHOLDER",
+            "replacement": "[EMAIL]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          }
+        ],
+        "retained_sensitive": [
+          {
+            "start": 102,
+            "end": 225,
+            "label": "FINANCIAL",
+            "reason": "essential_fact"
+          },
+          {
+            "start": 227,
+            "end": 327,
+            "label": "HEALTH",
+            "reason": "essential_fact"
+          },
+          {
+            "start": 329,
+            "end": 452,
+            "label": "FAMILY",
+            "reason": "essential_fact"
+          }
+        ],
+        "review_reasons": [
+          "experimental_model_not_release_validated",
+          "missing_task",
+          "unconfirmed_detection_requires_review"
+        ],
+        "coverage": {
+          "scanned_characters": 692,
+          "total_characters": 692,
+          "complete": true,
+          "offset_unit": "unicode_code_point",
+          "history_messages_scanned": 0,
+          "task_scanned": true
+        },
+        "protected_task": "",
+        "protected_history": [],
+        "pending_reviews": [
+          {
+            "start": 389,
+            "end": 397,
+            "label": "FINANCIAL",
+            "reason": "unconfirmed_context_boundary"
+          }
+        ],
+        "context_reports": [
+          {
+            "component": "task",
+            "index": null,
+            "edits": [],
+            "retained_sensitive": [],
+            "pending_reviews": [],
+            "coverage": {
+              "scanned_characters": 0,
+              "total_characters": 0,
+              "complete": true,
+              "offset_unit": "unicode_code_point"
+            }
+          }
+        ],
+        "runtime_versions": {
+          "pipeline": "privacy-edit-pipeline.2",
+          "section_mode": "legacy",
+          "policy": "consumer-v1-pilot.2",
+          "model_training_policy": "consumer-v1-pilot.2",
+          "model_bundle_sha256": "2cb1fb04e9cda1701deecaeb68391c45bafe910fdbfad80b3611ef41c5c8bc42"
+        },
+        "section_diagnostics": [
+          {
+            "start": 102,
+            "end": 225,
+            "candidate_mode": "legacy",
+            "probes": [
+              {
+                "start": 102,
+                "end": 225,
+                "label": "FINANCIAL",
+                "proposed_action": "KEEP",
+                "action_score": 0.9977068729064779,
+                "relevance": {
+                  "essential": 0.9947063326835632,
+                  "unnecessary": 0.0035839746706187725,
+                  "uncertain": 0.001709694741293788
+                },
+                "scores_calibrated": false,
+                "applied_action": "KEEP",
+                "gate_reason": "essential_fact"
+              }
+            ],
+            "outcome": "KEEP",
+            "reason": "essential_fact"
+          },
+          {
+            "start": 227,
+            "end": 327,
+            "candidate_mode": "legacy",
+            "probes": [
+              {
+                "start": 227,
+                "end": 327,
+                "label": "HEALTH",
+                "proposed_action": "KEEP",
+                "action_score": 0.9979749873034669,
+                "relevance": {
+                  "essential": 0.9954290390014648,
+                  "unnecessary": 0.003057225840166211,
+                  "uncertain": 0.001513725845143199
+                },
+                "scores_calibrated": false,
+                "applied_action": "KEEP",
+                "gate_reason": "essential_fact"
+              }
+            ],
+            "outcome": "KEEP",
+            "reason": "essential_fact"
+          },
+          {
+            "start": 329,
+            "end": 452,
+            "candidate_mode": "legacy",
+            "probes": [
+              {
+                "start": 329,
+                "end": 452,
+                "label": "FAMILY",
+                "proposed_action": "KEEP",
+                "action_score": 0.9977908100832306,
+                "relevance": {
+                  "essential": 0.9945107698440552,
+                  "unnecessary": 0.0036675084847956896,
+                  "uncertain": 0.001821707235649228
+                },
+                "scores_calibrated": false,
+                "applied_action": "KEEP",
+                "gate_reason": "essential_fact"
+              }
+            ],
+            "outcome": "KEEP",
+            "reason": "essential_fact"
+          }
+        ],
+        "receiving_ai_instruction": "Privacy note: Labels such as [PERSON_1] represent redacted references. You may use these labels verbatim in your reply. Do not guess or invent the hidden values."
+      },
+      "identifier_misses": [],
+      "lost_expected_facts": [],
+      "missed_expected_sections": [],
+      "person_group_aliases": [
+        [
+          "[PERSON_1]"
+        ]
+      ],
+      "inconsistent_person_groups": 0,
+      "erroneous_person_merge": false,
+      "expected_no_edit": false,
+      "no_edit": false,
+      "real_app_supported": true,
+      "real_app_protected_text": "These are my notes from this week and I am not sure how to put them together. My name is [PERSON_1]. The rent increased to 860 euros this month, and I have asked the landlord whether the increase can start next month instead. I also missed two shifts because of a migraine, although I have not received the revised payslip yet. My partner can cover the electricity bill if it stays below 90 euros, but we have not agreed what happens above that amount. The housing office offered an appointment on Thursday at 15:30. I need to bring the tenancy agreement and the last three payslips. The confirmation was sent to [EMAIL]. There may be a cancellation slot earlier in the week.",
+      "local_mock_reply": "[PERSON_1] [PERSON_999] [EMAIL]",
+      "locally_restored_reply": "Elena Costa [PERSON_999] [EMAIL]"
+    }
+  ]
+}

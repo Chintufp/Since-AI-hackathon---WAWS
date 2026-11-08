@@ -1,0 +1,34 @@
+{
+  "scope": "Static compatibility audit; hosted page was not modified or re-tested.",
+  "browser_source_files": {
+    "src/browser_model.py": "13e1f8684e7b1923e6e9a3e4aaf736c8d83f6ea28fabd372aa502fe82a6f9962",
+    "scripts/export_model.py": "031c6011919176126703de509ad69723fd16558dbfd54afd9ded6eac49870512",
+    "scripts/prepare_policy.py": "012d1c49d9b6e71482b27f9abd32ff0c6e8606a01575c1bd571e1412aedb2cbd",
+    "src/manifest.js": "b2dd32641794d014efc22f9ca0e8a167fd549df9658a4ec69891cccf8e6a2544",
+    "src/pipeline.worker.js": "b8caacab6ab4119a2b7781a55aa8c4c038f29245ff8d457b31cafacd6c6df35c"
+  },
+  "baseline_matches_browser_bundle": true,
+  "browser_adapter_has_predict_sections": false,
+  "browser_graph_outputs": [
+    "tag_logits",
+    "action_logits",
+    "relevance_logits"
+  ],
+  "browser_model_markers": 2,
+  "new_model_requires_section_head": true,
+  "new_python_dependencies_absent_from_current_policy_package": {
+    "engine": [
+      "section_pipeline",
+      "sections"
+    ],
+    "candidates": [
+      "identifiers",
+      "validators"
+    ],
+    "rules": [
+      "identifiers",
+      "validators"
+    ]
+  },
+  "drop_in_replacement_supported": false
+}

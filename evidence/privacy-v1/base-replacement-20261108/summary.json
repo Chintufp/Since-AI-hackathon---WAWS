@@ -1,0 +1,522 @@
+{
+  "scope": {
+    "per_model": {
+      "frozen_dev_messages": 130,
+      "fresh_diagnostic_messages": 12,
+      "video_messages": 2,
+      "gallery_messages": 6,
+      "spreadsheet_fixtures": 16
+    },
+    "fresh_independent_sources": 8,
+    "inference_network_disabled": true,
+    "production_default_changed": false
+  },
+  "models": {
+    "old": {
+      "original-dev": {
+        "counts": {
+          "records": 50,
+          "unsupported": 0,
+          "required_facts": 182,
+          "inconsistent_identity_aliases": 0,
+          "erroneous_identity_merges": 0,
+          "unnecessary_changed_characters": 0,
+          "predicted_removed_clauses": 0,
+          "records_with_identifier_misses": 0,
+          "records_with_lost_required_facts": 0,
+          "records_with_false_clause_removals": 0,
+          "gate_essential_fact": 9,
+          "benign_no_edit_controls": 18,
+          "benign_controls_changed": 0,
+          "direct_identifiers": 30,
+          "retained_person_mentions": 24,
+          "required_whole_sections": 9,
+          "whole_sections_removed": 0,
+          "required_clause_removals": 12,
+          "correct_clause_removals": 0,
+          "person_alias_misses": 2,
+          "task_pair_groups": 7,
+          "gold_task_conditioned_switches": 12,
+          "correct_task_conditioned_switches": 0,
+          "fully_correct_task_pairs": 0,
+          "identifier_misses": 0,
+          "lost_required_facts": 0,
+          "false_clause_removals": 0
+        },
+        "latency_seconds": {
+          "median": 0.06392479198984802,
+          "max": 0.2102123750373721
+        }
+      },
+      "supplemental-dev": {
+        "counts": {
+          "records": 80,
+          "unsupported": 0,
+          "direct_identifiers": 323,
+          "identifier_misses": 29,
+          "required_facts": 405,
+          "lost_required_facts": 19,
+          "retained_person_mentions": 246,
+          "inconsistent_identity_aliases": 47,
+          "erroneous_identity_merges": 2,
+          "unnecessary_changed_characters": 621,
+          "predicted_removed_clauses": 0,
+          "records_with_identifier_misses": 21,
+          "records_with_lost_required_facts": 17,
+          "records_with_false_clause_removals": 0,
+          "benign_no_edit_controls": 3,
+          "benign_controls_changed": 2,
+          "gate_essential_fact": 26,
+          "required_whole_sections": 33,
+          "whole_sections_removed": 0,
+          "required_clause_removals": 58,
+          "correct_clause_removals": 0,
+          "person_alias_misses": 2,
+          "task_pair_groups": 20,
+          "gold_task_conditioned_switches": 42,
+          "correct_task_conditioned_switches": 0,
+          "fully_correct_task_pairs": 0,
+          "false_clause_removals": 0
+        },
+        "latency_seconds": {
+          "median": 0.14429916703375056,
+          "max": 0.5849377500126138
+        }
+      },
+      "fresh": {
+        "counts": {
+          "cases": 12,
+          "identifier_misses": 1,
+          "lost_expected_facts": 0,
+          "missed_expected_sections": 3,
+          "inconsistent_person_groups": 2,
+          "erroneous_person_merges": 0
+        },
+        "checked_fact_targets": 30,
+        "app_supported": 12,
+        "app_engine_equal": 12,
+        "correct_task_pairs": 0,
+        "task_pairs": [
+          {
+            "drop_case": "fresh-health-employer",
+            "keep_case": "fresh-health-clinician",
+            "correct": false
+          },
+          {
+            "drop_case": "fresh-boiler-engineer",
+            "keep_case": "fresh-boiler-budget",
+            "correct": false
+          },
+          {
+            "drop_case": "fresh-incident-engineering",
+            "keep_case": "fresh-incident-commercial",
+            "correct": false
+          }
+        ],
+        "benign_control_unchanged": true,
+        "unknown_reply_alias_preserved": true
+      },
+      "adapters": {
+        "total": 16,
+        "round_trips": 16,
+        "exact_matches": 9,
+        "failures": [
+          {
+            "file": "fixture-01.csv",
+            "mismatches": {
+              "B2": {
+                "expected": "My neighbour, [PERSON_1], checked on me after my walk. Since Tuesday I have had a dry cough at night, but no fever. I think the wheezing started before I changed the air filter, although I am not certain. I would like to describe the timing accurately without assuming a cause.",
+                "actual": "My neighbour, [PERSON_1], checked on me after my walk. Since Tuesday I have had a dry cough at night, but no fever. I think the wheezing started before I changed the air filter, although I am not certain. I would like to describe the timing accurately without assuming a cause.\n\nMy separate note about the flat says that the rent is 815 euros each month."
+              },
+              "B3": {
+                "expected": "My neighbour, [PERSON_1], checked on me after my walk. Since Tuesday I have had a dry cough at night, but no fever. I think the wheezing started before I changed the air filter, although I am not certain. I would like to describe the timing accurately without assuming a cause.",
+                "actual": "My neighbour, [PERSON_1], checked on me after my walk. Since Tuesday I have had a dry cough at night, but no fever. I think the wheezing started before I changed the air filter, although I am not certain. I would like to describe the timing accurately without assuming a cause.\n\nMy separate note about the flat says that the rent is 815 euros each month."
+              }
+            },
+            "error": null
+          },
+          {
+            "file": "fixture-02.csv",
+            "mismatches": {
+              "B2": {
+                "expected": "I am comparing two train tickets for a weekend visit. The flexible ticket costs 64 euros and can be refunded until the day before departure. The cheaper ticket costs 41 euros but cannot be refunded. My sister, [PERSON_1], offered to meet me at the station if her shift ends on time.",
+                "actual": "I am comparing two train tickets for a weekend visit. The flexible ticket costs 64 euros and can be refunded until the day before departure. The cheaper ticket costs 41 euros but cannot be refunded. My sister, [PERSON_1], offered to meet me at the station if her shift ends on time.\n\nMy unrelated medical note says that I have migraines twice a month."
+              },
+              "B3": {
+                "expected": "I am comparing two train tickets for a weekend visit. The flexible ticket costs 64 euros and can be refunded until the day before departure. The cheaper ticket costs 41 euros but cannot be refunded. My sister, [PERSON_1], offered to meet me at the station if her shift ends on time.",
+                "actual": "I am comparing two train tickets for a weekend visit. The flexible ticket costs 64 euros and can be refunded until the day before departure. The cheaper ticket costs 41 euros but cannot be refunded. My sister, [PERSON_1], offered to meet me at the station if her shift ends on time.\n\nMy unrelated medical note says that I have migraines twice a month."
+              }
+            },
+            "error": null
+          },
+          {
+            "file": "fixture-03.csv",
+            "mismatches": {
+              "B2": {
+                "expected": "Please help me plan a simple vegetable garden on my balcony. It gets direct sun for about four hours in the afternoon, and the railing has room for three narrow planters. I can water most mornings, except when I travel for work. I prefer herbs and salad leaves rather than large plants.",
+                "actual": "Please help me plan a simple vegetable garden on my balcony. It gets direct sun for about four hours in the afternoon, and the railing has room for three narrow planters. I can water most mornings, except when I travel for work. I prefer herbs and salad leaves rather than large plants.\n\nFor a different task, my credit card number is [PAYMENT_CARD]."
+              },
+              "B3": {
+                "expected": "Please help me plan a simple vegetable garden on my balcony. It gets direct sun for about four hours in the afternoon, and the railing has room for three narrow planters. I can water most mornings, except when I travel for work. I prefer herbs and salad leaves rather than large plants.",
+                "actual": "Please help me plan a simple vegetable garden on my balcony. It gets direct sun for about four hours in the afternoon, and the railing has room for three narrow planters. I can water most mornings, except when I travel for work. I prefer herbs and salad leaves rather than large plants.\n\nFor a different task, my credit card number is [PAYMENT_CARD]."
+              }
+            },
+            "error": null
+          },
+          {
+            "file": "fixture-10.csv",
+            "mismatches": {
+              "B2": {
+                "expected": "For an external AI writing assistant: our account manager, [PERSON_1], spoke with the prospective customer [ORG]. Their identity is private until the contract is signed. They asked for a two-week onboarding outline and a named point of contact; do not promise a launch date. Our unapproved offer is [FINANCIAL]. Please draft a generic follow-up that focuses on the onboarding questions and avoids the price.",
+                "actual": "For an external AI writing assistant: our account manager, [PERSON_1], spoke with the prospective customer [ORG]. Their identity is private until the contract is signed. They asked for a two-week onboarding outline and a named point of contact; do not promise a launch date. Our unapproved offer is 72,500 euros. Please draft a generic follow-up that focuses on the onboarding questions and avoids the price."
+              },
+              "B3": {
+                "expected": "For an external AI writing assistant: our account manager, [PERSON_1], spoke with the prospective customer [ORG]. Their identity is private until the contract is signed. They asked for a two-week onboarding outline and a named point of contact; do not promise a launch date. Our unapproved offer is [FINANCIAL]. Please draft a generic follow-up that focuses on the onboarding questions and avoids the price.",
+                "actual": "For an external AI writing assistant: our account manager, [PERSON_1], spoke with the prospective customer [ORG]. Their identity is private until the contract is signed. They asked for a two-week onboarding outline and a named point of contact; do not promise a launch date. Our unapproved offer is 72,500 euros. Please draft a generic follow-up that focuses on the onboarding questions and avoids the price."
+              }
+            },
+            "error": null
+          },
+          {
+            "file": "fixture-13.xlsx",
+            "mismatches": {
+              "B2": {
+                "expected": "For an external writing tool, turn these meeting notes into a general request for applicants. The team needs someone who can explain technical decisions clearly and work with designers. The role can be remote within the country.",
+                "actual": "For an external writing tool, turn these meeting notes into a general request for applicants. The team needs someone who can explain technical decisions clearly and work with designers. The role can be remote within the country.\n\nA separate internal HR note says that employee [PERSON_1] received a proposed salary of 84,000 euros and is on medical leave."
+              },
+              "B3": {
+                "expected": "For an external writing tool, turn these meeting notes into a general request for applicants. The team needs someone who can explain technical decisions clearly and work with designers. The role can be remote within the country.",
+                "actual": "For an external writing tool, turn these meeting notes into a general request for applicants. The team needs someone who can explain technical decisions clearly and work with designers. The role can be remote within the country.\n\nA separate internal HR note says that employee [PERSON_1] received a proposed salary of 84,000 euros and is on medical leave."
+              }
+            },
+            "error": null
+          },
+          {
+            "file": "fixture-14.xlsx",
+            "mismatches": {
+              "B2": {
+                "expected": "My sister, [PERSON_1], checked my temperature after lunch. It was 38.1 C on Tuesday and 37.4 C on Wednesday. I had a sore throat but no cough. I have not taken any fever medicine. I want to keep the timing straight before I speak to the nurse.\n\nThe club meets on Thursday; I need to ask to move it to Friday.",
+                "actual": "My sister, [PERSON_1], checked my temperature after lunch. It was 38.1 C on Tuesday and 37.4 C on Wednesday. I had a sore throat but no cough. I have not taken any fever medicine. I want to keep the timing straight before I speak to the nurse.\n\nMy unrelated savings balance is 2,300 euros.\n\nThe club meets on Thursday; I need to ask to move it to Friday."
+              },
+              "B3": {
+                "expected": "My sister, [PERSON_1], checked my temperature after lunch. It was 38.1 C on Tuesday and 37.4 C on Wednesday. I had a sore throat but no cough. I have not taken any fever medicine. I want to keep the timing straight before I speak to the nurse.\n\nThe club meets on Thursday; I need to ask to move it to Friday.",
+                "actual": "My sister, [PERSON_1], checked my temperature after lunch. It was 38.1 C on Tuesday and 37.4 C on Wednesday. I had a sore throat but no cough. I have not taken any fever medicine. I want to keep the timing straight before I speak to the nurse.\n\nMy unrelated savings balance is 2,300 euros.\n\nThe club meets on Thursday; I need to ask to move it to Friday."
+              }
+            },
+            "error": null
+          },
+          {
+            "file": "fixture-15.xlsx",
+            "mismatches": {
+              "B2": {
+                "expected": "My flatmate, [PERSON_1], says the kitchen tap has dripped since Friday. We put a bowl underneath and it filled halfway overnight. The shutoff valve still turns, but the handle is stiff. Please ask the landlord to arrange a repair and mention that weekday afternoons work.",
+                "actual": "My flatmate, [PERSON_1], says the kitchen tap has dripped since Friday. We put a bowl underneath and it filled halfway overnight. The shutoff valve still turns, but the handle is stiff. Please ask the landlord to arrange a repair and mention that weekday afternoons work.\n\nI also owe 1,240 euros on a personal loan."
+              },
+              "B3": {
+                "expected": "My flatmate, [PERSON_1], says the kitchen tap has dripped since Friday. We put a bowl underneath and it filled halfway overnight. The shutoff valve still turns, but the handle is stiff. Please ask the landlord to arrange a repair and mention that weekday afternoons work.",
+                "actual": "My flatmate, [PERSON_1], says the kitchen tap has dripped since Friday. We put a bowl underneath and it filled halfway overnight. The shutoff valve still turns, but the handle is stiff. Please ask the landlord to arrange a repair and mention that weekday afternoons work.\n\nI also owe 1,240 euros on a personal loan."
+              }
+            },
+            "error": null
+          }
+        ]
+      },
+      "gallery": {
+        "total": 6,
+        "exact_matches": 1
+      },
+      "videos": [
+        {
+          "id": "personal-health-message.txt",
+          "seconds": 0.46306645800359547,
+          "status": "needs_review",
+          "change_count": 3
+        },
+        {
+          "id": "corporate-support-message.txt",
+          "seconds": 0.1240822920226492,
+          "status": "needs_review",
+          "change_count": 18
+        }
+      ]
+    },
+    "new": {
+      "original-dev": {
+        "counts": {
+          "records": 50,
+          "unsupported": 0,
+          "required_facts": 182,
+          "inconsistent_identity_aliases": 0,
+          "erroneous_identity_merges": 0,
+          "unnecessary_changed_characters": 0,
+          "predicted_removed_clauses": 3,
+          "records_with_identifier_misses": 0,
+          "records_with_lost_required_facts": 0,
+          "records_with_false_clause_removals": 0,
+          "gate_section_not_confidently_unnecessary": 227,
+          "benign_no_edit_controls": 18,
+          "benign_controls_changed": 0,
+          "direct_identifiers": 30,
+          "retained_person_mentions": 24,
+          "required_whole_sections": 9,
+          "whole_sections_removed": 3,
+          "required_clause_removals": 12,
+          "correct_clause_removals": 3,
+          "raw_unnecessary_on_unnecessary": 5,
+          "gate_dedicated_head_and_safeguards_authorise_drop": 3,
+          "gate_section_contains_retained_or_uncertain_evidence": 1,
+          "task_pair_groups": 7,
+          "gold_task_conditioned_switches": 12,
+          "correct_task_conditioned_switches": 3,
+          "fully_correct_task_pairs": 2,
+          "identifier_misses": 0,
+          "lost_required_facts": 0,
+          "false_clause_removals": 0
+        },
+        "latency_seconds": {
+          "median": 0.18146037502447143,
+          "max": 0.4169056670507416
+        }
+      },
+      "supplemental-dev": {
+        "counts": {
+          "records": 80,
+          "unsupported": 0,
+          "direct_identifiers": 323,
+          "identifier_misses": 24,
+          "required_facts": 405,
+          "retained_person_mentions": 244,
+          "inconsistent_identity_aliases": 0,
+          "erroneous_identity_merges": 0,
+          "unnecessary_changed_characters": 714,
+          "predicted_removed_clauses": 25,
+          "records_with_identifier_misses": 20,
+          "records_with_lost_required_facts": 6,
+          "records_with_false_clause_removals": 4,
+          "gate_section_not_confidently_unnecessary": 604,
+          "benign_no_edit_controls": 3,
+          "benign_controls_changed": 0,
+          "lost_required_facts": 8,
+          "false_clause_removals": 5,
+          "raw_unnecessary_on_essential": 5,
+          "gate_dedicated_head_and_safeguards_authorise_drop": 25,
+          "required_whole_sections": 33,
+          "whole_sections_removed": 8,
+          "required_clause_removals": 58,
+          "correct_clause_removals": 20,
+          "raw_unnecessary_on_unnecessary": 33,
+          "gate_section_contains_retained_or_uncertain_evidence": 7,
+          "raw_unnecessary_on_uncertain": 1,
+          "task_pair_groups": 20,
+          "gold_task_conditioned_switches": 42,
+          "correct_task_conditioned_switches": 9,
+          "fully_correct_task_pairs": 3
+        },
+        "latency_seconds": {
+          "median": 0.6444727500202134,
+          "max": 1.3838942919974215
+        }
+      },
+      "fresh": {
+        "counts": {
+          "cases": 12,
+          "identifier_misses": 1,
+          "lost_expected_facts": 0,
+          "missed_expected_sections": 1,
+          "inconsistent_person_groups": 0,
+          "erroneous_person_merges": 0
+        },
+        "checked_fact_targets": 30,
+        "app_supported": 12,
+        "app_engine_equal": 12,
+        "correct_task_pairs": 2,
+        "task_pairs": [
+          {
+            "drop_case": "fresh-health-employer",
+            "keep_case": "fresh-health-clinician",
+            "correct": true
+          },
+          {
+            "drop_case": "fresh-boiler-engineer",
+            "keep_case": "fresh-boiler-budget",
+            "correct": false
+          },
+          {
+            "drop_case": "fresh-incident-engineering",
+            "keep_case": "fresh-incident-commercial",
+            "correct": true
+          }
+        ],
+        "benign_control_unchanged": true,
+        "unknown_reply_alias_preserved": true
+      },
+      "adapters": {
+        "total": 16,
+        "round_trips": 16,
+        "exact_matches": 15,
+        "failures": [
+          {
+            "file": "fixture-03.csv",
+            "mismatches": {
+              "B2": {
+                "expected": "Please help me plan a simple vegetable garden on my balcony. It gets direct sun for about four hours in the afternoon, and the railing has room for three narrow planters. I can water most mornings, except when I travel for work. I prefer herbs and salad leaves rather than large plants.",
+                "actual": "Please help me plan a simple vegetable garden on my balcony. It gets direct sun for about four hours in the afternoon, and the railing has room for three narrow planters. I can water most mornings, except when I travel for work. I prefer herbs and salad leaves rather than large plants.\n\nFor a different task, my credit card number is [PAYMENT_CARD]."
+              },
+              "B3": {
+                "expected": "Please help me plan a simple vegetable garden on my balcony. It gets direct sun for about four hours in the afternoon, and the railing has room for three narrow planters. I can water most mornings, except when I travel for work. I prefer herbs and salad leaves rather than large plants.",
+                "actual": "Please help me plan a simple vegetable garden on my balcony. It gets direct sun for about four hours in the afternoon, and the railing has room for three narrow planters. I can water most mornings, except when I travel for work. I prefer herbs and salad leaves rather than large plants.\n\nFor a different task, my credit card number is [PAYMENT_CARD]."
+              }
+            },
+            "error": null
+          }
+        ]
+      },
+      "gallery": {
+        "total": 6,
+        "exact_matches": 1
+      },
+      "videos": [
+        {
+          "id": "personal-health-message.txt",
+          "seconds": 1.6699133749934845,
+          "status": "needs_review",
+          "change_count": 3
+        },
+        {
+          "id": "corporate-support-message.txt",
+          "seconds": 1.7217388750286773,
+          "status": "needs_review",
+          "change_count": 18
+        }
+      ]
+    }
+  },
+  "paired_regressions": {
+    "original-dev": {
+      "identifier_misses": {
+        "fixed": 0,
+        "new": 0,
+        "persistent": 0,
+        "new_examples": []
+      },
+      "lost_required_facts": {
+        "fixed": 0,
+        "new": 0,
+        "persistent": 0,
+        "new_examples": []
+      },
+      "false_removals": {
+        "fixed": 0,
+        "new": 0,
+        "persistent": 0,
+        "new_examples": []
+      }
+    },
+    "supplemental-dev": {
+      "identifier_misses": {
+        "fixed": 5,
+        "new": 0,
+        "persistent": 24,
+        "new_examples": []
+      },
+      "lost_required_facts": {
+        "fixed": 16,
+        "new": 5,
+        "persistent": 3,
+        "new_examples": [
+          {
+            "id": "6f3a54fde3954d9588ca4a07a8d12a3d:pres-001",
+            "task": "Turn this into a weekly rota table that shows who does which day, and what is still conditional or uncertain.",
+            "quote": "The carer's allowance claim is in my name only, not"
+          },
+          {
+            "id": "9a79ce63e3e14bee9ee44f3ac962dbac:clinic-confirmation-email-b",
+            "task": "Write a message to my manager asking for Tuesday morning off and saying what the work assessment will cover.",
+            "quote": "A medical certificate for your employer can be issued on the day if you ask at reception."
+          },
+          {
+            "id": "be1dbe5d01cd4ed9a3e53f7bc8b2770d:school-vision-nivelles-drop",
+            "task": "Write a short message to his teacher confirming that he should move to the front row on Monday.",
+            "quote": "We think this explains why he often squints at the board."
+          },
+          {
+            "id": "edb79ce33dab4721814675c087183792:cred-002",
+            "task": "Turn this into a clean handover for the next engineer.",
+            "quote": "Their contract has a 99.95% uptime clause, with credits of 4% of the"
+          },
+          {
+            "id": "edb79ce33dab4721814675c087183792:cred-002",
+            "task": "Turn this into a clean handover for the next engineer.",
+            "quote": "annual fee per breach."
+          }
+        ]
+      },
+      "false_removals": {
+        "fixed": 0,
+        "new": 5,
+        "persistent": 0,
+        "new_examples": [
+          {
+            "id": "6f3a54fde3954d9588ca4a07a8d12a3d:pres-001",
+            "task": "Turn this into a weekly rota table that shows who does which day, and what is still conditional or uncertain.",
+            "quote": "The carer's allowance claim is in my name only, not Adaeze's, so the 81.90 pounds a week is mine"
+          },
+          {
+            "id": "9a79ce63e3e14bee9ee44f3ac962dbac:clinic-confirmation-email-b",
+            "task": "Write a message to my manager asking for Tuesday morning off and saying what the work assessment will cover.",
+            "quote": "- A medical certificate for your employer can be issued on the day if you ask at reception"
+          },
+          {
+            "id": "be1dbe5d01cd4ed9a3e53f7bc8b2770d:school-vision-nivelles-drop",
+            "task": "Write a short message to his teacher confirming that he should move to the front row on Monday.",
+            "quote": "His distance vision measured 5/10 in the right eye and 9/10 in the left, so we recommend an appointment with an ophthalmologist within a month"
+          },
+          {
+            "id": "be1dbe5d01cd4ed9a3e53f7bc8b2770d:school-vision-nivelles-drop",
+            "task": "Write a short message to his teacher confirming that he should move to the front row on Monday.",
+            "quote": "We think this explains why he often squints at the board"
+          },
+          {
+            "id": "d28488bc79944fd8ab07033a8b7f84d5:p4-ebike-parking-keep",
+            "task": "Write a request to facilities for a reserved parking bay for the days I drive.",
+            "quote": "The e-bike cost 1,280,000 pesos, and the company scheme repays it over ten months if I submit the invoice by 30 November"
+          }
+        ]
+      }
+    }
+  },
+  "browser": {
+    "scope": "Static compatibility audit; hosted page was not modified or re-tested.",
+    "browser_source_files": {
+      "src/browser_model.py": "13e1f8684e7b1923e6e9a3e4aaf736c8d83f6ea28fabd372aa502fe82a6f9962",
+      "scripts/export_model.py": "031c6011919176126703de509ad69723fd16558dbfd54afd9ded6eac49870512",
+      "scripts/prepare_policy.py": "012d1c49d9b6e71482b27f9abd32ff0c6e8606a01575c1bd571e1412aedb2cbd",
+      "src/manifest.js": "b2dd32641794d014efc22f9ca0e8a167fd549df9658a4ec69891cccf8e6a2544",
+      "src/pipeline.worker.js": "b8caacab6ab4119a2b7781a55aa8c4c038f29245ff8d457b31cafacd6c6df35c"
+    },
+    "baseline_matches_browser_bundle": true,
+    "browser_adapter_has_predict_sections": false,
+    "browser_graph_outputs": [
+      "tag_logits",
+      "action_logits",
+      "relevance_logits"
+    ],
+    "browser_model_markers": 2,
+    "new_model_requires_section_head": true,
+    "new_python_dependencies_absent_from_current_policy_package": {
+      "engine": [
+        "section_pipeline",
+        "sections"
+      ],
+      "candidates": [
+        "identifiers",
+        "validators"
+      ],
+      "rules": [
+        "identifiers",
+        "validators"
+      ]
+    },
+    "drop_in_replacement_supported": false
+  }
+}

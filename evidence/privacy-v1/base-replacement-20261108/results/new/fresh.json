@@ -1,0 +1,3027 @@
+{
+  "evaluation_role": "fresh_diagnostics_frozen_before_inference",
+  "counts": {
+    "cases": 12,
+    "identifier_misses": 1,
+    "lost_expected_facts": 0,
+    "missed_expected_sections": 1,
+    "inconsistent_person_groups": 0,
+    "erroneous_person_merges": 0
+  },
+  "outputs": [
+    {
+      "id": "fresh-health-employer",
+      "word_count": 121,
+      "text": "Could you help me turn these appointment notes into a clear message? My name is Mei Tan. I had knee surgery on 2 November and the physiotherapist expects a gradual return to work from 18 November. I can sit at a desk, but I must not lift more than 5 kg or stand for longer than twenty minutes until the review on 9 December. Working from home is possible on Tuesdays and Thursdays. My psychiatrist diagnosed bipolar II in 2021, and I take lamotrigine 100 mg every evening. I have slept poorly for three nights but have not changed the dose. The clinic can reach me at mei.tan@example.org. My manager needs an update before Friday so the rota can be arranged.",
+      "task": "Draft an email requesting temporary desk duties, covering the return date, restrictions and available work-from-home days.",
+      "result": {
+        "status": "needs_review",
+        "protected_text": "Could you help me turn these appointment notes into a clear message? My name is [PERSON_1]. I had knee surgery on 2 November and the physiotherapist expects a gradual return to work from 18 November. I can sit at a desk, but I must not lift more than 5 kg or stand for longer than twenty minutes until the review on 9 December. Working from home is possible on Tuesdays and Thursdays. The clinic can reach me at [EMAIL]. My manager needs an update before Friday so the rota can be arranged.",
+        "model_version": "deberta-v3-base-section-v1",
+        "edits": [
+          {
+            "start": 80,
+            "end": 87,
+            "label": "PERSON",
+            "action": "ALIAS",
+            "replacement": "[PERSON_1]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          },
+          {
+            "start": 382,
+            "end": 541,
+            "label": "HEALTH",
+            "action": "DROP",
+            "replacement": "",
+            "reason": "learned_unnecessary_clause",
+            "score": 0.9995816349983215
+          },
+          {
+            "start": 568,
+            "end": 587,
+            "label": "EMAIL",
+            "action": "PLACEHOLDER",
+            "replacement": "[EMAIL]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          }
+        ],
+        "retained_sensitive": [],
+        "review_reasons": [
+          "experimental_model_not_release_validated",
+          "unconfirmed_detection_requires_review"
+        ],
+        "coverage": {
+          "scanned_characters": 658,
+          "total_characters": 658,
+          "complete": true,
+          "offset_unit": "unicode_code_point",
+          "history_messages_scanned": 0,
+          "task_scanned": true
+        },
+        "protected_task": "Draft an email requesting temporary desk duties, covering the return date, restrictions and available work-from-home days.",
+        "protected_history": [],
+        "pending_reviews": [
+          {
+            "start": 646,
+            "end": 657,
+            "label": "EMPLOYMENT",
+            "reason": "unconfirmed_context_boundary"
+          }
+        ],
+        "context_reports": [
+          {
+            "component": "task",
+            "index": null,
+            "edits": [],
+            "retained_sensitive": [],
+            "pending_reviews": [],
+            "coverage": {
+              "scanned_characters": 122,
+              "total_characters": 122,
+              "complete": true,
+              "offset_unit": "unicode_code_point"
+            }
+          }
+        ],
+        "runtime_versions": {
+          "pipeline": "privacy-edit-pipeline.2",
+          "section_mode": "section-head-v1",
+          "policy": "consumer-v1-pilot.2",
+          "model_training_policy": "consumer-v1-pilot.2",
+          "model_bundle_sha256": "6b69155f87c06e4c4fac9d6f3a20acb50ef000c83a889a50023bb89dced66112"
+        },
+        "section_diagnostics": [
+          {
+            "start": 0,
+            "end": 67,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9999619722366333,
+              "unnecessary": 2.586501977930311e-05,
+              "uncertain": 1.219117439177353e-05
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 69,
+            "end": 87,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.999521017074585,
+              "unnecessary": 0.0002155099791707471,
+              "uncertain": 0.0002634778502397239
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 89,
+            "end": 195,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9935107827186584,
+              "unnecessary": 0.0063496120274066925,
+              "uncertain": 0.00013963112724013627
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 197,
+            "end": 323,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9992668032646179,
+              "unnecessary": 0.0006532538100145757,
+              "uncertain": 7.998953515198082e-05
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 325,
+            "end": 380,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9998651742935181,
+              "unnecessary": 0.00012196606257930398,
+              "uncertain": 1.2878405868832488e-05
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 382,
+            "end": 471,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.00038303062319755554,
+              "unnecessary": 0.9995816349983215,
+              "uncertain": 3.5351677070138976e-05
+            },
+            "raw_class": "unnecessary",
+            "threshold": 0.9,
+            "outcome": "DROP",
+            "scores_calibrated": false,
+            "nested_evidence": [
+              {
+                "start": 382,
+                "end": 472,
+                "label": "HEALTH",
+                "action": "DROP",
+                "relevance": {
+                  "essential": 0.02228877693414688,
+                  "unnecessary": 0.976318895816803,
+                  "uncertain": 0.0013923340011388063
+                }
+              }
+            ],
+            "edit_start": 382,
+            "edit_end": 473,
+            "reason": "dedicated_head_and_safeguards_authorise_drop"
+          },
+          {
+            "start": 473,
+            "end": 539,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.0005672024562954903,
+              "unnecessary": 0.9993727803230286,
+              "uncertain": 5.999848144710995e-05
+            },
+            "raw_class": "unnecessary",
+            "threshold": 0.9,
+            "outcome": "DROP",
+            "scores_calibrated": false,
+            "nested_evidence": [
+              {
+                "start": 473,
+                "end": 540,
+                "label": "HEALTH",
+                "action": "DROP",
+                "relevance": {
+                  "essential": 0.015947092324495316,
+                  "unnecessary": 0.9830005168914795,
+                  "uncertain": 0.0010523886885493994
+                }
+              }
+            ],
+            "edit_start": 473,
+            "edit_end": 541,
+            "reason": "dedicated_head_and_safeguards_authorise_drop"
+          },
+          {
+            "start": 541,
+            "end": 587,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9988956451416016,
+              "unnecessary": 0.00015365063154604286,
+              "uncertain": 0.0009507202194072306
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 589,
+            "end": 657,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9999606609344482,
+              "unnecessary": 2.611604577396065e-05,
+              "uncertain": 1.3288389709487092e-05
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          }
+        ],
+        "receiving_ai_instruction": "Privacy note: Labels such as [PERSON_1] represent redacted references. You may use these labels verbatim in your reply. Do not guess or invent the hidden values."
+      },
+      "identifier_misses": [],
+      "lost_expected_facts": [],
+      "missed_expected_sections": [],
+      "person_group_aliases": [
+        [
+          "[PERSON_1]"
+        ]
+      ],
+      "inconsistent_person_groups": 0,
+      "erroneous_person_merge": false,
+      "expected_no_edit": false,
+      "no_edit": false,
+      "real_app_supported": true,
+      "real_app_protected_text": "Could you help me turn these appointment notes into a clear message? My name is [PERSON_1]. I had knee surgery on 2 November and the physiotherapist expects a gradual return to work from 18 November. I can sit at a desk, but I must not lift more than 5 kg or stand for longer than twenty minutes until the review on 9 December. Working from home is possible on Tuesdays and Thursdays. The clinic can reach me at [EMAIL]. My manager needs an update before Friday so the rota can be arranged.",
+      "local_mock_reply": "[PERSON_1] [PERSON_999] [EMAIL]",
+      "locally_restored_reply": "Mei Tan [PERSON_999] [EMAIL]"
+    },
+    {
+      "id": "fresh-health-clinician",
+      "word_count": 121,
+      "text": "Could you help me turn these appointment notes into a clear message? My name is Mei Tan. I had knee surgery on 2 November and the physiotherapist expects a gradual return to work from 18 November. I can sit at a desk, but I must not lift more than 5 kg or stand for longer than twenty minutes until the review on 9 December. Working from home is possible on Tuesdays and Thursdays. My psychiatrist diagnosed bipolar II in 2021, and I take lamotrigine 100 mg every evening. I have slept poorly for three nights but have not changed the dose. The clinic can reach me at mei.tan@example.org. My manager needs an update before Friday so the rota can be arranged.",
+      "task": "Prepare a summary of my current health, medicines, recent sleep and recovery restrictions for a medication review with my clinician.",
+      "result": {
+        "status": "needs_review",
+        "protected_text": "Could you help me turn these appointment notes into a clear message? My name is [PERSON_1]. I had knee surgery on 2 November and the physiotherapist expects a gradual return to work from 18 November. I can sit at a desk, but I must not lift more than 5 kg or stand for longer than twenty minutes until the review on 9 December. Working from home is possible on Tuesdays and Thursdays. My psychiatrist diagnosed bipolar II in 2021, and I take lamotrigine 100 mg every evening. I have slept poorly for three nights but have not changed the dose. The clinic can reach me at [EMAIL].",
+        "model_version": "deberta-v3-base-section-v1",
+        "edits": [
+          {
+            "start": 80,
+            "end": 87,
+            "label": "PERSON",
+            "action": "ALIAS",
+            "replacement": "[PERSON_1]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          },
+          {
+            "start": 568,
+            "end": 587,
+            "label": "EMAIL",
+            "action": "PLACEHOLDER",
+            "replacement": "[EMAIL]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          },
+          {
+            "start": 588,
+            "end": 658,
+            "label": "EMPLOYMENT",
+            "action": "DROP",
+            "replacement": "",
+            "reason": "learned_unnecessary_clause",
+            "score": 0.9921890497207642
+          }
+        ],
+        "retained_sensitive": [],
+        "review_reasons": [
+          "experimental_model_not_release_validated",
+          "unconfirmed_detection_requires_review"
+        ],
+        "coverage": {
+          "scanned_characters": 658,
+          "total_characters": 658,
+          "complete": true,
+          "offset_unit": "unicode_code_point",
+          "history_messages_scanned": 0,
+          "task_scanned": true
+        },
+        "protected_task": "Prepare a summary of my current health, medicines, recent sleep and recovery restrictions for a medication review with my clinician.",
+        "protected_history": [],
+        "pending_reviews": [
+          {
+            "start": 646,
+            "end": 657,
+            "label": "EMPLOYMENT",
+            "reason": "unconfirmed_context_boundary"
+          }
+        ],
+        "context_reports": [
+          {
+            "component": "task",
+            "index": null,
+            "edits": [],
+            "retained_sensitive": [],
+            "pending_reviews": [],
+            "coverage": {
+              "scanned_characters": 132,
+              "total_characters": 132,
+              "complete": true,
+              "offset_unit": "unicode_code_point"
+            }
+          }
+        ],
+        "runtime_versions": {
+          "pipeline": "privacy-edit-pipeline.2",
+          "section_mode": "section-head-v1",
+          "policy": "consumer-v1-pilot.2",
+          "model_training_policy": "consumer-v1-pilot.2",
+          "model_bundle_sha256": "6b69155f87c06e4c4fac9d6f3a20acb50ef000c83a889a50023bb89dced66112"
+        },
+        "section_diagnostics": [
+          {
+            "start": 0,
+            "end": 67,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.999968409538269,
+              "unnecessary": 1.7258264051633887e-05,
+              "uncertain": 1.4262455806601793e-05
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 69,
+            "end": 87,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9991924166679382,
+              "unnecessary": 0.00034458411391824484,
+              "uncertain": 0.0004630134208127856
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 89,
+            "end": 195,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9998999834060669,
+              "unnecessary": 7.385262142634019e-05,
+              "uncertain": 2.6049119696835987e-05
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 197,
+            "end": 323,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9997753500938416,
+              "unnecessary": 0.00018674411694519222,
+              "uncertain": 3.7957903259666637e-05
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 325,
+            "end": 380,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.999945878982544,
+              "unnecessary": 4.499039278016426e-05,
+              "uncertain": 9.199592568620574e-06
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 382,
+            "end": 471,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9999110698699951,
+              "unnecessary": 5.197630889597349e-05,
+              "uncertain": 3.6898716643918306e-05
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 473,
+            "end": 539,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9999101161956787,
+              "unnecessary": 4.843542046728544e-05,
+              "uncertain": 4.1515431803418323e-05
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 541,
+            "end": 587,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.997820258140564,
+              "unnecessary": 0.0003002817102242261,
+              "uncertain": 0.0018795282812789083
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 589,
+            "end": 657,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.007404052186757326,
+              "unnecessary": 0.9921890497207642,
+              "uncertain": 0.0004068711423315108
+            },
+            "raw_class": "unnecessary",
+            "threshold": 0.9,
+            "outcome": "DROP",
+            "scores_calibrated": false,
+            "nested_evidence": [
+              {
+                "start": 646,
+                "end": 657,
+                "label": "EMPLOYMENT",
+                "action": "DROP",
+                "relevance": {
+                  "essential": 0.004071286413818598,
+                  "unnecessary": 0.9957341551780701,
+                  "uncertain": 0.00019458784663584083
+                }
+              }
+            ],
+            "edit_start": 588,
+            "edit_end": 658,
+            "reason": "dedicated_head_and_safeguards_authorise_drop"
+          }
+        ],
+        "receiving_ai_instruction": "Privacy note: Labels such as [PERSON_1] represent redacted references. You may use these labels verbatim in your reply. Do not guess or invent the hidden values."
+      },
+      "identifier_misses": [],
+      "lost_expected_facts": [],
+      "missed_expected_sections": [],
+      "person_group_aliases": [
+        [
+          "[PERSON_1]"
+        ]
+      ],
+      "inconsistent_person_groups": 0,
+      "erroneous_person_merge": false,
+      "expected_no_edit": false,
+      "no_edit": false,
+      "real_app_supported": true,
+      "real_app_protected_text": "Could you help me turn these appointment notes into a clear message? My name is [PERSON_1]. I had knee surgery on 2 November and the physiotherapist expects a gradual return to work from 18 November. I can sit at a desk, but I must not lift more than 5 kg or stand for longer than twenty minutes until the review on 9 December. Working from home is possible on Tuesdays and Thursdays. My psychiatrist diagnosed bipolar II in 2021, and I take lamotrigine 100 mg every evening. I have slept poorly for three nights but have not changed the dose. The clinic can reach me at [EMAIL].",
+      "local_mock_reply": "[PERSON_1] [PERSON_999] [EMAIL]",
+      "locally_restored_reply": "Mei Tan [PERSON_999] [EMAIL]"
+    },
+    {
+      "id": "fresh-boiler-engineer",
+      "word_count": 125,
+      "text": "I need to get this organised before the weather gets colder. I am Daniel Rios, and the flat is at 26 Rowan Court, Bellford. The boiler stops after about ten minutes and shows E14; resetting it twice did not solve the problem. The engineer can visit on Wednesday between 09:00 and 11:00, and I can be home during that window. The repair quote is 940 euros, but it excludes any replacement pump. Since my partner lost her job, our household income has fallen to 1,450 euros a month and our savings are down to 600 euros. Rent is 740 euros and groceries are usually 260 euros. Please do not approve any extra work until I receive an itemised quote. My number is +44 7700 900416.",
+      "task": "Draft a repair appointment confirmation explaining the fault, access time and requirement to approve an itemised quote before extra work.",
+      "result": {
+        "status": "needs_review",
+        "protected_text": "I need to get this organised before the weather gets colder. I am [PERSON_1], and the flat is at [ADDRESS]. The boiler stops after about ten minutes and shows E14; resetting it twice did not solve the problem. The engineer can visit on Wednesday between 09:00 and 11:00, and I can be home during that window. The repair quote is 940 euros, but it excludes any replacement pump. Since my partner lost her job, our household income has fallen to 1,450 euros a month and our savings are down to 600 euros. Please do not approve any extra work until I receive an itemised quote. My number is [PHONE].",
+        "model_version": "deberta-v3-base-section-v1",
+        "edits": [
+          {
+            "start": 66,
+            "end": 77,
+            "label": "PERSON",
+            "action": "ALIAS",
+            "replacement": "[PERSON_1]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          },
+          {
+            "start": 98,
+            "end": 122,
+            "label": "ADDRESS",
+            "action": "PLACEHOLDER",
+            "replacement": "[ADDRESS]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          },
+          {
+            "start": 519,
+            "end": 574,
+            "label": "FINANCIAL",
+            "action": "DROP",
+            "replacement": "",
+            "reason": "learned_unnecessary_clause",
+            "score": 0.9995586276054382
+          },
+          {
+            "start": 659,
+            "end": 674,
+            "label": "PHONE",
+            "action": "PLACEHOLDER",
+            "replacement": "[PHONE]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          }
+        ],
+        "retained_sensitive": [],
+        "review_reasons": [
+          "experimental_model_not_release_validated",
+          "unconfirmed_detection_requires_review"
+        ],
+        "coverage": {
+          "scanned_characters": 675,
+          "total_characters": 675,
+          "complete": true,
+          "offset_unit": "unicode_code_point",
+          "history_messages_scanned": 0,
+          "task_scanned": true
+        },
+        "protected_task": "Draft a repair appointment confirmation explaining the fault, access time and requirement to approve an itemised quote before extra work.",
+        "protected_history": [],
+        "pending_reviews": [
+          {
+            "start": 394,
+            "end": 423,
+            "label": "EMPLOYMENT",
+            "reason": "unconfirmed_context_boundary"
+          }
+        ],
+        "context_reports": [
+          {
+            "component": "task",
+            "index": null,
+            "edits": [],
+            "retained_sensitive": [],
+            "pending_reviews": [],
+            "coverage": {
+              "scanned_characters": 137,
+              "total_characters": 137,
+              "complete": true,
+              "offset_unit": "unicode_code_point"
+            }
+          }
+        ],
+        "runtime_versions": {
+          "pipeline": "privacy-edit-pipeline.2",
+          "section_mode": "section-head-v1",
+          "policy": "consumer-v1-pilot.2",
+          "model_training_policy": "consumer-v1-pilot.2",
+          "model_bundle_sha256": "6b69155f87c06e4c4fac9d6f3a20acb50ef000c83a889a50023bb89dced66112"
+        },
+        "section_diagnostics": [
+          {
+            "start": 0,
+            "end": 59,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9999761581420898,
+              "unnecessary": 1.7847345588961616e-05,
+              "uncertain": 5.975296517135575e-06
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 61,
+            "end": 122,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9993454813957214,
+              "unnecessary": 0.0005639357259497046,
+              "uncertain": 9.05303459148854e-05
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 124,
+            "end": 178,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9999582767486572,
+              "unnecessary": 3.373347863089293e-05,
+              "uncertain": 8.041577530093491e-06
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 180,
+            "end": 224,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9999589920043945,
+              "unnecessary": 3.342604395584203e-05,
+              "uncertain": 7.686632670811377e-06
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 226,
+            "end": 323,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9999780654907227,
+              "unnecessary": 1.7335134543827735e-05,
+              "uncertain": 4.590077878674492e-06
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 325,
+            "end": 392,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9999632835388184,
+              "unnecessary": 3.013667810591869e-05,
+              "uncertain": 6.568975550180767e-06
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 394,
+            "end": 517,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.0006772371707484126,
+              "unnecessary": 0.9992889165878296,
+              "uncertain": 3.386486059753224e-05
+            },
+            "raw_class": "unnecessary",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "nested_evidence": [
+              {
+                "start": 394,
+                "end": 423,
+                "label": "EMPLOYMENT",
+                "action": "KEEP",
+                "relevance": {
+                  "essential": 0.9867858290672302,
+                  "unnecessary": 0.013174992054700851,
+                  "uncertain": 3.9213871787069365e-05
+                }
+              },
+              {
+                "start": 423,
+                "end": 518,
+                "label": "FINANCIAL",
+                "action": "DROP",
+                "relevance": {
+                  "essential": 0.0016702726716175675,
+                  "unnecessary": 0.9982342720031738,
+                  "uncertain": 9.549283277010545e-05
+                }
+              }
+            ],
+            "reason": "section_contains_retained_or_uncertain_evidence"
+          },
+          {
+            "start": 519,
+            "end": 572,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.0004200003168080002,
+              "unnecessary": 0.9995586276054382,
+              "uncertain": 2.1358095182222314e-05
+            },
+            "raw_class": "unnecessary",
+            "threshold": 0.9,
+            "outcome": "DROP",
+            "scores_calibrated": false,
+            "nested_evidence": [
+              {
+                "start": 519,
+                "end": 573,
+                "label": "FINANCIAL",
+                "action": "DROP",
+                "relevance": {
+                  "essential": 0.0018140876200050116,
+                  "unnecessary": 0.9980556964874268,
+                  "uncertain": 0.00013033495633862913
+                }
+              }
+            ],
+            "edit_start": 519,
+            "edit_end": 574,
+            "reason": "dedicated_head_and_safeguards_authorise_drop"
+          },
+          {
+            "start": 574,
+            "end": 644,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9999581575393677,
+              "unnecessary": 3.2162257411982864e-05,
+              "uncertain": 9.657340342528187e-06
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 646,
+            "end": 674,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9689244627952576,
+              "unnecessary": 0.006586747244000435,
+              "uncertain": 0.02448873780667782
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          }
+        ],
+        "receiving_ai_instruction": "Privacy note: Labels such as [PERSON_1] represent redacted references. You may use these labels verbatim in your reply. Do not guess or invent the hidden values."
+      },
+      "identifier_misses": [],
+      "lost_expected_facts": [],
+      "missed_expected_sections": [
+        "Since my partner lost her job, our household income has fallen to 1,450 euros a month and our savings are down to 600 euros."
+      ],
+      "person_group_aliases": [
+        [
+          "[PERSON_1]"
+        ]
+      ],
+      "inconsistent_person_groups": 0,
+      "erroneous_person_merge": false,
+      "expected_no_edit": false,
+      "no_edit": false,
+      "real_app_supported": true,
+      "real_app_protected_text": "I need to get this organised before the weather gets colder. I am [PERSON_1], and the flat is at [ADDRESS]. The boiler stops after about ten minutes and shows E14; resetting it twice did not solve the problem. The engineer can visit on Wednesday between 09:00 and 11:00, and I can be home during that window. The repair quote is 940 euros, but it excludes any replacement pump. Since my partner lost her job, our household income has fallen to 1,450 euros a month and our savings are down to 600 euros. Please do not approve any extra work until I receive an itemised quote. My number is [PHONE].",
+      "local_mock_reply": "[PERSON_1] [PERSON_999] [EMAIL]",
+      "locally_restored_reply": "Daniel Rios [PERSON_999] [EMAIL]"
+    },
+    {
+      "id": "fresh-boiler-budget",
+      "word_count": 125,
+      "text": "I need to get this organised before the weather gets colder. I am Daniel Rios, and the flat is at 26 Rowan Court, Bellford. The boiler stops after about ten minutes and shows E14; resetting it twice did not solve the problem. The engineer can visit on Wednesday between 09:00 and 11:00, and I can be home during that window. The repair quote is 940 euros, but it excludes any replacement pump. Since my partner lost her job, our household income has fallen to 1,450 euros a month and our savings are down to 600 euros. Rent is 740 euros and groceries are usually 260 euros. Please do not approve any extra work until I receive an itemised quote. My number is +44 7700 900416.",
+      "task": "Work out whether this household can afford the boiler repair from current income and savings, and explain what costs are still uncertain.",
+      "result": {
+        "status": "needs_review",
+        "protected_text": "I need to get this organised before the weather gets colder. I am [PERSON_1], and the flat is at [ADDRESS]. The boiler stops after about ten minutes and shows E14; resetting it twice did not solve the problem. The engineer can visit on Wednesday between 09:00 and 11:00, and I can be home during that window. The repair quote is 940 euros, but it excludes any replacement pump. Since my partner lost her job, our household income has fallen to 1,450 euros a month and our savings are down to 600 euros. Rent is 740 euros and groceries are usually 260 euros. Please do not approve any extra work until I receive an itemised quote. My number is [PHONE].",
+        "model_version": "deberta-v3-base-section-v1",
+        "edits": [
+          {
+            "start": 66,
+            "end": 77,
+            "label": "PERSON",
+            "action": "ALIAS",
+            "replacement": "[PERSON_1]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          },
+          {
+            "start": 98,
+            "end": 122,
+            "label": "ADDRESS",
+            "action": "PLACEHOLDER",
+            "replacement": "[ADDRESS]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          },
+          {
+            "start": 659,
+            "end": 674,
+            "label": "PHONE",
+            "action": "PLACEHOLDER",
+            "replacement": "[PHONE]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          }
+        ],
+        "retained_sensitive": [],
+        "review_reasons": [
+          "experimental_model_not_release_validated",
+          "unconfirmed_detection_requires_review"
+        ],
+        "coverage": {
+          "scanned_characters": 675,
+          "total_characters": 675,
+          "complete": true,
+          "offset_unit": "unicode_code_point",
+          "history_messages_scanned": 0,
+          "task_scanned": true
+        },
+        "protected_task": "Work out whether this household can afford the boiler repair from current income and savings, and explain what costs are still uncertain.",
+        "protected_history": [],
+        "pending_reviews": [
+          {
+            "start": 394,
+            "end": 423,
+            "label": "EMPLOYMENT",
+            "reason": "unconfirmed_context_boundary"
+          }
+        ],
+        "context_reports": [
+          {
+            "component": "task",
+            "index": null,
+            "edits": [],
+            "retained_sensitive": [],
+            "pending_reviews": [],
+            "coverage": {
+              "scanned_characters": 137,
+              "total_characters": 137,
+              "complete": true,
+              "offset_unit": "unicode_code_point"
+            }
+          }
+        ],
+        "runtime_versions": {
+          "pipeline": "privacy-edit-pipeline.2",
+          "section_mode": "section-head-v1",
+          "policy": "consumer-v1-pilot.2",
+          "model_training_policy": "consumer-v1-pilot.2",
+          "model_bundle_sha256": "6b69155f87c06e4c4fac9d6f3a20acb50ef000c83a889a50023bb89dced66112"
+        },
+        "section_diagnostics": [
+          {
+            "start": 0,
+            "end": 59,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9999287128448486,
+              "unnecessary": 5.7755310990614817e-05,
+              "uncertain": 1.3450191545416601e-05
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 61,
+            "end": 122,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9970874190330505,
+              "unnecessary": 0.0026135698426514864,
+              "uncertain": 0.00029903932590968907
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 124,
+            "end": 178,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9998716115951538,
+              "unnecessary": 0.0001118347208830528,
+              "uncertain": 1.6512951333425008e-05
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 180,
+            "end": 224,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9998844861984253,
+              "unnecessary": 9.99324765871279e-05,
+              "uncertain": 1.564115154906176e-05
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 226,
+            "end": 323,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.999858021736145,
+              "unnecessary": 0.00012289728329051286,
+              "uncertain": 1.907900150399655e-05
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 325,
+            "end": 392,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9998849630355835,
+              "unnecessary": 9.910710650729015e-05,
+              "uncertain": 1.6022419004002586e-05
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 394,
+            "end": 517,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9989097118377686,
+              "unnecessary": 0.001048469333909452,
+              "uncertain": 4.1822862840490416e-05
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 519,
+            "end": 572,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9995619654655457,
+              "unnecessary": 0.0004004877991974354,
+              "uncertain": 3.75536983483471e-05
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 574,
+            "end": 644,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9999011754989624,
+              "unnecessary": 8.43522502691485e-05,
+              "uncertain": 1.4415219993679784e-05
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 646,
+            "end": 674,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9007091522216797,
+              "unnecessary": 0.03906182572245598,
+              "uncertain": 0.060228995978832245
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          }
+        ],
+        "receiving_ai_instruction": "Privacy note: Labels such as [PERSON_1] represent redacted references. You may use these labels verbatim in your reply. Do not guess or invent the hidden values."
+      },
+      "identifier_misses": [],
+      "lost_expected_facts": [],
+      "missed_expected_sections": [],
+      "person_group_aliases": [
+        [
+          "[PERSON_1]"
+        ]
+      ],
+      "inconsistent_person_groups": 0,
+      "erroneous_person_merge": false,
+      "expected_no_edit": false,
+      "no_edit": false,
+      "real_app_supported": true,
+      "real_app_protected_text": "I need to get this organised before the weather gets colder. I am [PERSON_1], and the flat is at [ADDRESS]. The boiler stops after about ten minutes and shows E14; resetting it twice did not solve the problem. The engineer can visit on Wednesday between 09:00 and 11:00, and I can be home during that window. The repair quote is 940 euros, but it excludes any replacement pump. Since my partner lost her job, our household income has fallen to 1,450 euros a month and our savings are down to 600 euros. Rent is 740 euros and groceries are usually 260 euros. Please do not approve any extra work until I receive an itemised quote. My number is [PHONE].",
+      "local_mock_reply": "[PERSON_1] [PERSON_999] [EMAIL]",
+      "locally_restored_reply": "Daniel Rios [PERSON_999] [EMAIL]"
+    },
+    {
+      "id": "fresh-incident-engineering",
+      "word_count": 118,
+      "text": "Please turn the notes from our call into something I can send on. Customer lead Noura Haddad reported that the export service stopped producing CSV files at 10:20 after version 4.8 went live. It affects 48 accounts, but PDF exports still work. Engineering reproduced the failure with accented customer names and has a patch awaiting review. There is no confirmed deployment time. Users must not delete their original uploads because we need them to reproduce the issue. Our confidential renewal offer is 240,000 euros annually, and finance approved a 12,000-euro service credit only if the customer signs by 30 November. The account team needs an update at 16:00. Replies should go to noura.haddad@example.org; the incident reference is INC-6842.",
+      "task": "Write a technical handover for the next engineer, including scope, reproduction, workaround, missing deployment date and preservation of uploads.",
+      "result": {
+        "status": "needs_review",
+        "protected_text": "Please turn the notes from our call into something I can send on. Customer lead [PERSON_1] reported that the export service stopped producing CSV files at 10:20 after version 4.8 went live. It affects 48 accounts, but PDF exports still work. Engineering reproduced the failure with accented customer names and has a patch awaiting review. There is no confirmed deployment time. Users must not delete their original uploads because we need them to reproduce the issue. The account team needs an update at 16:00. Replies should go to [EMAIL]; the incident reference is [ACCOUNT_ID].",
+        "model_version": "deberta-v3-base-section-v1",
+        "edits": [
+          {
+            "start": 80,
+            "end": 92,
+            "label": "PERSON",
+            "action": "ALIAS",
+            "replacement": "[PERSON_1]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          },
+          {
+            "start": 470,
+            "end": 621,
+            "label": "FINANCIAL",
+            "action": "DROP",
+            "replacement": "",
+            "reason": "learned_unnecessary_clause",
+            "score": 0.9996405839920044
+          },
+          {
+            "start": 685,
+            "end": 709,
+            "label": "EMAIL",
+            "action": "PLACEHOLDER",
+            "replacement": "[EMAIL]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          },
+          {
+            "start": 737,
+            "end": 745,
+            "label": "ACCOUNT_ID",
+            "action": "PLACEHOLDER",
+            "replacement": "[ACCOUNT_ID]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          }
+        ],
+        "retained_sensitive": [],
+        "review_reasons": [
+          "experimental_model_not_release_validated",
+          "unconfirmed_detection_requires_review"
+        ],
+        "coverage": {
+          "scanned_characters": 746,
+          "total_characters": 746,
+          "complete": true,
+          "offset_unit": "unicode_code_point",
+          "history_messages_scanned": 0,
+          "task_scanned": true
+        },
+        "protected_task": "Write a technical handover for the next engineer, including scope, reproduction, workaround, missing deployment date and preservation of uploads.",
+        "protected_history": [],
+        "pending_reviews": [
+          {
+            "start": 504,
+            "end": 526,
+            "label": "FINANCIAL",
+            "reason": "unconfirmed_context_boundary"
+          },
+          {
+            "start": 532,
+            "end": 550,
+            "label": "FINANCIAL",
+            "reason": "unconfirmed_context_boundary"
+          },
+          {
+            "start": 551,
+            "end": 619,
+            "label": "FINANCIAL",
+            "reason": "unconfirmed_context_boundary"
+          }
+        ],
+        "context_reports": [
+          {
+            "component": "task",
+            "index": null,
+            "edits": [],
+            "retained_sensitive": [],
+            "pending_reviews": [],
+            "coverage": {
+              "scanned_characters": 145,
+              "total_characters": 145,
+              "complete": true,
+              "offset_unit": "unicode_code_point"
+            }
+          }
+        ],
+        "runtime_versions": {
+          "pipeline": "privacy-edit-pipeline.2",
+          "section_mode": "section-head-v1",
+          "policy": "consumer-v1-pilot.2",
+          "model_training_policy": "consumer-v1-pilot.2",
+          "model_bundle_sha256": "6b69155f87c06e4c4fac9d6f3a20acb50ef000c83a889a50023bb89dced66112"
+        },
+        "section_diagnostics": [
+          {
+            "start": 0,
+            "end": 64,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9999871253967285,
+              "unnecessary": 8.448432708973996e-06,
+              "uncertain": 4.363554126030067e-06
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 66,
+            "end": 190,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9999793767929077,
+              "unnecessary": 1.4502448721032124e-05,
+              "uncertain": 6.13574184171739e-06
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 192,
+            "end": 242,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9999808073043823,
+              "unnecessary": 1.4748998182767536e-05,
+              "uncertain": 4.434474703884916e-06
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 244,
+            "end": 339,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9999819993972778,
+              "unnecessary": 1.3951308574178256e-05,
+              "uncertain": 4.099878424312919e-06
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 341,
+            "end": 378,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9999855756759644,
+              "unnecessary": 1.0027945791080128e-05,
+              "uncertain": 4.356969384389231e-06
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 380,
+            "end": 468,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9999837875366211,
+              "unnecessary": 1.2847656762460247e-05,
+              "uncertain": 3.3335711577819893e-06
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 470,
+            "end": 619,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.00034902861807495356,
+              "unnecessary": 0.9996405839920044,
+              "uncertain": 1.0400996870885137e-05
+            },
+            "raw_class": "unnecessary",
+            "threshold": 0.9,
+            "outcome": "DROP",
+            "scores_calibrated": false,
+            "nested_evidence": [
+              {
+                "start": 504,
+                "end": 526,
+                "label": "FINANCIAL",
+                "action": "DROP",
+                "relevance": {
+                  "essential": 0.00042718183249235153,
+                  "unnecessary": 0.9995670914649963,
+                  "uncertain": 5.663682713930029e-06
+                }
+              },
+              {
+                "start": 532,
+                "end": 550,
+                "label": "FINANCIAL",
+                "action": "DROP",
+                "relevance": {
+                  "essential": 0.0004191184707451612,
+                  "unnecessary": 0.9995754361152649,
+                  "uncertain": 5.4791612456028815e-06
+                }
+              },
+              {
+                "start": 551,
+                "end": 619,
+                "label": "FINANCIAL",
+                "action": "DROP",
+                "relevance": {
+                  "essential": 0.0004554382467176765,
+                  "unnecessary": 0.9995391368865967,
+                  "uncertain": 5.442165729618864e-06
+                }
+              }
+            ],
+            "edit_start": 470,
+            "edit_end": 621,
+            "reason": "dedicated_head_and_safeguards_authorise_drop"
+          },
+          {
+            "start": 621,
+            "end": 662,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9999698400497437,
+              "unnecessary": 2.343103551538661e-05,
+              "uncertain": 6.6596808210306335e-06
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 664,
+            "end": 709,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9995075464248657,
+              "unnecessary": 9.67022351687774e-05,
+              "uncertain": 0.0003956406144425273
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 711,
+            "end": 745,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9996851682662964,
+              "unnecessary": 8.144692401401699e-05,
+              "uncertain": 0.0002334329328732565
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          }
+        ],
+        "receiving_ai_instruction": "Privacy note: Labels such as [PERSON_1] represent redacted references. You may use these labels verbatim in your reply. Do not guess or invent the hidden values."
+      },
+      "identifier_misses": [],
+      "lost_expected_facts": [],
+      "missed_expected_sections": [],
+      "person_group_aliases": [
+        [
+          "[PERSON_1]"
+        ]
+      ],
+      "inconsistent_person_groups": 0,
+      "erroneous_person_merge": false,
+      "expected_no_edit": false,
+      "no_edit": false,
+      "real_app_supported": true,
+      "real_app_protected_text": "Please turn the notes from our call into something I can send on. Customer lead [PERSON_1] reported that the export service stopped producing CSV files at 10:20 after version 4.8 went live. It affects 48 accounts, but PDF exports still work. Engineering reproduced the failure with accented customer names and has a patch awaiting review. There is no confirmed deployment time. Users must not delete their original uploads because we need them to reproduce the issue. The account team needs an update at 16:00. Replies should go to [EMAIL]; the incident reference is [ACCOUNT_ID].",
+      "local_mock_reply": "[PERSON_1] [PERSON_999] [EMAIL]",
+      "locally_restored_reply": "Noura Haddad [PERSON_999] [EMAIL]"
+    },
+    {
+      "id": "fresh-incident-commercial",
+      "word_count": 118,
+      "text": "Please turn the notes from our call into something I can send on. Customer lead Noura Haddad reported that the export service stopped producing CSV files at 10:20 after version 4.8 went live. It affects 48 accounts, but PDF exports still work. Engineering reproduced the failure with accented customer names and has a patch awaiting review. There is no confirmed deployment time. Users must not delete their original uploads because we need them to reproduce the issue. Our confidential renewal offer is 240,000 euros annually, and finance approved a 12,000-euro service credit only if the customer signs by 30 November. The account team needs an update at 16:00. Replies should go to noura.haddad@example.org; the incident reference is INC-6842.",
+      "task": "Prepare an internal renewal and credit briefing for finance, keeping the exact amounts, signing condition and operational impact.",
+      "result": {
+        "status": "needs_review",
+        "protected_text": "Please turn the notes from our call into something I can send on. Customer lead [PERSON_1] reported that the export service stopped producing CSV files at 10:20 after version 4.8 went live. It affects 48 accounts, but PDF exports still work. Engineering reproduced the failure with accented customer names and has a patch awaiting review. There is no confirmed deployment time. Users must not delete their original uploads because we need them to reproduce the issue. Our confidential renewal offer is 240,000 euros annually, and finance approved a 12,000-euro service credit only if the customer signs by 30 November. The account team needs an update at 16:00. Replies should go to [EMAIL]; the incident reference is [ACCOUNT_ID].",
+        "model_version": "deberta-v3-base-section-v1",
+        "edits": [
+          {
+            "start": 80,
+            "end": 92,
+            "label": "PERSON",
+            "action": "ALIAS",
+            "replacement": "[PERSON_1]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          },
+          {
+            "start": 685,
+            "end": 709,
+            "label": "EMAIL",
+            "action": "PLACEHOLDER",
+            "replacement": "[EMAIL]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          },
+          {
+            "start": 737,
+            "end": 745,
+            "label": "ACCOUNT_ID",
+            "action": "PLACEHOLDER",
+            "replacement": "[ACCOUNT_ID]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          }
+        ],
+        "retained_sensitive": [],
+        "review_reasons": [
+          "experimental_model_not_release_validated",
+          "unconfirmed_detection_requires_review"
+        ],
+        "coverage": {
+          "scanned_characters": 746,
+          "total_characters": 746,
+          "complete": true,
+          "offset_unit": "unicode_code_point",
+          "history_messages_scanned": 0,
+          "task_scanned": true
+        },
+        "protected_task": "Prepare an internal renewal and credit briefing for finance, keeping the exact amounts, signing condition and operational impact.",
+        "protected_history": [],
+        "pending_reviews": [
+          {
+            "start": 504,
+            "end": 526,
+            "label": "FINANCIAL",
+            "reason": "unconfirmed_context_boundary"
+          },
+          {
+            "start": 532,
+            "end": 550,
+            "label": "FINANCIAL",
+            "reason": "unconfirmed_context_boundary"
+          },
+          {
+            "start": 551,
+            "end": 619,
+            "label": "FINANCIAL",
+            "reason": "unconfirmed_context_boundary"
+          }
+        ],
+        "context_reports": [
+          {
+            "component": "task",
+            "index": null,
+            "edits": [],
+            "retained_sensitive": [],
+            "pending_reviews": [],
+            "coverage": {
+              "scanned_characters": 129,
+              "total_characters": 129,
+              "complete": true,
+              "offset_unit": "unicode_code_point"
+            }
+          }
+        ],
+        "runtime_versions": {
+          "pipeline": "privacy-edit-pipeline.2",
+          "section_mode": "section-head-v1",
+          "policy": "consumer-v1-pilot.2",
+          "model_training_policy": "consumer-v1-pilot.2",
+          "model_bundle_sha256": "6b69155f87c06e4c4fac9d6f3a20acb50ef000c83a889a50023bb89dced66112"
+        },
+        "section_diagnostics": [
+          {
+            "start": 0,
+            "end": 64,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9999746084213257,
+              "unnecessary": 1.971543133549858e-05,
+              "uncertain": 5.716037321690237e-06
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 66,
+            "end": 190,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9999423027038574,
+              "unnecessary": 4.689097841037437e-05,
+              "uncertain": 1.0836464753083419e-05
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 192,
+            "end": 242,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9999446868896484,
+              "unnecessary": 4.8077530664158985e-05,
+              "uncertain": 7.313877176784445e-06
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 244,
+            "end": 339,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9998786449432373,
+              "unnecessary": 0.000108997272036504,
+              "uncertain": 1.2416347090038471e-05
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 341,
+            "end": 378,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9999511241912842,
+              "unnecessary": 3.929934973712079e-05,
+              "uncertain": 9.502836292085703e-06
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 380,
+            "end": 468,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9998927116394043,
+              "unnecessary": 9.667521226219833e-05,
+              "uncertain": 1.0549066246312577e-05
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 470,
+            "end": 619,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9999068975448608,
+              "unnecessary": 8.363892993656918e-05,
+              "uncertain": 9.430958016309887e-06
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 621,
+            "end": 662,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9999768733978271,
+              "unnecessary": 1.8142751287086867e-05,
+              "uncertain": 5.0617113629414234e-06
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 664,
+            "end": 709,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9994158744812012,
+              "unnecessary": 0.00018485120381228626,
+              "uncertain": 0.00039921121788211167
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 711,
+            "end": 745,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9994022846221924,
+              "unnecessary": 0.0002231900580227375,
+              "uncertain": 0.0003745769790839404
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          }
+        ],
+        "receiving_ai_instruction": "Privacy note: Labels such as [PERSON_1] represent redacted references. You may use these labels verbatim in your reply. Do not guess or invent the hidden values."
+      },
+      "identifier_misses": [],
+      "lost_expected_facts": [],
+      "missed_expected_sections": [],
+      "person_group_aliases": [
+        [
+          "[PERSON_1]"
+        ]
+      ],
+      "inconsistent_person_groups": 0,
+      "erroneous_person_merge": false,
+      "expected_no_edit": false,
+      "no_edit": false,
+      "real_app_supported": true,
+      "real_app_protected_text": "Please turn the notes from our call into something I can send on. Customer lead [PERSON_1] reported that the export service stopped producing CSV files at 10:20 after version 4.8 went live. It affects 48 accounts, but PDF exports still work. Engineering reproduced the failure with accented customer names and has a patch awaiting review. There is no confirmed deployment time. Users must not delete their original uploads because we need them to reproduce the issue. Our confidential renewal offer is 240,000 euros annually, and finance approved a 12,000-euro service credit only if the customer signs by 30 November. The account team needs an update at 16:00. Replies should go to [EMAIL]; the incident reference is [ACCOUNT_ID].",
+      "local_mock_reply": "[PERSON_1] [PERSON_999] [EMAIL]",
+      "locally_restored_reply": "Noura Haddad [PERSON_999] [EMAIL]"
+    },
+    {
+      "id": "fresh-ambiguous-person-links",
+      "word_count": 120,
+      "text": "I have two people to coordinate with for the flat inspection and their messages are getting mixed up. My sister, Sara Hale, will collect the spare keys on Tuesday, while the letting agent, Sara Nolan, will meet the plumber on Wednesday. Hale cannot arrive before 18:00 because her train gets in at 17:40. Nolan said the plumber's visit may take up to two hours, but it is not confirmed yet. The latest message just says Sara will call me, and I don't know which Sara that means. Please keep that uncertainty visible. The water needs to stay on until the plumber has tested the repair. I want one short plan with the confirmed arrangements first and the open questions underneath.",
+      "task": "Organise the arrangements and unresolved questions, keeping the two people distinct and the ambiguous caller unresolved.",
+      "result": {
+        "status": "needs_review",
+        "protected_text": "I have two people to coordinate with for the flat inspection and their messages are getting mixed up. My sister, [PERSON_1], will collect the spare keys on Tuesday, while the letting agent, [PERSON_2], will meet the plumber on Wednesday. [PERSON_1] cannot arrive before 18:00 because her train gets in at 17:40. [PERSON_2] said the plumber's visit may take up to two hours, but it is not confirmed yet. The latest message just says [PERSON_3] will call me, and I don't know which [PERSON_3] that means. Please keep that uncertainty visible. The water needs to stay on until the plumber has tested the repair. I want one short plan with the confirmed arrangements first and the open questions underneath.",
+        "model_version": "deberta-v3-base-section-v1",
+        "edits": [
+          {
+            "start": 113,
+            "end": 122,
+            "label": "PERSON",
+            "action": "ALIAS",
+            "replacement": "[PERSON_1]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          },
+          {
+            "start": 189,
+            "end": 199,
+            "label": "PERSON",
+            "action": "ALIAS",
+            "replacement": "[PERSON_2]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          },
+          {
+            "start": 237,
+            "end": 241,
+            "label": "PERSON",
+            "action": "ALIAS",
+            "replacement": "[PERSON_1]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          },
+          {
+            "start": 305,
+            "end": 310,
+            "label": "PERSON",
+            "action": "ALIAS",
+            "replacement": "[PERSON_2]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          },
+          {
+            "start": 420,
+            "end": 424,
+            "label": "PERSON",
+            "action": "ALIAS",
+            "replacement": "[PERSON_3]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          },
+          {
+            "start": 462,
+            "end": 466,
+            "label": "PERSON",
+            "action": "ALIAS",
+            "replacement": "[PERSON_3]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          }
+        ],
+        "retained_sensitive": [],
+        "review_reasons": [
+          "experimental_model_not_release_validated"
+        ],
+        "coverage": {
+          "scanned_characters": 679,
+          "total_characters": 679,
+          "complete": true,
+          "offset_unit": "unicode_code_point",
+          "history_messages_scanned": 0,
+          "task_scanned": true
+        },
+        "protected_task": "Organise the arrangements and unresolved questions, keeping the two people distinct and the ambiguous caller unresolved.",
+        "protected_history": [],
+        "pending_reviews": [],
+        "context_reports": [
+          {
+            "component": "task",
+            "index": null,
+            "edits": [],
+            "retained_sensitive": [],
+            "pending_reviews": [],
+            "coverage": {
+              "scanned_characters": 120,
+              "total_characters": 120,
+              "complete": true,
+              "offset_unit": "unicode_code_point"
+            }
+          }
+        ],
+        "runtime_versions": {
+          "pipeline": "privacy-edit-pipeline.2",
+          "section_mode": "section-head-v1",
+          "policy": "consumer-v1-pilot.2",
+          "model_training_policy": "consumer-v1-pilot.2",
+          "model_bundle_sha256": "6b69155f87c06e4c4fac9d6f3a20acb50ef000c83a889a50023bb89dced66112"
+        },
+        "section_diagnostics": [
+          {
+            "start": 0,
+            "end": 100,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9999719858169556,
+              "unnecessary": 2.0617782865883783e-05,
+              "uncertain": 7.333550001931144e-06
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 102,
+            "end": 235,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9999680519104004,
+              "unnecessary": 2.6475194317754358e-05,
+              "uncertain": 5.450953722174745e-06
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 237,
+            "end": 303,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9999682903289795,
+              "unnecessary": 2.7800835596281104e-05,
+              "uncertain": 3.986448518844554e-06
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 305,
+            "end": 389,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9999674558639526,
+              "unnecessary": 2.691606459848117e-05,
+              "uncertain": 5.653881999023724e-06
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 391,
+            "end": 477,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9999594688415527,
+              "unnecessary": 3.21896695822943e-05,
+              "uncertain": 8.3197764979559e-06
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 479,
+            "end": 515,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9999685287475586,
+              "unnecessary": 2.359361678827554e-05,
+              "uncertain": 7.88905435911147e-06
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 517,
+            "end": 583,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.999950647354126,
+              "unnecessary": 3.5463344829622656e-05,
+              "uncertain": 1.3881051017961e-05
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 585,
+            "end": 678,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9999747276306152,
+              "unnecessary": 2.0336243323981762e-05,
+              "uncertain": 4.946488388668513e-06
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          }
+        ],
+        "receiving_ai_instruction": "Privacy note: Labels such as [PERSON_1] represent redacted references. You may use these labels verbatim in your reply. Do not guess or invent the hidden values."
+      },
+      "identifier_misses": [],
+      "lost_expected_facts": [],
+      "missed_expected_sections": [],
+      "person_group_aliases": [
+        [
+          "[PERSON_1]"
+        ],
+        [
+          "[PERSON_2]"
+        ]
+      ],
+      "inconsistent_person_groups": 0,
+      "erroneous_person_merge": false,
+      "expected_no_edit": false,
+      "no_edit": false,
+      "real_app_supported": true,
+      "real_app_protected_text": "I have two people to coordinate with for the flat inspection and their messages are getting mixed up. My sister, [PERSON_1], will collect the spare keys on Tuesday, while the letting agent, [PERSON_2], will meet the plumber on Wednesday. [PERSON_1] cannot arrive before 18:00 because her train gets in at 17:40. [PERSON_2] said the plumber's visit may take up to two hours, but it is not confirmed yet. The latest message just says [PERSON_3] will call me, and I don't know which [PERSON_3] that means. Please keep that uncertainty visible. The water needs to stay on until the plumber has tested the repair. I want one short plan with the confirmed arrangements first and the open questions underneath.",
+      "local_mock_reply": "[PERSON_1] [PERSON_2] [PERSON_3] [PERSON_999] [EMAIL]",
+      "locally_restored_reply": "Sara Hale Sara Nolan Sara [PERSON_999] [EMAIL]"
+    },
+    {
+      "id": "fresh-credential-debugging",
+      "word_count": 114,
+      "text": "Can you help me explain this deployment failure to the on-call engineer? The staging worker starts normally but gets HTTP 401 when it requests /v2/invoices. The previous build succeeded at 08:15, and the first failure appeared after the secret rotation at 08:40. I copied the relevant environment line here: DATABASE_PASSWORD=SilverLeaf_demo_4829! The application log says token audience mismatch, not connection refused, and the database health check is still green. We have not rolled back because invoice uploads are queued safely and retrying every five minutes. Please focus on the order of checks and avoid recommending that we delete the queue. My colleague Owen Mercer owns the rotation, and he can join a call after 11:30.",
+      "task": "Summarise the failure and propose an investigation checklist preserving the evidence, timeline and queued invoices.",
+      "result": {
+        "status": "needs_review",
+        "protected_text": "Can you help me explain this deployment failure to the on-call engineer? The staging worker starts normally but gets HTTP 401 when it requests /v2/invoices. The previous build succeeded at 08:15, and the first failure appeared after the secret rotation at 08:40. I copied the relevant environment line here: DATABASE_PASSWORD=[SECRET]! The application log says token audience mismatch, not connection refused, and the database health check is still green. We have not rolled back because invoice uploads are queued safely and retrying every five minutes. Please focus on the order of checks and avoid recommending that we delete the queue. My colleague [PERSON_1] owns the rotation, and he can join a call after 11:30.",
+        "model_version": "deberta-v3-base-section-v1",
+        "edits": [
+          {
+            "start": 326,
+            "end": 346,
+            "label": "SECRET",
+            "action": "PLACEHOLDER",
+            "replacement": "[SECRET]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          },
+          {
+            "start": 665,
+            "end": 676,
+            "label": "PERSON",
+            "action": "ALIAS",
+            "replacement": "[PERSON_1]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          }
+        ],
+        "retained_sensitive": [],
+        "review_reasons": [
+          "experimental_model_not_release_validated"
+        ],
+        "coverage": {
+          "scanned_characters": 731,
+          "total_characters": 731,
+          "complete": true,
+          "offset_unit": "unicode_code_point",
+          "history_messages_scanned": 0,
+          "task_scanned": true
+        },
+        "protected_task": "Summarise the failure and propose an investigation checklist preserving the evidence, timeline and queued invoices.",
+        "protected_history": [],
+        "pending_reviews": [],
+        "context_reports": [
+          {
+            "component": "task",
+            "index": null,
+            "edits": [],
+            "retained_sensitive": [],
+            "pending_reviews": [],
+            "coverage": {
+              "scanned_characters": 115,
+              "total_characters": 115,
+              "complete": true,
+              "offset_unit": "unicode_code_point"
+            }
+          }
+        ],
+        "runtime_versions": {
+          "pipeline": "privacy-edit-pipeline.2",
+          "section_mode": "section-head-v1",
+          "policy": "consumer-v1-pilot.2",
+          "model_training_policy": "consumer-v1-pilot.2",
+          "model_bundle_sha256": "6b69155f87c06e4c4fac9d6f3a20acb50ef000c83a889a50023bb89dced66112"
+        },
+        "section_diagnostics": [
+          {
+            "start": 0,
+            "end": 71,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9999847412109375,
+              "unnecessary": 1.0248223588860128e-05,
+              "uncertain": 4.994732989871409e-06
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 73,
+            "end": 155,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9999840259552002,
+              "unnecessary": 9.578441677149385e-06,
+              "uncertain": 6.4560022110526916e-06
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 157,
+            "end": 261,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9999881982803345,
+              "unnecessary": 8.244175660365727e-06,
+              "uncertain": 3.537041948220576e-06
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 263,
+            "end": 346,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.999761164188385,
+              "unnecessary": 0.00014185287000145763,
+              "uncertain": 9.697485802462325e-05
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 348,
+            "end": 466,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9999815225601196,
+              "unnecessary": 1.0968270544253755e-05,
+              "uncertain": 7.4562503868946806e-06
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 468,
+            "end": 565,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9999852180480957,
+              "unnecessary": 1.0395537174190395e-05,
+              "uncertain": 4.46031572209904e-06
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 567,
+            "end": 650,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9999871253967285,
+              "unnecessary": 8.71606698638061e-06,
+              "uncertain": 4.131787136429921e-06
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 652,
+            "end": 730,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9999709129333496,
+              "unnecessary": 2.0101448171772063e-05,
+              "uncertain": 8.934001925808843e-06
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          }
+        ],
+        "receiving_ai_instruction": "Privacy note: Labels such as [PERSON_1] represent redacted references. You may use these labels verbatim in your reply. Do not guess or invent the hidden values."
+      },
+      "identifier_misses": [
+        {
+          "value": "SilverLeaf_demo_4829!",
+          "start": 326,
+          "end": 347
+        }
+      ],
+      "lost_expected_facts": [],
+      "missed_expected_sections": [],
+      "person_group_aliases": [
+        [
+          "[PERSON_1]"
+        ]
+      ],
+      "inconsistent_person_groups": 0,
+      "erroneous_person_merge": false,
+      "expected_no_edit": false,
+      "no_edit": false,
+      "real_app_supported": true,
+      "real_app_protected_text": "Can you help me explain this deployment failure to the on-call engineer? The staging worker starts normally but gets HTTP 401 when it requests /v2/invoices. The previous build succeeded at 08:15, and the first failure appeared after the secret rotation at 08:40. I copied the relevant environment line here: DATABASE_PASSWORD=[SECRET]! The application log says token audience mismatch, not connection refused, and the database health check is still green. We have not rolled back because invoice uploads are queued safely and retrying every five minutes. Please focus on the order of checks and avoid recommending that we delete the queue. My colleague [PERSON_1] owns the rotation, and he can join a call after 11:30.",
+      "local_mock_reply": "[PERSON_1] [PERSON_999] [EMAIL]",
+      "locally_restored_reply": "Owen Mercer [PERSON_999] [EMAIL]"
+    },
+    {
+      "id": "fresh-benign-technical",
+      "word_count": 114,
+      "text": "Please turn these notes into a short checklist for our public documentation site. The migration changes /guides/install to /docs/install and needs a permanent 301 redirect. A normal page should return HTTP 200, while an unknown path should return 404. The staging server listens on port 8443, and the current release is version 2.14.7. The example invoice in the documentation has a subtotal of 80 euros and a delivery charge of 12 euros; it is an invented example, not a customer bill. Keep the headings in sentence case and the code snippets in fenced blocks. A redirect test must check that query parameters survive. We also need a keyboard-only navigation check before publishing the update.",
+      "task": "Create a checklist for the public documentation migration.",
+      "result": {
+        "status": "needs_review",
+        "protected_text": "Please turn these notes into a short checklist for our public documentation site. The migration changes /guides/install to /docs/install and needs a permanent 301 redirect. A normal page should return HTTP 200, while an unknown path should return 404. The staging server listens on port 8443, and the current release is version 2.14.7. The example invoice in the documentation has a subtotal of 80 euros and a delivery charge of 12 euros; it is an invented example, not a customer bill. Keep the headings in sentence case and the code snippets in fenced blocks. A redirect test must check that query parameters survive. We also need a keyboard-only navigation check before publishing the update.",
+        "model_version": "deberta-v3-base-section-v1",
+        "edits": [],
+        "retained_sensitive": [],
+        "review_reasons": [
+          "experimental_model_not_release_validated",
+          "unconfirmed_detection_requires_review"
+        ],
+        "coverage": {
+          "scanned_characters": 695,
+          "total_characters": 695,
+          "complete": true,
+          "offset_unit": "unicode_code_point",
+          "history_messages_scanned": 0,
+          "task_scanned": true
+        },
+        "protected_task": "Create a checklist for the public documentation migration.",
+        "protected_history": [],
+        "pending_reviews": [
+          {
+            "start": 395,
+            "end": 403,
+            "label": "FINANCIAL",
+            "reason": "unconfirmed_context_boundary"
+          },
+          {
+            "start": 410,
+            "end": 428,
+            "label": "FINANCIAL",
+            "reason": "unconfirmed_context_boundary"
+          },
+          {
+            "start": 429,
+            "end": 437,
+            "label": "FINANCIAL",
+            "reason": "unconfirmed_context_boundary"
+          }
+        ],
+        "context_reports": [
+          {
+            "component": "task",
+            "index": null,
+            "edits": [],
+            "retained_sensitive": [],
+            "pending_reviews": [],
+            "coverage": {
+              "scanned_characters": 58,
+              "total_characters": 58,
+              "complete": true,
+              "offset_unit": "unicode_code_point"
+            }
+          }
+        ],
+        "runtime_versions": {
+          "pipeline": "privacy-edit-pipeline.2",
+          "section_mode": "section-head-v1",
+          "policy": "consumer-v1-pilot.2",
+          "model_training_policy": "consumer-v1-pilot.2",
+          "model_bundle_sha256": "6b69155f87c06e4c4fac9d6f3a20acb50ef000c83a889a50023bb89dced66112"
+        },
+        "section_diagnostics": [
+          {
+            "start": 0,
+            "end": 80,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9999873638153076,
+              "unnecessary": 7.812243893567938e-06,
+              "uncertain": 4.728326530312188e-06
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 82,
+            "end": 171,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9999860525131226,
+              "unnecessary": 8.73690441949293e-06,
+              "uncertain": 5.238651738181943e-06
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 173,
+            "end": 250,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9999879598617554,
+              "unnecessary": 7.803633707226254e-06,
+              "uncertain": 4.26192718805396e-06
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 252,
+            "end": 334,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9999833106994629,
+              "unnecessary": 9.649204912420828e-06,
+              "uncertain": 7.008741704339627e-06
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 336,
+            "end": 437,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9858946800231934,
+              "unnecessary": 0.013937593437731266,
+              "uncertain": 0.00016771846276242286
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 439,
+            "end": 485,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9998916387557983,
+              "unnecessary": 8.68450733833015e-05,
+              "uncertain": 2.1477037080330774e-05
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 487,
+            "end": 560,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9999827146530151,
+              "unnecessary": 1.0680832929210737e-05,
+              "uncertain": 6.53565348329721e-06
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 562,
+            "end": 618,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9999850988388062,
+              "unnecessary": 8.386884474020917e-06,
+              "uncertain": 6.515480436064536e-06
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 620,
+            "end": 694,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.999984860420227,
+              "unnecessary": 8.50926971907029e-06,
+              "uncertain": 6.706921340082772e-06
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          }
+        ],
+        "receiving_ai_instruction": "Privacy note: Labels such as [PERSON_1] represent redacted references. You may use these labels verbatim in your reply. Do not guess or invent the hidden values."
+      },
+      "identifier_misses": [],
+      "lost_expected_facts": [],
+      "missed_expected_sections": [],
+      "person_group_aliases": [],
+      "inconsistent_person_groups": 0,
+      "erroneous_person_merge": false,
+      "expected_no_edit": true,
+      "no_edit": true,
+      "real_app_supported": true,
+      "real_app_protected_text": "Please turn these notes into a short checklist for our public documentation site. The migration changes /guides/install to /docs/install and needs a permanent 301 redirect. A normal page should return HTTP 200, while an unknown path should return 404. The staging server listens on port 8443, and the current release is version 2.14.7. The example invoice in the documentation has a subtotal of 80 euros and a delivery charge of 12 euros; it is an invented example, not a customer bill. Keep the headings in sentence case and the code snippets in fenced blocks. A redirect test must check that query parameters survive. We also need a keyboard-only navigation check before publishing the update.",
+      "local_mock_reply": " [PERSON_999] [EMAIL]",
+      "locally_restored_reply": " [PERSON_999] [EMAIL]"
+    },
+    {
+      "id": "fresh-negation-school",
+      "word_count": 118,
+      "text": "I need a clear note for the school about my daughter, Maya Iqbal, after yesterday's appointment. The doctor said she does not have asthma, and the cough has settled without starting an inhaler. She can attend normal lessons, but she should not run or take part in PE until Monday. If the cough returns during class, the school should call me before arranging an early pickup. The note should not say that she needs antibiotics, because none were prescribed. Her teacher, Helen Ward, asked whether she could join the museum visit on Friday; the doctor said walking is fine if she can take breaks. I can be reached at maya.parent@example.org, but I cannot answer between 13:00 and 14:00.",
+      "task": "Write a school note preserving the diagnosis clarification, activity restrictions, museum advice and contact timing.",
+      "result": {
+        "status": "needs_review",
+        "protected_text": "I need a clear note for the school about my daughter, [PERSON_1], after yesterday's appointment. The doctor said she does not have asthma, and the cough has settled without starting an inhaler. She can attend normal lessons, but she should not run or take part in PE until Monday. If the cough returns during class, the school should call me before arranging an early pickup. The note should not say that she needs antibiotics, because none were prescribed. Her teacher, [PERSON_2], asked whether she could join the museum visit on Friday; the doctor said walking is fine if she can take breaks. I can be reached at [EMAIL], but I cannot answer between 13:00 and 14:00.",
+        "model_version": "deberta-v3-base-section-v1",
+        "edits": [
+          {
+            "start": 54,
+            "end": 64,
+            "label": "PERSON",
+            "action": "ALIAS",
+            "replacement": "[PERSON_1]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          },
+          {
+            "start": 471,
+            "end": 481,
+            "label": "PERSON",
+            "action": "ALIAS",
+            "replacement": "[PERSON_2]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          },
+          {
+            "start": 616,
+            "end": 639,
+            "label": "EMAIL",
+            "action": "PLACEHOLDER",
+            "replacement": "[EMAIL]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          }
+        ],
+        "retained_sensitive": [],
+        "review_reasons": [
+          "experimental_model_not_release_validated",
+          "unconfirmed_detection_requires_review"
+        ],
+        "coverage": {
+          "scanned_characters": 685,
+          "total_characters": 685,
+          "complete": true,
+          "offset_unit": "unicode_code_point",
+          "history_messages_scanned": 0,
+          "task_scanned": true
+        },
+        "protected_task": "Write a school note preserving the diagnosis clarification, activity restrictions, museum advice and contact timing.",
+        "protected_history": [],
+        "pending_reviews": [
+          {
+            "start": 376,
+            "end": 379,
+            "label": "HEALTH",
+            "reason": "unconfirmed_context_boundary"
+          },
+          {
+            "start": 385,
+            "end": 456,
+            "label": "HEALTH",
+            "reason": "unconfirmed_context_boundary"
+          }
+        ],
+        "context_reports": [
+          {
+            "component": "task",
+            "index": null,
+            "edits": [],
+            "retained_sensitive": [],
+            "pending_reviews": [],
+            "coverage": {
+              "scanned_characters": 116,
+              "total_characters": 116,
+              "complete": true,
+              "offset_unit": "unicode_code_point"
+            }
+          }
+        ],
+        "runtime_versions": {
+          "pipeline": "privacy-edit-pipeline.2",
+          "section_mode": "section-head-v1",
+          "policy": "consumer-v1-pilot.2",
+          "model_training_policy": "consumer-v1-pilot.2",
+          "model_bundle_sha256": "6b69155f87c06e4c4fac9d6f3a20acb50ef000c83a889a50023bb89dced66112"
+        },
+        "section_diagnostics": [
+          {
+            "start": 0,
+            "end": 95,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9999302625656128,
+              "unnecessary": 5.776228863396682e-05,
+              "uncertain": 1.1911320143553894e-05
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 97,
+            "end": 192,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9995224475860596,
+              "unnecessary": 0.00042898659012280405,
+              "uncertain": 4.8634796257829294e-05
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 194,
+            "end": 279,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9998736381530762,
+              "unnecessary": 0.00011592343798838556,
+              "uncertain": 1.036502726492472e-05
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 281,
+            "end": 374,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9998898506164551,
+              "unnecessary": 0.00010031084093498066,
+              "uncertain": 9.778303137863986e-06
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 376,
+            "end": 456,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9998729228973389,
+              "unnecessary": 0.00010797168943099678,
+              "uncertain": 1.912045081553515e-05
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 458,
+            "end": 538,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9999330043792725,
+              "unnecessary": 5.7402259699301794e-05,
+              "uncertain": 9.58338932832703e-06
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 540,
+            "end": 594,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9999352693557739,
+              "unnecessary": 5.365145261748694e-05,
+              "uncertain": 1.1074264875787776e-05
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 596,
+            "end": 684,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9999324083328247,
+              "unnecessary": 4.689100751420483e-05,
+              "uncertain": 2.0710354874609038e-05
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          }
+        ],
+        "receiving_ai_instruction": "Privacy note: Labels such as [PERSON_1] represent redacted references. You may use these labels verbatim in your reply. Do not guess or invent the hidden values."
+      },
+      "identifier_misses": [],
+      "lost_expected_facts": [],
+      "missed_expected_sections": [],
+      "person_group_aliases": [
+        [
+          "[PERSON_1]"
+        ],
+        [
+          "[PERSON_2]"
+        ]
+      ],
+      "inconsistent_person_groups": 0,
+      "erroneous_person_merge": false,
+      "expected_no_edit": false,
+      "no_edit": false,
+      "real_app_supported": true,
+      "real_app_protected_text": "I need a clear note for the school about my daughter, [PERSON_1], after yesterday's appointment. The doctor said she does not have asthma, and the cough has settled without starting an inhaler. She can attend normal lessons, but she should not run or take part in PE until Monday. If the cough returns during class, the school should call me before arranging an early pickup. The note should not say that she needs antibiotics, because none were prescribed. Her teacher, [PERSON_2], asked whether she could join the museum visit on Friday; the doctor said walking is fine if she can take breaks. I can be reached at [EMAIL], but I cannot answer between 13:00 and 14:00.",
+      "local_mock_reply": "[PERSON_1] [PERSON_2] [PERSON_999] [EMAIL]",
+      "locally_restored_reply": "Maya Iqbal Helen Ward [PERSON_999] [EMAIL]"
+    },
+    {
+      "id": "fresh-vague-goal",
+      "word_count": 123,
+      "text": "These are my notes from this week and I am not sure how to put them together. My name is Elena Costa. The rent increased to 860 euros this month, and I have asked the landlord whether the increase can start next month instead. I also missed two shifts because of a migraine, although I have not received the revised payslip yet. My partner can cover the electricity bill if it stays below 90 euros, but we have not agreed what happens above that amount. The housing office offered an appointment on Thursday at 15:30. I need to bring the tenancy agreement and the last three payslips. The confirmation was sent to elena.costa@example.org. There may be a cancellation slot earlier in the week.",
+      "task": "Help me with this.",
+      "result": {
+        "status": "needs_review",
+        "protected_text": "These are my notes from this week and I am not sure how to put them together. My name is [PERSON_1]. The rent increased to 860 euros this month, and I have asked the landlord whether the increase can start next month instead. I also missed two shifts because of a migraine, although I have not received the revised payslip yet. My partner can cover the electricity bill if it stays below 90 euros, but we have not agreed what happens above that amount. The housing office offered an appointment on Thursday at 15:30. I need to bring the tenancy agreement and the last three payslips. The confirmation was sent to [EMAIL]. There may be a cancellation slot earlier in the week.",
+        "model_version": "deberta-v3-base-section-v1",
+        "edits": [
+          {
+            "start": 89,
+            "end": 100,
+            "label": "PERSON",
+            "action": "ALIAS",
+            "replacement": "[PERSON_1]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          },
+          {
+            "start": 614,
+            "end": 637,
+            "label": "EMAIL",
+            "action": "PLACEHOLDER",
+            "replacement": "[EMAIL]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          }
+        ],
+        "retained_sensitive": [],
+        "review_reasons": [
+          "experimental_model_not_release_validated"
+        ],
+        "coverage": {
+          "scanned_characters": 692,
+          "total_characters": 692,
+          "complete": true,
+          "offset_unit": "unicode_code_point",
+          "history_messages_scanned": 0,
+          "task_scanned": true
+        },
+        "protected_task": "Help me with this.",
+        "protected_history": [],
+        "pending_reviews": [],
+        "context_reports": [
+          {
+            "component": "task",
+            "index": null,
+            "edits": [],
+            "retained_sensitive": [],
+            "pending_reviews": [],
+            "coverage": {
+              "scanned_characters": 18,
+              "total_characters": 18,
+              "complete": true,
+              "offset_unit": "unicode_code_point"
+            }
+          }
+        ],
+        "runtime_versions": {
+          "pipeline": "privacy-edit-pipeline.2",
+          "section_mode": "section-head-v1",
+          "policy": "consumer-v1-pilot.2",
+          "model_training_policy": "consumer-v1-pilot.2",
+          "model_bundle_sha256": "6b69155f87c06e4c4fac9d6f3a20acb50ef000c83a889a50023bb89dced66112"
+        },
+        "section_diagnostics": [
+          {
+            "start": 0,
+            "end": 76,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.950171709060669,
+              "unnecessary": 0.00010073919111164287,
+              "uncertain": 0.04972762614488602
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 78,
+            "end": 100,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.02316589653491974,
+              "unnecessary": 2.679498356883414e-05,
+              "uncertain": 0.9768072962760925
+            },
+            "raw_class": "uncertain",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 102,
+            "end": 225,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.8944706916809082,
+              "unnecessary": 0.0004142556863371283,
+              "uncertain": 0.10511504858732224
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 227,
+            "end": 327,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.6684210896492004,
+              "unnecessary": 0.0012063098838552833,
+              "uncertain": 0.3303726017475128
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 329,
+            "end": 452,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.06061536446213722,
+              "unnecessary": 0.07015717774629593,
+              "uncertain": 0.869227409362793
+            },
+            "raw_class": "uncertain",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 454,
+            "end": 516,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9780822992324829,
+              "unnecessary": 0.00020134200167376548,
+              "uncertain": 0.02171635814011097
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 518,
+            "end": 583,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9951933026313782,
+              "unnecessary": 0.00011471372999949381,
+              "uncertain": 0.0046919481828808784
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 585,
+            "end": 637,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.0265410915017128,
+              "unnecessary": 1.4892908438923769e-05,
+              "uncertain": 0.9734439849853516
+            },
+            "raw_class": "uncertain",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 639,
+            "end": 691,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9730389714241028,
+              "unnecessary": 0.0001167985174106434,
+              "uncertain": 0.026844216510653496
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          }
+        ],
+        "receiving_ai_instruction": "Privacy note: Labels such as [PERSON_1] represent redacted references. You may use these labels verbatim in your reply. Do not guess or invent the hidden values."
+      },
+      "identifier_misses": [],
+      "lost_expected_facts": [],
+      "missed_expected_sections": [],
+      "person_group_aliases": [
+        [
+          "[PERSON_1]"
+        ]
+      ],
+      "inconsistent_person_groups": 0,
+      "erroneous_person_merge": false,
+      "expected_no_edit": false,
+      "no_edit": false,
+      "real_app_supported": true,
+      "real_app_protected_text": "These are my notes from this week and I am not sure how to put them together. My name is [PERSON_1]. The rent increased to 860 euros this month, and I have asked the landlord whether the increase can start next month instead. I also missed two shifts because of a migraine, although I have not received the revised payslip yet. My partner can cover the electricity bill if it stays below 90 euros, but we have not agreed what happens above that amount. The housing office offered an appointment on Thursday at 15:30. I need to bring the tenancy agreement and the last three payslips. The confirmation was sent to [EMAIL]. There may be a cancellation slot earlier in the week.",
+      "local_mock_reply": "[PERSON_1] [PERSON_999] [EMAIL]",
+      "locally_restored_reply": "Elena Costa [PERSON_999] [EMAIL]"
+    },
+    {
+      "id": "fresh-no-explicit-goal",
+      "word_count": 123,
+      "text": "These are my notes from this week and I am not sure how to put them together. My name is Elena Costa. The rent increased to 860 euros this month, and I have asked the landlord whether the increase can start next month instead. I also missed two shifts because of a migraine, although I have not received the revised payslip yet. My partner can cover the electricity bill if it stays below 90 euros, but we have not agreed what happens above that amount. The housing office offered an appointment on Thursday at 15:30. I need to bring the tenancy agreement and the last three payslips. The confirmation was sent to elena.costa@example.org. There may be a cancellation slot earlier in the week.",
+      "task": "",
+      "result": {
+        "status": "needs_review",
+        "protected_text": "These are my notes from this week and I am not sure how to put them together. My name is [PERSON_1]. The rent increased to 860 euros this month, and I have asked the landlord whether the increase can start next month instead. I also missed two shifts because of a migraine, although I have not received the revised payslip yet. My partner can cover the electricity bill if it stays below 90 euros, but we have not agreed what happens above that amount. The housing office offered an appointment on Thursday at 15:30. I need to bring the tenancy agreement and the last three payslips. The confirmation was sent to [EMAIL]. There may be a cancellation slot earlier in the week.",
+        "model_version": "deberta-v3-base-section-v1",
+        "edits": [
+          {
+            "start": 89,
+            "end": 100,
+            "label": "PERSON",
+            "action": "ALIAS",
+            "replacement": "[PERSON_1]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          },
+          {
+            "start": 614,
+            "end": 637,
+            "label": "EMAIL",
+            "action": "PLACEHOLDER",
+            "replacement": "[EMAIL]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          }
+        ],
+        "retained_sensitive": [],
+        "review_reasons": [
+          "experimental_model_not_release_validated"
+        ],
+        "coverage": {
+          "scanned_characters": 692,
+          "total_characters": 692,
+          "complete": true,
+          "offset_unit": "unicode_code_point",
+          "history_messages_scanned": 0,
+          "task_scanned": true
+        },
+        "protected_task": "",
+        "protected_history": [],
+        "pending_reviews": [],
+        "context_reports": [
+          {
+            "component": "task",
+            "index": null,
+            "edits": [],
+            "retained_sensitive": [],
+            "pending_reviews": [],
+            "coverage": {
+              "scanned_characters": 0,
+              "total_characters": 0,
+              "complete": true,
+              "offset_unit": "unicode_code_point"
+            }
+          }
+        ],
+        "runtime_versions": {
+          "pipeline": "privacy-edit-pipeline.2",
+          "section_mode": "section-head-v1",
+          "policy": "consumer-v1-pilot.2",
+          "model_training_policy": "consumer-v1-pilot.2",
+          "model_bundle_sha256": "6b69155f87c06e4c4fac9d6f3a20acb50ef000c83a889a50023bb89dced66112"
+        },
+        "section_diagnostics": [
+          {
+            "start": 0,
+            "end": 76,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9898217916488647,
+              "unnecessary": 7.081226067384705e-05,
+              "uncertain": 0.010107365436851978
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "missing_or_vague_task"
+          },
+          {
+            "start": 78,
+            "end": 100,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.07265158742666245,
+              "unnecessary": 7.090162398526445e-05,
+              "uncertain": 0.9272775650024414
+            },
+            "raw_class": "uncertain",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "missing_or_vague_task"
+          },
+          {
+            "start": 102,
+            "end": 225,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9555418491363525,
+              "unnecessary": 0.0004684703017119318,
+              "uncertain": 0.0439896360039711
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "missing_or_vague_task"
+          },
+          {
+            "start": 227,
+            "end": 327,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.7952536940574646,
+              "unnecessary": 0.0014726145891472697,
+              "uncertain": 0.20327366888523102
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "missing_or_vague_task"
+          },
+          {
+            "start": 329,
+            "end": 452,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.10727228224277496,
+              "unnecessary": 0.1481606662273407,
+              "uncertain": 0.7445670366287231
+            },
+            "raw_class": "uncertain",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "missing_or_vague_task"
+          },
+          {
+            "start": 454,
+            "end": 516,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9876226186752319,
+              "unnecessary": 0.00021421266137622297,
+              "uncertain": 0.012163139879703522
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "missing_or_vague_task"
+          },
+          {
+            "start": 518,
+            "end": 583,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9968332648277283,
+              "unnecessary": 0.00012827967293560505,
+              "uncertain": 0.0030384217388927937
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "missing_or_vague_task"
+          },
+          {
+            "start": 585,
+            "end": 637,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.05148542299866676,
+              "unnecessary": 3.068646401516162e-05,
+              "uncertain": 0.948483943939209
+            },
+            "raw_class": "uncertain",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "missing_or_vague_task"
+          },
+          {
+            "start": 639,
+            "end": 691,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9845266342163086,
+              "unnecessary": 0.00012101501488359645,
+              "uncertain": 0.015352356247603893
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "missing_or_vague_task"
+          }
+        ],
+        "receiving_ai_instruction": "Privacy note: Labels such as [PERSON_1] represent redacted references. You may use these labels verbatim in your reply. Do not guess or invent the hidden values."
+      },
+      "identifier_misses": [],
+      "lost_expected_facts": [],
+      "missed_expected_sections": [],
+      "person_group_aliases": [
+        [
+          "[PERSON_1]"
+        ]
+      ],
+      "inconsistent_person_groups": 0,
+      "erroneous_person_merge": false,
+      "expected_no_edit": false,
+      "no_edit": false,
+      "real_app_supported": true,
+      "real_app_protected_text": "These are my notes from this week and I am not sure how to put them together. My name is [PERSON_1]. The rent increased to 860 euros this month, and I have asked the landlord whether the increase can start next month instead. I also missed two shifts because of a migraine, although I have not received the revised payslip yet. My partner can cover the electricity bill if it stays below 90 euros, but we have not agreed what happens above that amount. The housing office offered an appointment on Thursday at 15:30. I need to bring the tenancy agreement and the last three payslips. The confirmation was sent to [EMAIL]. There may be a cancellation slot earlier in the week.",
+      "local_mock_reply": "[PERSON_1] [PERSON_999] [EMAIL]",
+      "locally_restored_reply": "Elena Costa [PERSON_999] [EMAIL]"
+    }
+  ]
+}

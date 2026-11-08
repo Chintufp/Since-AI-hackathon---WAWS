@@ -1,0 +1,33 @@
+{
+  "source_commit": "1d7ea1c9d446f93207d325197063219ca86b5623",
+  "device": "cpu",
+  "threads": 4,
+  "torch": "2.15.0",
+  "fresh_inputs_sha256": "f0ef7338af3837e9ce32a15ef1c89e51b3dd330c5dcc03ad928acc56185a3ed1",
+  "models": {
+    "old": {
+      "path": "mask/ml/privacy_v1/artifacts/reviewed-2026-11-07/deberta-v3-base",
+      "manifest_sha256": "2cb1fb04e9cda1701deecaeb68391c45bafe910fdbfad80b3611ef41c5c8bc42",
+      "model_id": "deberta-v3-base",
+      "load_seconds": 4.4323947909870185,
+      "section_mode": "legacy"
+    },
+    "new": {
+      "path": "/Users/markp/Code/sinceai-trusted/mask/ml/privacy_v1/artifacts/section-training-20261108/deberta-v3-base",
+      "manifest_sha256": "6b69155f87c06e4c4fac9d6f3a20acb50ef000c83a889a50023bb89dced66112",
+      "model_id": "deberta-v3-base-section-v1",
+      "load_seconds": 2.4881307080504484,
+      "section_mode": "section-head-v1"
+    }
+  },
+  "files": {
+    "mask/ml/privacy_v1/data/section-split-20261108-v1/dev.authored.jsonl": "21771b5163abea0758d5405ae9efc463bcdc98bc4edaa932cf74e4dba1616436",
+    "mask/ml/privacy_v1/data/section-split-20261108-v1/supplemental-dev.authored.jsonl": "d02544427d9e1112d4a677615cc8fe84f2fc04311bff826260eb336a654cbb0b",
+    "mask/ml/privacy_v1/data/training-2026-11-07/adapter-fixtures/manifest.json": "b9e4f6491b4284a1c25d713f572da165719e0f3a63a9ff5b423af232b12e26d8"
+  },
+  "limitations": [
+    "Dev sets previously used for model selection; fresh diagnostic labels authored in this task, not an independent human audit.",
+    "Each complete pipeline uses its published default behavior; differences include both weights and versioned inference logic.",
+    "No live provider request, deployed-browser inference, threshold change or default-model update."
+  ]
+}

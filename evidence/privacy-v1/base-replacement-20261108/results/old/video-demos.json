@@ -1,0 +1,320 @@
+[
+  {
+    "id": "personal-health-message.txt",
+    "text": "Can you tell me about the medicine I was prescribed and explain why I was given it, based on the medical records below?\n\nPATIENT DETAILS\nName: Alex Bennett\nDate of birth: 14 June 1995\nPatient number: PT-482071\nEmail: alex.bennett@example.com\n\nVISIT — 29 October 2026\nReason: Runny nose and frequent sneezing.\nMedication prescribed: Cetirizine.\nFollow-up: Contact the clinic if symptoms persist.\n\nVISIT — 14 September 2026\nReason: Persistent itching around the anus.\nPatient reports: “My ass is really itchy, especially at night.”\nExamination and follow-up notes recorded separately.\n\nVISIT — 20 May 2026\nReason: Left wrist pain after a fall while cycling.\nAssessment: Wrist sprain.\nFollow-up: Symptoms improving.\n",
+    "task": "Can you tell me about the medicine I was prescribed and explain why I was given it, based on the medical records below?",
+    "preview_seconds": 0.46306645800359547,
+    "preview": {
+      "preview_id": "Qmj3EPJh70Ck4Nvy2gKc6tNf",
+      "provider_request": {
+        "system": "Privacy note: Labels such as [PERSON_1] represent redacted references. You may use these labels verbatim in your reply. Do not guess or invent the hidden values.\n\nReply in plain text without Markdown formatting.",
+        "user": "Task: Can you tell me about the medicine I was prescribed and explain why I was given it, based on the medical records below?\n\nCan you tell me about the medicine I was prescribed and explain why I was given it, based on the medical records below?\n\nPATIENT DETAILS\nName: [PERSON_1]\nDate of birth: 14 June 1995\nPatient number: [ACCOUNT_ID]\nEmail: [EMAIL]\n\nVISIT — 29 October 2026\nReason: Runny nose and frequent sneezing.\nMedication prescribed: Cetirizine.\nFollow-up: Contact the clinic if symptoms persist.\n\nVISIT — 14 September 2026\nReason: Persistent itching around the anus.\nPatient reports: “My ass is really itchy, especially at night.”\nExamination and follow-up notes recorded separately.\n\nVISIT — 20 May 2026\nReason: Left wrist pain after a fall while cycling.\nAssessment: Wrist sprain.\nFollow-up: Symptoms improving.\n"
+      },
+      "protected_view": {
+        "task": [
+          {
+            "text": "Can you tell me about the medicine I was prescribed and explain why I was given it, based on the medical records below?"
+          }
+        ],
+        "message": [
+          {
+            "text": "Can you tell me about the medicine I was prescribed and explain why I was given it, based on the medical records below?\n\nPATIENT DETAILS\nName: "
+          },
+          {
+            "text": "[PERSON_1]",
+            "label": "PERSON",
+            "action": "ALIAS",
+            "start": 143,
+            "end": 155
+          },
+          {
+            "text": "\nDate of birth: 14 June 1995\nPatient number: "
+          },
+          {
+            "text": "[ACCOUNT_ID]",
+            "label": "ACCOUNT_ID",
+            "action": "PLACEHOLDER",
+            "start": 200,
+            "end": 209
+          },
+          {
+            "text": "\nEmail: "
+          },
+          {
+            "text": "[EMAIL]",
+            "label": "EMAIL",
+            "action": "PLACEHOLDER",
+            "start": 217,
+            "end": 241
+          },
+          {
+            "text": "\n\nVISIT — 29 October 2026\nReason: Runny nose and frequent sneezing.\nMedication prescribed: Cetirizine.\nFollow-up: Contact the clinic if symptoms persist.\n\nVISIT — 14 September 2026\nReason: Persistent itching around the anus.\nPatient reports: “My ass is really itchy, especially at night.”\nExamination and follow-up notes recorded separately.\n\nVISIT — 20 May 2026\nReason: Left wrist pain after a fall while cycling.\nAssessment: Wrist sprain.\nFollow-up: Symptoms improving.\n"
+          }
+        ]
+      },
+      "status": "needs_review",
+      "payload": "Privacy note: Labels such as [PERSON_1] represent redacted references. You may use these labels verbatim in your reply. Do not guess or invent the hidden values.\n\nTask: Can you tell me about the medicine I was prescribed and explain why I was given it, based on the medical records below?\n\nCan you tell me about the medicine I was prescribed and explain why I was given it, based on the medical records below?\n\nPATIENT DETAILS\nName: [PERSON_1]\nDate of birth: 14 June 1995\nPatient number: [ACCOUNT_ID]\nEmail: [EMAIL]\n\nVISIT — 29 October 2026\nReason: Runny nose and frequent sneezing.\nMedication prescribed: Cetirizine.\nFollow-up: Contact the clinic if symptoms persist.\n\nVISIT — 14 September 2026\nReason: Persistent itching around the anus.\nPatient reports: “My ass is really itchy, especially at night.”\nExamination and follow-up notes recorded separately.\n\nVISIT — 20 May 2026\nReason: Left wrist pain after a fall while cycling.\nAssessment: Wrist sprain.\nFollow-up: Symptoms improving.\n",
+      "protected_text": "Can you tell me about the medicine I was prescribed and explain why I was given it, based on the medical records below?\n\nPATIENT DETAILS\nName: [PERSON_1]\nDate of birth: 14 June 1995\nPatient number: [ACCOUNT_ID]\nEmail: [EMAIL]\n\nVISIT — 29 October 2026\nReason: Runny nose and frequent sneezing.\nMedication prescribed: Cetirizine.\nFollow-up: Contact the clinic if symptoms persist.\n\nVISIT — 14 September 2026\nReason: Persistent itching around the anus.\nPatient reports: “My ass is really itchy, especially at night.”\nExamination and follow-up notes recorded separately.\n\nVISIT — 20 May 2026\nReason: Left wrist pain after a fall while cycling.\nAssessment: Wrist sprain.\nFollow-up: Symptoms improving.\n",
+      "protected_task": "Can you tell me about the medicine I was prescribed and explain why I was given it, based on the medical records below?",
+      "model_version": "deberta-v3-base",
+      "runtime_versions": {
+        "pipeline": "privacy-edit-pipeline.2",
+        "section_mode": "legacy",
+        "policy": "consumer-v1-pilot.2",
+        "model_training_policy": "consumer-v1-pilot.2",
+        "model_bundle_sha256": "2cb1fb04e9cda1701deecaeb68391c45bafe910fdbfad80b3611ef41c5c8bc42"
+      },
+      "context_mode": "explicit_task",
+      "receiving_ai_instruction": "Privacy note: Labels such as [PERSON_1] represent redacted references. You may use these labels verbatim in your reply. Do not guess or invent the hidden values.",
+      "change_count": 3,
+      "retained_types": [
+        "HEALTH"
+      ],
+      "review_reasons": [
+        "experimental_model_not_release_validated",
+        "unconfirmed_detection_requires_review"
+      ],
+      "coverage": {
+        "scanned_characters": 713,
+        "total_characters": 713,
+        "complete": true,
+        "offset_unit": "unicode_code_point",
+        "history_messages_scanned": 0,
+        "task_scanned": true
+      }
+    }
+  },
+  {
+    "id": "corporate-support-message.txt",
+    "text": "What are the three main things our customers are complaining about in these support tickets? Count the tickets in each category and suggest one practical improvement for each.\n\nHere’s the export from our support system:\n\ncustomer_id,customer_name,email,complaint\nC-1042,Emma Wilson,emma.wilson@example.com,\"I was charged twice for the same order. Please refund the extra payment.\"\nC-2087,Oliver Davis,oliver.davis@example.com,\"I returned my order two weeks ago and still haven’t received my refund. Please send an update to oliver.davis@example.com.\"\nC-3156,Sofia Martin,sofia.martin@example.com,\"The password-reset email never arrives, so I can’t get into my account.\"\nC-4093,Noah Taylor,noah.taylor@example.com,\"My payment failed on screen, so I tried again. Now I can see two charges for one order.\"\nC-5028,Amelia Brown,amelia.brown@example.com,\"Support confirmed my refund ten days ago, but the money still hasn’t arrived.\"\nC-6074,Lucas Harris,lucas.harris@example.com,\"Hi, Lucas Harris here. I’ve been billed twice for a single purchase and need the duplicate charge reversed.\"\n",
+    "task": "What are the three main things our customers are complaining about in these support tickets? Count the tickets in each category and suggest one practical improvement for each.",
+    "preview_seconds": 0.1240822920226492,
+    "preview": {
+      "preview_id": "9V6EOo9031W0WutKa1vfL7p-",
+      "provider_request": {
+        "system": "Privacy note: Labels such as [PERSON_1] represent redacted references. You may use these labels verbatim in your reply. Do not guess or invent the hidden values.\n\nReply in plain text without Markdown formatting.",
+        "user": "Task: What are the three main things our customers are complaining about in these support tickets? Count the tickets in each category and suggest one practical improvement for each.\n\nWhat are the three main things our customers are complaining about in these support tickets? Count the tickets in each category and suggest one practical improvement for each.\n\nHere’s the export from our support system:\n\ncustomer_id,customer_name,email,complaint\n[ACCOUNT_ID],[PERSON_1],[EMAIL],\"I was charged twice for the same order. Please refund the extra payment.\"\nC-2087,[PERSON_2],[EMAIL],\"I returned my order two weeks ago and still haven’t received my refund. Please send an update to [EMAIL].\"\n[ACCOUNT_ID],[PERSON_3],[EMAIL],\"The password-reset email never arrives, so I can’t get into my account.\"\n[ACCOUNT_ID],[PERSON_4],[EMAIL],\"My payment failed on screen, so I tried again. Now I can see two charges for one order.\"\nC-5028,[PERSON_5],[EMAIL],\"Support confirmed my refund ten days ago, but the money still hasn’t arrived.\"\n[ACCOUNT_ID],[PERSON_6],[EMAIL],\"Hi, [PERSON_6] here. I’ve been billed twice for a single purchase and need the duplicate charge reversed.\"\n"
+      },
+      "protected_view": {
+        "task": [
+          {
+            "text": "What are the three main things our customers are complaining about in these support tickets? Count the tickets in each category and suggest one practical improvement for each."
+          }
+        ],
+        "message": [
+          {
+            "text": "What are the three main things our customers are complaining about in these support tickets? Count the tickets in each category and suggest one practical improvement for each.\n\nHere’s the export from our support system:\n\ncustomer_id,customer_name,email,complaint\n"
+          },
+          {
+            "text": "[ACCOUNT_ID]",
+            "label": "ACCOUNT_ID",
+            "action": "PLACEHOLDER",
+            "start": 263,
+            "end": 269
+          },
+          {
+            "text": ","
+          },
+          {
+            "text": "[PERSON_1]",
+            "label": "PERSON",
+            "action": "ALIAS",
+            "start": 270,
+            "end": 281
+          },
+          {
+            "text": ","
+          },
+          {
+            "text": "[EMAIL]",
+            "label": "EMAIL",
+            "action": "PLACEHOLDER",
+            "start": 282,
+            "end": 305
+          },
+          {
+            "text": ",\"I was charged twice for the same order. Please refund the extra payment.\"\nC-2087,"
+          },
+          {
+            "text": "[PERSON_2]",
+            "label": "PERSON",
+            "action": "ALIAS",
+            "start": 388,
+            "end": 400
+          },
+          {
+            "text": ","
+          },
+          {
+            "text": "[EMAIL]",
+            "label": "EMAIL",
+            "action": "PLACEHOLDER",
+            "start": 401,
+            "end": 425
+          },
+          {
+            "text": ",\"I returned my order two weeks ago and still haven’t received my refund. Please send an update to "
+          },
+          {
+            "text": "[EMAIL]",
+            "label": "EMAIL",
+            "action": "PLACEHOLDER",
+            "start": 524,
+            "end": 548
+          },
+          {
+            "text": ".\"\n"
+          },
+          {
+            "text": "[ACCOUNT_ID]",
+            "label": "ACCOUNT_ID",
+            "action": "PLACEHOLDER",
+            "start": 551,
+            "end": 557
+          },
+          {
+            "text": ","
+          },
+          {
+            "text": "[PERSON_3]",
+            "label": "PERSON",
+            "action": "ALIAS",
+            "start": 558,
+            "end": 570
+          },
+          {
+            "text": ","
+          },
+          {
+            "text": "[EMAIL]",
+            "label": "EMAIL",
+            "action": "PLACEHOLDER",
+            "start": 571,
+            "end": 595
+          },
+          {
+            "text": ",\"The password-reset email never arrives, so I can’t get into my account.\"\n"
+          },
+          {
+            "text": "[ACCOUNT_ID]",
+            "label": "ACCOUNT_ID",
+            "action": "PLACEHOLDER",
+            "start": 670,
+            "end": 676
+          },
+          {
+            "text": ","
+          },
+          {
+            "text": "[PERSON_4]",
+            "label": "PERSON",
+            "action": "ALIAS",
+            "start": 677,
+            "end": 688
+          },
+          {
+            "text": ","
+          },
+          {
+            "text": "[EMAIL]",
+            "label": "EMAIL",
+            "action": "PLACEHOLDER",
+            "start": 689,
+            "end": 712
+          },
+          {
+            "text": ",\"My payment failed on screen, so I tried again. Now I can see two charges for one order.\"\nC-5028,"
+          },
+          {
+            "text": "[PERSON_5]",
+            "label": "PERSON",
+            "action": "ALIAS",
+            "start": 810,
+            "end": 822
+          },
+          {
+            "text": ","
+          },
+          {
+            "text": "[EMAIL]",
+            "label": "EMAIL",
+            "action": "PLACEHOLDER",
+            "start": 823,
+            "end": 847
+          },
+          {
+            "text": ",\"Support confirmed my refund ten days ago, but the money still hasn’t arrived.\"\n"
+          },
+          {
+            "text": "[ACCOUNT_ID]",
+            "label": "ACCOUNT_ID",
+            "action": "PLACEHOLDER",
+            "start": 928,
+            "end": 934
+          },
+          {
+            "text": ","
+          },
+          {
+            "text": "[PERSON_6]",
+            "label": "PERSON",
+            "action": "ALIAS",
+            "start": 935,
+            "end": 947
+          },
+          {
+            "text": ","
+          },
+          {
+            "text": "[EMAIL]",
+            "label": "EMAIL",
+            "action": "PLACEHOLDER",
+            "start": 948,
+            "end": 972
+          },
+          {
+            "text": ",\"Hi, "
+          },
+          {
+            "text": "[PERSON_6]",
+            "label": "PERSON",
+            "action": "ALIAS",
+            "start": 978,
+            "end": 990
+          },
+          {
+            "text": " here. I’ve been billed twice for a single purchase and need the duplicate charge reversed.\"\n"
+          }
+        ]
+      },
+      "status": "needs_review",
+      "payload": "Privacy note: Labels such as [PERSON_1] represent redacted references. You may use these labels verbatim in your reply. Do not guess or invent the hidden values.\n\nTask: What are the three main things our customers are complaining about in these support tickets? Count the tickets in each category and suggest one practical improvement for each.\n\nWhat are the three main things our customers are complaining about in these support tickets? Count the tickets in each category and suggest one practical improvement for each.\n\nHere’s the export from our support system:\n\ncustomer_id,customer_name,email,complaint\n[ACCOUNT_ID],[PERSON_1],[EMAIL],\"I was charged twice for the same order. Please refund the extra payment.\"\nC-2087,[PERSON_2],[EMAIL],\"I returned my order two weeks ago and still haven’t received my refund. Please send an update to [EMAIL].\"\n[ACCOUNT_ID],[PERSON_3],[EMAIL],\"The password-reset email never arrives, so I can’t get into my account.\"\n[ACCOUNT_ID],[PERSON_4],[EMAIL],\"My payment failed on screen, so I tried again. Now I can see two charges for one order.\"\nC-5028,[PERSON_5],[EMAIL],\"Support confirmed my refund ten days ago, but the money still hasn’t arrived.\"\n[ACCOUNT_ID],[PERSON_6],[EMAIL],\"Hi, [PERSON_6] here. I’ve been billed twice for a single purchase and need the duplicate charge reversed.\"\n",
+      "protected_text": "What are the three main things our customers are complaining about in these support tickets? Count the tickets in each category and suggest one practical improvement for each.\n\nHere’s the export from our support system:\n\ncustomer_id,customer_name,email,complaint\n[ACCOUNT_ID],[PERSON_1],[EMAIL],\"I was charged twice for the same order. Please refund the extra payment.\"\nC-2087,[PERSON_2],[EMAIL],\"I returned my order two weeks ago and still haven’t received my refund. Please send an update to [EMAIL].\"\n[ACCOUNT_ID],[PERSON_3],[EMAIL],\"The password-reset email never arrives, so I can’t get into my account.\"\n[ACCOUNT_ID],[PERSON_4],[EMAIL],\"My payment failed on screen, so I tried again. Now I can see two charges for one order.\"\nC-5028,[PERSON_5],[EMAIL],\"Support confirmed my refund ten days ago, but the money still hasn’t arrived.\"\n[ACCOUNT_ID],[PERSON_6],[EMAIL],\"Hi, [PERSON_6] here. I’ve been billed twice for a single purchase and need the duplicate charge reversed.\"\n",
+      "protected_task": "What are the three main things our customers are complaining about in these support tickets? Count the tickets in each category and suggest one practical improvement for each.",
+      "model_version": "deberta-v3-base",
+      "runtime_versions": {
+        "pipeline": "privacy-edit-pipeline.2",
+        "section_mode": "legacy",
+        "policy": "consumer-v1-pilot.2",
+        "model_training_policy": "consumer-v1-pilot.2",
+        "model_bundle_sha256": "2cb1fb04e9cda1701deecaeb68391c45bafe910fdbfad80b3611ef41c5c8bc42"
+      },
+      "context_mode": "explicit_task",
+      "receiving_ai_instruction": "Privacy note: Labels such as [PERSON_1] represent redacted references. You may use these labels verbatim in your reply. Do not guess or invent the hidden values.",
+      "change_count": 18,
+      "retained_types": [],
+      "review_reasons": [
+        "experimental_model_not_release_validated",
+        "unconfirmed_detection_requires_review"
+      ],
+      "coverage": {
+        "scanned_characters": 1083,
+        "total_characters": 1083,
+        "complete": true,
+        "offset_unit": "unicode_code_point",
+        "history_messages_scanned": 0,
+        "task_scanned": true
+      }
+    }
+  }
+]

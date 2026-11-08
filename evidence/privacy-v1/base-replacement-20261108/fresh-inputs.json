@@ -1,0 +1,255 @@
+[
+  {
+    "id": "fresh-health-employer",
+    "text": "Could you help me turn these appointment notes into a clear message? My name is Mei Tan. I had knee surgery on 2 November and the physiotherapist expects a gradual return to work from 18 November. I can sit at a desk, but I must not lift more than 5 kg or stand for longer than twenty minutes until the review on 9 December. Working from home is possible on Tuesdays and Thursdays. My psychiatrist diagnosed bipolar II in 2021, and I take lamotrigine 100 mg every evening. I have slept poorly for three nights but have not changed the dose. The clinic can reach me at mei.tan@example.org. My manager needs an update before Friday so the rota can be arranged.",
+    "task": "Draft an email requesting temporary desk duties, covering the return date, restrictions and available work-from-home days.",
+    "expected_preserved": [
+      "I can sit at a desk, but I must not lift more than 5 kg or stand for longer than twenty minutes until the review on 9 December.",
+      "Working from home is possible on Tuesdays and Thursdays."
+    ],
+    "expected_removed": [
+      "My psychiatrist diagnosed bipolar II in 2021, and I take lamotrigine 100 mg every evening."
+    ],
+    "identifiers": [
+      "Mei Tan",
+      "mei.tan@example.org"
+    ],
+    "person_groups": [
+      [
+        "Mei Tan"
+      ]
+    ],
+    "expected_no_edit": false
+  },
+  {
+    "id": "fresh-health-clinician",
+    "text": "Could you help me turn these appointment notes into a clear message? My name is Mei Tan. I had knee surgery on 2 November and the physiotherapist expects a gradual return to work from 18 November. I can sit at a desk, but I must not lift more than 5 kg or stand for longer than twenty minutes until the review on 9 December. Working from home is possible on Tuesdays and Thursdays. My psychiatrist diagnosed bipolar II in 2021, and I take lamotrigine 100 mg every evening. I have slept poorly for three nights but have not changed the dose. The clinic can reach me at mei.tan@example.org. My manager needs an update before Friday so the rota can be arranged.",
+    "task": "Prepare a summary of my current health, medicines, recent sleep and recovery restrictions for a medication review with my clinician.",
+    "expected_preserved": [
+      "I can sit at a desk, but I must not lift more than 5 kg or stand for longer than twenty minutes until the review on 9 December.",
+      "My psychiatrist diagnosed bipolar II in 2021, and I take lamotrigine 100 mg every evening.",
+      "I have slept poorly for three nights but have not changed the dose."
+    ],
+    "expected_removed": [],
+    "identifiers": [
+      "Mei Tan",
+      "mei.tan@example.org"
+    ],
+    "person_groups": [
+      [
+        "Mei Tan"
+      ]
+    ],
+    "expected_no_edit": false
+  },
+  {
+    "id": "fresh-boiler-engineer",
+    "text": "I need to get this organised before the weather gets colder. I am Daniel Rios, and the flat is at 26 Rowan Court, Bellford. The boiler stops after about ten minutes and shows E14; resetting it twice did not solve the problem. The engineer can visit on Wednesday between 09:00 and 11:00, and I can be home during that window. The repair quote is 940 euros, but it excludes any replacement pump. Since my partner lost her job, our household income has fallen to 1,450 euros a month and our savings are down to 600 euros. Rent is 740 euros and groceries are usually 260 euros. Please do not approve any extra work until I receive an itemised quote. My number is +44 7700 900416.",
+    "task": "Draft a repair appointment confirmation explaining the fault, access time and requirement to approve an itemised quote before extra work.",
+    "expected_preserved": [
+      "The boiler stops after about ten minutes and shows E14; resetting it twice did not solve the problem.",
+      "Please do not approve any extra work until I receive an itemised quote."
+    ],
+    "expected_removed": [
+      "Since my partner lost her job, our household income has fallen to 1,450 euros a month and our savings are down to 600 euros."
+    ],
+    "identifiers": [
+      "Daniel Rios",
+      "+44 7700 900416"
+    ],
+    "person_groups": [
+      [
+        "Daniel Rios"
+      ]
+    ],
+    "expected_no_edit": false
+  },
+  {
+    "id": "fresh-boiler-budget",
+    "text": "I need to get this organised before the weather gets colder. I am Daniel Rios, and the flat is at 26 Rowan Court, Bellford. The boiler stops after about ten minutes and shows E14; resetting it twice did not solve the problem. The engineer can visit on Wednesday between 09:00 and 11:00, and I can be home during that window. The repair quote is 940 euros, but it excludes any replacement pump. Since my partner lost her job, our household income has fallen to 1,450 euros a month and our savings are down to 600 euros. Rent is 740 euros and groceries are usually 260 euros. Please do not approve any extra work until I receive an itemised quote. My number is +44 7700 900416.",
+    "task": "Work out whether this household can afford the boiler repair from current income and savings, and explain what costs are still uncertain.",
+    "expected_preserved": [
+      "Since my partner lost her job, our household income has fallen to 1,450 euros a month and our savings are down to 600 euros.",
+      "Rent is 740 euros and groceries are usually 260 euros.",
+      "The repair quote is 940 euros, but it excludes any replacement pump."
+    ],
+    "expected_removed": [],
+    "identifiers": [
+      "Daniel Rios",
+      "+44 7700 900416"
+    ],
+    "person_groups": [
+      [
+        "Daniel Rios"
+      ]
+    ],
+    "expected_no_edit": false
+  },
+  {
+    "id": "fresh-incident-engineering",
+    "text": "Please turn the notes from our call into something I can send on. Customer lead Noura Haddad reported that the export service stopped producing CSV files at 10:20 after version 4.8 went live. It affects 48 accounts, but PDF exports still work. Engineering reproduced the failure with accented customer names and has a patch awaiting review. There is no confirmed deployment time. Users must not delete their original uploads because we need them to reproduce the issue. Our confidential renewal offer is 240,000 euros annually, and finance approved a 12,000-euro service credit only if the customer signs by 30 November. The account team needs an update at 16:00. Replies should go to noura.haddad@example.org; the incident reference is INC-6842.",
+    "task": "Write a technical handover for the next engineer, including scope, reproduction, workaround, missing deployment date and preservation of uploads.",
+    "expected_preserved": [
+      "It affects 48 accounts, but PDF exports still work.",
+      "There is no confirmed deployment time.",
+      "Users must not delete their original uploads because we need them to reproduce the issue."
+    ],
+    "expected_removed": [
+      "Our confidential renewal offer is 240,000 euros annually, and finance approved a 12,000-euro service credit only if the customer signs by 30 November."
+    ],
+    "identifiers": [
+      "Noura Haddad",
+      "noura.haddad@example.org"
+    ],
+    "person_groups": [
+      [
+        "Noura Haddad"
+      ]
+    ],
+    "expected_no_edit": false
+  },
+  {
+    "id": "fresh-incident-commercial",
+    "text": "Please turn the notes from our call into something I can send on. Customer lead Noura Haddad reported that the export service stopped producing CSV files at 10:20 after version 4.8 went live. It affects 48 accounts, but PDF exports still work. Engineering reproduced the failure with accented customer names and has a patch awaiting review. There is no confirmed deployment time. Users must not delete their original uploads because we need them to reproduce the issue. Our confidential renewal offer is 240,000 euros annually, and finance approved a 12,000-euro service credit only if the customer signs by 30 November. The account team needs an update at 16:00. Replies should go to noura.haddad@example.org; the incident reference is INC-6842.",
+    "task": "Prepare an internal renewal and credit briefing for finance, keeping the exact amounts, signing condition and operational impact.",
+    "expected_preserved": [
+      "Our confidential renewal offer is 240,000 euros annually, and finance approved a 12,000-euro service credit only if the customer signs by 30 November.",
+      "It affects 48 accounts, but PDF exports still work."
+    ],
+    "expected_removed": [],
+    "identifiers": [
+      "Noura Haddad",
+      "noura.haddad@example.org"
+    ],
+    "person_groups": [
+      [
+        "Noura Haddad"
+      ]
+    ],
+    "expected_no_edit": false
+  },
+  {
+    "id": "fresh-ambiguous-person-links",
+    "text": "I have two people to coordinate with for the flat inspection and their messages are getting mixed up. My sister, Sara Hale, will collect the spare keys on Tuesday, while the letting agent, Sara Nolan, will meet the plumber on Wednesday. Hale cannot arrive before 18:00 because her train gets in at 17:40. Nolan said the plumber's visit may take up to two hours, but it is not confirmed yet. The latest message just says Sara will call me, and I don't know which Sara that means. Please keep that uncertainty visible. The water needs to stay on until the plumber has tested the repair. I want one short plan with the confirmed arrangements first and the open questions underneath.",
+    "task": "Organise the arrangements and unresolved questions, keeping the two people distinct and the ambiguous caller unresolved.",
+    "expected_preserved": [
+      "The water needs to stay on until the plumber has tested the repair.",
+      "and I don't know which"
+    ],
+    "expected_removed": [],
+    "identifiers": [
+      "Sara Hale",
+      "Sara Nolan"
+    ],
+    "person_groups": [
+      [
+        "Sara Hale",
+        "Hale"
+      ],
+      [
+        "Sara Nolan",
+        "Nolan"
+      ]
+    ],
+    "expected_no_edit": false
+  },
+  {
+    "id": "fresh-credential-debugging",
+    "text": "Can you help me explain this deployment failure to the on-call engineer? The staging worker starts normally but gets HTTP 401 when it requests /v2/invoices. The previous build succeeded at 08:15, and the first failure appeared after the secret rotation at 08:40. I copied the relevant environment line here: DATABASE_PASSWORD=SilverLeaf_demo_4829! The application log says token audience mismatch, not connection refused, and the database health check is still green. We have not rolled back because invoice uploads are queued safely and retrying every five minutes. Please focus on the order of checks and avoid recommending that we delete the queue. My colleague Owen Mercer owns the rotation, and he can join a call after 11:30.",
+    "task": "Summarise the failure and propose an investigation checklist preserving the evidence, timeline and queued invoices.",
+    "expected_preserved": [
+      "HTTP 401",
+      "token audience mismatch, not connection refused",
+      "invoice uploads are queued safely and retrying every five minutes."
+    ],
+    "expected_removed": [],
+    "identifiers": [
+      "SilverLeaf_demo_4829!",
+      "Owen Mercer"
+    ],
+    "person_groups": [
+      [
+        "Owen Mercer"
+      ]
+    ],
+    "expected_no_edit": false
+  },
+  {
+    "id": "fresh-benign-technical",
+    "text": "Please turn these notes into a short checklist for our public documentation site. The migration changes /guides/install to /docs/install and needs a permanent 301 redirect. A normal page should return HTTP 200, while an unknown path should return 404. The staging server listens on port 8443, and the current release is version 2.14.7. The example invoice in the documentation has a subtotal of 80 euros and a delivery charge of 12 euros; it is an invented example, not a customer bill. Keep the headings in sentence case and the code snippets in fenced blocks. A redirect test must check that query parameters survive. We also need a keyboard-only navigation check before publishing the update.",
+    "task": "Create a checklist for the public documentation migration.",
+    "expected_preserved": [],
+    "expected_removed": [],
+    "identifiers": [],
+    "person_groups": [],
+    "expected_no_edit": true
+  },
+  {
+    "id": "fresh-negation-school",
+    "text": "I need a clear note for the school about my daughter, Maya Iqbal, after yesterday's appointment. The doctor said she does not have asthma, and the cough has settled without starting an inhaler. She can attend normal lessons, but she should not run or take part in PE until Monday. If the cough returns during class, the school should call me before arranging an early pickup. The note should not say that she needs antibiotics, because none were prescribed. Her teacher, Helen Ward, asked whether she could join the museum visit on Friday; the doctor said walking is fine if she can take breaks. I can be reached at maya.parent@example.org, but I cannot answer between 13:00 and 14:00.",
+    "task": "Write a school note preserving the diagnosis clarification, activity restrictions, museum advice and contact timing.",
+    "expected_preserved": [
+      "The doctor said she does not have asthma, and the cough has settled without starting an inhaler.",
+      "she should not run or take part in PE until Monday.",
+      "because none were prescribed.",
+      "the doctor said walking is fine if she can take breaks."
+    ],
+    "expected_removed": [],
+    "identifiers": [
+      "Maya Iqbal",
+      "Helen Ward",
+      "maya.parent@example.org"
+    ],
+    "person_groups": [
+      [
+        "Maya Iqbal"
+      ],
+      [
+        "Helen Ward"
+      ]
+    ],
+    "expected_no_edit": false
+  },
+  {
+    "id": "fresh-vague-goal",
+    "text": "These are my notes from this week and I am not sure how to put them together. My name is Elena Costa. The rent increased to 860 euros this month, and I have asked the landlord whether the increase can start next month instead. I also missed two shifts because of a migraine, although I have not received the revised payslip yet. My partner can cover the electricity bill if it stays below 90 euros, but we have not agreed what happens above that amount. The housing office offered an appointment on Thursday at 15:30. I need to bring the tenancy agreement and the last three payslips. The confirmation was sent to elena.costa@example.org. There may be a cancellation slot earlier in the week.",
+    "task": "Help me with this.",
+    "expected_preserved": [
+      "The rent increased to 860 euros this month",
+      "I also missed two shifts because of a migraine, although I have not received the revised payslip yet.",
+      "My partner can cover the electricity bill if it stays below 90 euros, but we have not agreed what happens above that amount."
+    ],
+    "expected_removed": [],
+    "identifiers": [
+      "Elena Costa",
+      "elena.costa@example.org"
+    ],
+    "person_groups": [
+      [
+        "Elena Costa"
+      ]
+    ],
+    "expected_no_edit": false
+  },
+  {
+    "id": "fresh-no-explicit-goal",
+    "text": "These are my notes from this week and I am not sure how to put them together. My name is Elena Costa. The rent increased to 860 euros this month, and I have asked the landlord whether the increase can start next month instead. I also missed two shifts because of a migraine, although I have not received the revised payslip yet. My partner can cover the electricity bill if it stays below 90 euros, but we have not agreed what happens above that amount. The housing office offered an appointment on Thursday at 15:30. I need to bring the tenancy agreement and the last three payslips. The confirmation was sent to elena.costa@example.org. There may be a cancellation slot earlier in the week.",
+    "task": "",
+    "expected_preserved": [
+      "The rent increased to 860 euros this month",
+      "I also missed two shifts because of a migraine, although I have not received the revised payslip yet.",
+      "My partner can cover the electricity bill if it stays below 90 euros, but we have not agreed what happens above that amount."
+    ],
+    "expected_removed": [],
+    "identifiers": [
+      "Elena Costa",
+      "elena.costa@example.org"
+    ],
+    "person_groups": [
+      [
+        "Elena Costa"
+      ]
+    ],
+    "expected_no_edit": false
+  }
+]

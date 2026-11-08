@@ -1,0 +1,7 @@
+{
+  "path": "/Users/markp/Code/sinceai-trusted/mask/ml/privacy_v1/artifacts/section-training-20261108/deberta-v3-base",
+  "manifest_sha256": "6b69155f87c06e4c4fac9d6f3a20acb50ef000c83a889a50023bb89dced66112",
+  "model_id": "deberta-v3-base-section-v1",
+  "load_seconds": 2.4881307080504484,
+  "section_mode": "section-head-v1"
+}
