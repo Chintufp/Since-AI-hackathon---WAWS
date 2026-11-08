@@ -1,0 +1,1414 @@
+{
+  "source_file": "demo/personal-health-message.txt",
+  "source_sha256": "9e1bc981eb19c5e70610f9882cb96ff59e64470f34c6b7b5ef31c573eb30b8f0",
+  "source_words": 107,
+  "model_path": "/Users/markp/Code/sinceai-trusted/mask/ml/privacy_v1/artifacts/section-training-20261108/deberta-v3-base",
+  "model_manifest_sha256": "6b69155f87c06e4c4fac9d6f3a20acb50ef000c83a889a50023bb89dced66112",
+  "device": "cpu",
+  "threads": 4,
+  "model_load_seconds": 4.306996583007276,
+  "source": "Can you tell me about the medicine I was prescribed and explain why I was given it, based on the medical records below?\n\nPATIENT DETAILS\nName: Alex Bennett\nDate of birth: 14 June 1995\nPatient number: PT-482071\nEmail: alex.bennett@example.com\n\nVISIT — 29 October 2026\nReason: Runny nose and frequent sneezing.\nMedication prescribed: Cetirizine.\nFollow-up: Contact the clinic if symptoms persist.\n\nVISIT — 14 September 2026\nReason: Persistent itching around the anus.\nPatient reports: “My ass is really itchy, especially at night.”\nExamination and follow-up notes recorded separately.\n\nVISIT — 20 May 2026\nReason: Left wrist pain after a fall while cycling.\nAssessment: Wrist sprain.\nFollow-up: Symptoms improving.\n",
+  "outputs": [
+    {
+      "condition": "browser_first_line",
+      "task": "Can you tell me about the medicine I was prescribed and explain why I was given it, based on the medical records below?",
+      "effective_task": "Can you tell me about the medicine I was prescribed and explain why I was given it, based on the medical records below?",
+      "preview_seconds": 1.7588175000273623,
+      "checks": {
+        "name_removed": true,
+        "email_removed": true,
+        "patient_number_removed": true,
+        "dob_removed": false,
+        "medicine_retained": true,
+        "symptoms_retained": true,
+        "itching_reason_removed": false,
+        "itchy_quote_removed": false,
+        "wrist_details_removed": false
+      },
+      "result": {
+        "status": "needs_review",
+        "protected_text": "Can you tell me about the medicine I was prescribed and explain why I was given it, based on the medical records below?\n\nPATIENT DETAILS\nName: [PERSON_1]\nDate of birth: 14 June 1995\nPatient number: [ACCOUNT_ID]\nEmail: [EMAIL]\n\nVISIT — 29 October 2026\nReason: Runny nose and frequent sneezing.\nMedication prescribed: Cetirizine.\nFollow-up: Contact the clinic if symptoms persist.\n\nVISIT — 14 September 2026\nReason: Persistent itching around the anus.\nPatient reports: “My ass is really itchy, especially at night.”\nExamination and follow-up notes recorded separately.\n\nVISIT — 20 May 2026\nReason: Left wrist pain after a fall while cycling.\nAssessment: Wrist sprain.\nFollow-up: Symptoms improving.\n",
+        "model_version": "deberta-v3-base-section-v1",
+        "edits": [
+          {
+            "start": 143,
+            "end": 155,
+            "label": "PERSON",
+            "action": "ALIAS",
+            "replacement": "[PERSON_1]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          },
+          {
+            "start": 200,
+            "end": 209,
+            "label": "ACCOUNT_ID",
+            "action": "PLACEHOLDER",
+            "replacement": "[ACCOUNT_ID]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          },
+          {
+            "start": 217,
+            "end": 241,
+            "label": "EMAIL",
+            "action": "PLACEHOLDER",
+            "replacement": "[EMAIL]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          }
+        ],
+        "retained_sensitive": [],
+        "review_reasons": [
+          "experimental_model_not_release_validated",
+          "unconfirmed_detection_requires_review"
+        ],
+        "coverage": {
+          "scanned_characters": 713,
+          "total_characters": 713,
+          "complete": true,
+          "offset_unit": "unicode_code_point",
+          "history_messages_scanned": 0,
+          "task_scanned": true
+        },
+        "protected_task": "Can you tell me about the medicine I was prescribed and explain why I was given it, based on the medical records below?",
+        "protected_history": [],
+        "pending_reviews": [
+          {
+            "start": 171,
+            "end": 183,
+            "label": "DATE",
+            "reason": "unconfirmed_entity_shape"
+          },
+          {
+            "start": 251,
+            "end": 266,
+            "label": "DATE",
+            "reason": "unconfirmed_entity_shape"
+          }
+        ],
+        "context_reports": [
+          {
+            "component": "task",
+            "index": null,
+            "edits": [],
+            "retained_sensitive": [],
+            "pending_reviews": [],
+            "coverage": {
+              "scanned_characters": 119,
+              "total_characters": 119,
+              "complete": true,
+              "offset_unit": "unicode_code_point"
+            }
+          }
+        ],
+        "runtime_versions": {
+          "pipeline": "privacy-edit-pipeline.2",
+          "section_mode": "section-head-v1",
+          "policy": "consumer-v1-pilot.2",
+          "model_training_policy": "consumer-v1-pilot.2",
+          "model_bundle_sha256": "6b69155f87c06e4c4fac9d6f3a20acb50ef000c83a889a50023bb89dced66112"
+        },
+        "section_diagnostics": [
+          {
+            "start": 0,
+            "end": 118,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9999779462814331,
+              "unnecessary": 6.480545380327385e-06,
+              "uncertain": 1.5595082004438154e-05
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 121,
+            "end": 136,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9990731477737427,
+              "unnecessary": 7.02943725627847e-05,
+              "uncertain": 0.0008565583848394454
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 137,
+            "end": 155,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9958775043487549,
+              "unnecessary": 0.0002821104717440903,
+              "uncertain": 0.003840372432023287
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 156,
+            "end": 183,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.99920254945755,
+              "unnecessary": 0.00018068008648697287,
+              "uncertain": 0.0006167921819724143
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 184,
+            "end": 209,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.966083824634552,
+              "unnecessary": 0.00012464456085581332,
+              "uncertain": 0.03379160165786743
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 210,
+            "end": 241,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9425004124641418,
+              "unnecessary": 0.0002601373998913914,
+              "uncertain": 0.057239457964897156
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 243,
+            "end": 266,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9952406883239746,
+              "unnecessary": 0.0022489894181489944,
+              "uncertain": 0.0025102864019572735
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 267,
+            "end": 307,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9996335506439209,
+              "unnecessary": 0.00010252497304463759,
+              "uncertain": 0.0002639640006236732
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 309,
+            "end": 342,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9998443126678467,
+              "unnecessary": 3.9074409869499505e-05,
+              "uncertain": 0.00011654277477646247
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 344,
+            "end": 393,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9996378421783447,
+              "unnecessary": 0.00014714589633513242,
+              "uncertain": 0.00021492021915037185
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 396,
+            "end": 421,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.0002411613386357203,
+              "unnecessary": 0.9997190833091736,
+              "uncertain": 3.972149715991691e-05
+            },
+            "raw_class": "unnecessary",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "nested_evidence": [
+              {
+                "start": 396,
+                "end": 582,
+                "label": "HEALTH",
+                "action": "KEEP",
+                "relevance": {
+                  "essential": 0.8347769975662231,
+                  "unnecessary": 0.128583624958992,
+                  "uncertain": 0.03663935884833336
+                }
+              }
+            ],
+            "reason": "section_contains_retained_or_uncertain_evidence"
+          },
+          {
+            "start": 422,
+            "end": 464,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.00017679441953077912,
+              "unnecessary": 0.9997996687889099,
+              "uncertain": 2.3545850126538426e-05
+            },
+            "raw_class": "unnecessary",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "nested_evidence": [
+              {
+                "start": 396,
+                "end": 582,
+                "label": "HEALTH",
+                "action": "KEEP",
+                "relevance": {
+                  "essential": 0.8347769975662231,
+                  "unnecessary": 0.128583624958992,
+                  "uncertain": 0.03663935884833336
+                }
+              }
+            ],
+            "reason": "section_contains_retained_or_uncertain_evidence"
+          },
+          {
+            "start": 466,
+            "end": 529,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.00021535081032197922,
+              "unnecessary": 0.9997443556785583,
+              "uncertain": 4.031096614198759e-05
+            },
+            "raw_class": "unnecessary",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "nested_evidence": [
+              {
+                "start": 396,
+                "end": 582,
+                "label": "HEALTH",
+                "action": "KEEP",
+                "relevance": {
+                  "essential": 0.8347769975662231,
+                  "unnecessary": 0.128583624958992,
+                  "uncertain": 0.03663935884833336
+                }
+              }
+            ],
+            "reason": "section_contains_retained_or_uncertain_evidence"
+          },
+          {
+            "start": 530,
+            "end": 581,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.00017248347285203636,
+              "unnecessary": 0.9998051524162292,
+              "uncertain": 2.237294575024862e-05
+            },
+            "raw_class": "unnecessary",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "nested_evidence": [
+              {
+                "start": 396,
+                "end": 582,
+                "label": "HEALTH",
+                "action": "KEEP",
+                "relevance": {
+                  "essential": 0.8347769975662231,
+                  "unnecessary": 0.128583624958992,
+                  "uncertain": 0.03663935884833336
+                }
+              }
+            ],
+            "reason": "section_contains_retained_or_uncertain_evidence"
+          },
+          {
+            "start": 584,
+            "end": 603,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.0001761290623107925,
+              "unnecessary": 0.9997828602790833,
+              "uncertain": 4.098262434126809e-05
+            },
+            "raw_class": "unnecessary",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "nested_evidence": [
+              {
+                "start": 584,
+                "end": 712,
+                "label": "HEALTH",
+                "action": "KEEP",
+                "relevance": {
+                  "essential": 0.7966946363449097,
+                  "unnecessary": 0.16400229930877686,
+                  "uncertain": 0.03930298611521721
+                }
+              }
+            ],
+            "reason": "section_contains_retained_or_uncertain_evidence"
+          },
+          {
+            "start": 604,
+            "end": 654,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.0001484993554186076,
+              "unnecessary": 0.99982750415802,
+              "uncertain": 2.3982060156413354e-05
+            },
+            "raw_class": "unnecessary",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "nested_evidence": [
+              {
+                "start": 584,
+                "end": 712,
+                "label": "HEALTH",
+                "action": "KEEP",
+                "relevance": {
+                  "essential": 0.7966946363449097,
+                  "unnecessary": 0.16400229930877686,
+                  "uncertain": 0.03930298611521721
+                }
+              }
+            ],
+            "reason": "section_contains_retained_or_uncertain_evidence"
+          },
+          {
+            "start": 656,
+            "end": 680,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.0001234738010680303,
+              "unnecessary": 0.9998584985733032,
+              "uncertain": 1.803347004170064e-05
+            },
+            "raw_class": "unnecessary",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "nested_evidence": [
+              {
+                "start": 584,
+                "end": 712,
+                "label": "HEALTH",
+                "action": "KEEP",
+                "relevance": {
+                  "essential": 0.7966946363449097,
+                  "unnecessary": 0.16400229930877686,
+                  "uncertain": 0.03930298611521721
+                }
+              }
+            ],
+            "reason": "section_contains_retained_or_uncertain_evidence"
+          },
+          {
+            "start": 682,
+            "end": 711,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.00014296104200184345,
+              "unnecessary": 0.9998353719711304,
+              "uncertain": 2.1744983314420097e-05
+            },
+            "raw_class": "unnecessary",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "nested_evidence": [
+              {
+                "start": 584,
+                "end": 712,
+                "label": "HEALTH",
+                "action": "KEEP",
+                "relevance": {
+                  "essential": 0.7966946363449097,
+                  "unnecessary": 0.16400229930877686,
+                  "uncertain": 0.03930298611521721
+                }
+              }
+            ],
+            "reason": "section_contains_retained_or_uncertain_evidence"
+          }
+        ],
+        "receiving_ai_instruction": "Privacy note: Labels such as [PERSON_1] represent redacted references. You may use these labels verbatim in your reply. Do not guess or invent the hidden values."
+      },
+      "application_status": "needs_review",
+      "application_preview_matches_engine": true
+    },
+    {
+      "condition": "backend_message_only",
+      "task": null,
+      "effective_task": "Can you tell me about the medicine I was prescribed and explain why I was given it, based on the medical records below?\n\nPATIENT DETAILS\nName: Alex Bennett\nDate of birth: 14 June 1995\nPatient number: PT-482071\nEmail: alex.bennett@example.com\n\nVISIT — 29 October 2026\nReason: Runny nose and frequent sneezing.\nMedication prescribed: Cetirizine.\nFollow-up: Contact the clinic if symptoms persist.\n\nVISIT — 14 September 2026\nReason: Persistent itching around the anus.\nPatient reports: “My ass is really itchy, especially at night.”\nExamination and follow-up notes recorded separately.\n\nVISIT — 20 May 2026\nReason: Left wrist pain after a fall while cycling.\nAssessment: Wrist sprain.\nFollow-up: Symptoms improving.\n",
+      "preview_seconds": 1.9272217089892365,
+      "checks": {
+        "name_removed": true,
+        "email_removed": true,
+        "patient_number_removed": true,
+        "dob_removed": false,
+        "medicine_retained": true,
+        "symptoms_retained": true,
+        "itching_reason_removed": false,
+        "itchy_quote_removed": false,
+        "wrist_details_removed": false
+      },
+      "result": {
+        "status": "needs_review",
+        "protected_text": "Can you tell me about the medicine I was prescribed and explain why I was given it, based on the medical records below?\n\nPATIENT DETAILS\nName: [PERSON_1]\nDate of birth: 14 June 1995\nPatient number: [ACCOUNT_ID]\nEmail: [EMAIL]\n\nVISIT — 29 October 2026\nReason: Runny nose and frequent sneezing.\nMedication prescribed: Cetirizine.\nFollow-up: Contact the clinic if symptoms persist.\n\nVISIT — 14 September 2026\nReason: Persistent itching around the anus.\nPatient reports: “My ass is really itchy, especially at night.”\nExamination and follow-up notes recorded separately.\n\nVISIT — 20 May 2026\nReason: Left wrist pain after a fall while cycling.\nAssessment: Wrist sprain.\nFollow-up: Symptoms improving.\n",
+        "model_version": "deberta-v3-base-section-v1",
+        "edits": [
+          {
+            "start": 143,
+            "end": 155,
+            "label": "PERSON",
+            "action": "ALIAS",
+            "replacement": "[PERSON_1]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          },
+          {
+            "start": 200,
+            "end": 209,
+            "label": "ACCOUNT_ID",
+            "action": "PLACEHOLDER",
+            "replacement": "[ACCOUNT_ID]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          },
+          {
+            "start": 217,
+            "end": 241,
+            "label": "EMAIL",
+            "action": "PLACEHOLDER",
+            "replacement": "[EMAIL]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          }
+        ],
+        "retained_sensitive": [],
+        "review_reasons": [
+          "experimental_model_not_release_validated",
+          "message_used_as_intended_use",
+          "unconfirmed_detection_requires_review"
+        ],
+        "coverage": {
+          "scanned_characters": 713,
+          "total_characters": 713,
+          "complete": true,
+          "offset_unit": "unicode_code_point",
+          "history_messages_scanned": 0,
+          "task_scanned": true
+        },
+        "protected_task": "Can you tell me about the medicine I was prescribed and explain why I was given it, based on the medical records below?\n\nPATIENT DETAILS\nName: [PERSON_1]\nDate of birth: 14 June 1995\nPatient number: [ACCOUNT_ID]\nEmail: [EMAIL]\n\nVISIT — 29 October 2026\nReason: Runny nose and frequent sneezing.\nMedication prescribed: Cetirizine.\nFollow-up: Contact the clinic if symptoms persist.\n\nVISIT — 14 September 2026\nReason: Persistent itching around the anus.\nPatient reports: “My ass is really itchy, especially at night.”\nExamination and follow-up notes recorded separately.\n\nVISIT — 20 May 2026\nReason: Left wrist pain after a fall while cycling.\nAssessment: Wrist sprain.\nFollow-up: Symptoms improving.\n",
+        "protected_history": [],
+        "pending_reviews": [
+          {
+            "start": 171,
+            "end": 183,
+            "label": "DATE",
+            "reason": "unconfirmed_entity_shape"
+          },
+          {
+            "start": 251,
+            "end": 266,
+            "label": "DATE",
+            "reason": "unconfirmed_entity_shape"
+          }
+        ],
+        "context_reports": [
+          {
+            "component": "task",
+            "index": null,
+            "edits": [
+              {
+                "start": 143,
+                "end": 155,
+                "label": "PERSON",
+                "action": "ALIAS",
+                "replacement": "[PERSON_1]",
+                "reason": "direct_identifier_policy",
+                "score": null
+              },
+              {
+                "start": 200,
+                "end": 209,
+                "label": "ACCOUNT_ID",
+                "action": "PLACEHOLDER",
+                "replacement": "[ACCOUNT_ID]",
+                "reason": "direct_identifier_policy",
+                "score": null
+              },
+              {
+                "start": 217,
+                "end": 241,
+                "label": "EMAIL",
+                "action": "PLACEHOLDER",
+                "replacement": "[EMAIL]",
+                "reason": "direct_identifier_policy",
+                "score": null
+              }
+            ],
+            "retained_sensitive": [],
+            "pending_reviews": [
+              {
+                "start": 171,
+                "end": 183,
+                "label": "DATE",
+                "reason": "unconfirmed_entity_shape"
+              },
+              {
+                "start": 251,
+                "end": 266,
+                "label": "DATE",
+                "reason": "unconfirmed_entity_shape"
+              }
+            ],
+            "coverage": {
+              "scanned_characters": 713,
+              "total_characters": 713,
+              "complete": true,
+              "offset_unit": "unicode_code_point",
+              "history_messages_scanned": 0,
+              "task_scanned": true
+            }
+          }
+        ],
+        "runtime_versions": {
+          "pipeline": "privacy-edit-pipeline.2",
+          "section_mode": "section-head-v1",
+          "policy": "consumer-v1-pilot.2",
+          "model_training_policy": "consumer-v1-pilot.2",
+          "model_bundle_sha256": "6b69155f87c06e4c4fac9d6f3a20acb50ef000c83a889a50023bb89dced66112"
+        },
+        "section_diagnostics": [
+          {
+            "start": 0,
+            "end": 118,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.999971866607666,
+              "unnecessary": 9.746016985445749e-06,
+              "uncertain": 1.8407059542369097e-05
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "missing_or_vague_task"
+          },
+          {
+            "start": 121,
+            "end": 136,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9996953010559082,
+              "unnecessary": 3.181734791724011e-05,
+              "uncertain": 0.00027294500614516437
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "missing_or_vague_task"
+          },
+          {
+            "start": 137,
+            "end": 155,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9984159469604492,
+              "unnecessary": 0.0002071330090984702,
+              "uncertain": 0.0013768976787105203
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "missing_or_vague_task"
+          },
+          {
+            "start": 156,
+            "end": 183,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9995920062065125,
+              "unnecessary": 0.00013381299504544586,
+              "uncertain": 0.00027417027740739286
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "missing_or_vague_task"
+          },
+          {
+            "start": 184,
+            "end": 209,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9889851808547974,
+              "unnecessary": 8.587503543822095e-05,
+              "uncertain": 0.010929036885499954
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "missing_or_vague_task"
+          },
+          {
+            "start": 210,
+            "end": 241,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9619781374931335,
+              "unnecessary": 0.0002246953808935359,
+              "uncertain": 0.03779721260070801
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "missing_or_vague_task"
+          },
+          {
+            "start": 243,
+            "end": 266,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9997574687004089,
+              "unnecessary": 8.183628233382478e-05,
+              "uncertain": 0.00016065302770584822
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "missing_or_vague_task"
+          },
+          {
+            "start": 267,
+            "end": 307,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9990474581718445,
+              "unnecessary": 0.0005769128911197186,
+              "uncertain": 0.0003755877260118723
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "missing_or_vague_task"
+          },
+          {
+            "start": 309,
+            "end": 342,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9997323155403137,
+              "unnecessary": 0.00012549069651868194,
+              "uncertain": 0.00014221531455405056
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "missing_or_vague_task"
+          },
+          {
+            "start": 344,
+            "end": 393,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.997577965259552,
+              "unnecessary": 0.0020004610996693373,
+              "uncertain": 0.0004215939552523196
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "missing_or_vague_task"
+          },
+          {
+            "start": 396,
+            "end": 421,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.0006198433693498373,
+              "unnecessary": 0.9993176460266113,
+              "uncertain": 6.248633144423366e-05
+            },
+            "raw_class": "unnecessary",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "missing_or_vague_task"
+          },
+          {
+            "start": 422,
+            "end": 464,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.00046195133472792804,
+              "unnecessary": 0.9995059967041016,
+              "uncertain": 3.209190253983252e-05
+            },
+            "raw_class": "unnecessary",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "missing_or_vague_task"
+          },
+          {
+            "start": 466,
+            "end": 529,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.0005385397817008197,
+              "unnecessary": 0.9994148015975952,
+              "uncertain": 4.666670429287478e-05
+            },
+            "raw_class": "unnecessary",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "missing_or_vague_task"
+          },
+          {
+            "start": 530,
+            "end": 581,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.0004425441147759557,
+              "unnecessary": 0.9995195865631104,
+              "uncertain": 3.786179513554089e-05
+            },
+            "raw_class": "unnecessary",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "missing_or_vague_task"
+          },
+          {
+            "start": 584,
+            "end": 603,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.00024162378394976258,
+              "unnecessary": 0.9997360110282898,
+              "uncertain": 2.2374533727997914e-05
+            },
+            "raw_class": "unnecessary",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "missing_or_vague_task"
+          },
+          {
+            "start": 604,
+            "end": 654,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.0002469015307724476,
+              "unnecessary": 0.9997333884239197,
+              "uncertain": 1.963126487680711e-05
+            },
+            "raw_class": "unnecessary",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "missing_or_vague_task"
+          },
+          {
+            "start": 656,
+            "end": 680,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.00021115118579473346,
+              "unnecessary": 0.9997733235359192,
+              "uncertain": 1.544133738207165e-05
+            },
+            "raw_class": "unnecessary",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "missing_or_vague_task"
+          },
+          {
+            "start": 682,
+            "end": 711,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.00031764802406542003,
+              "unnecessary": 0.9996554851531982,
+              "uncertain": 2.6843668820220046e-05
+            },
+            "raw_class": "unnecessary",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "missing_or_vague_task"
+          }
+        ],
+        "receiving_ai_instruction": "Privacy note: Labels such as [PERSON_1] represent redacted references. You may use these labels verbatim in your reply. Do not guess or invent the hidden values."
+      },
+      "application_status": "needs_review",
+      "application_preview_matches_engine": true
+    },
+    {
+      "condition": "specific_intended_task",
+      "task": "Explain what cetirizine is used for and how it relates to the runny nose and sneezing recorded at the most recent visit.",
+      "effective_task": "Explain what cetirizine is used for and how it relates to the runny nose and sneezing recorded at the most recent visit.",
+      "preview_seconds": 1.7703317920095287,
+      "checks": {
+        "name_removed": true,
+        "email_removed": true,
+        "patient_number_removed": true,
+        "dob_removed": false,
+        "medicine_retained": true,
+        "symptoms_retained": true,
+        "itching_reason_removed": false,
+        "itchy_quote_removed": false,
+        "wrist_details_removed": false
+      },
+      "result": {
+        "status": "needs_review",
+        "protected_text": "Can you tell me about the medicine I was prescribed and explain why I was given it, based on the medical records below?\n\nPATIENT DETAILS\nName: [PERSON_1]\nDate of birth: 14 June 1995\nPatient number: [ACCOUNT_ID]\nEmail: [EMAIL]\n\nVISIT — 29 October 2026\nReason: Runny nose and frequent sneezing.\nMedication prescribed: Cetirizine.\nFollow-up: Contact the clinic if symptoms persist.\n\nVISIT — 14 September 2026\nReason: Persistent itching around the anus.\nPatient reports: “My ass is really itchy, especially at night.”\nExamination and follow-up notes recorded separately.\n\nVISIT — 20 May 2026\nReason: Left wrist pain after a fall while cycling.\nAssessment: Wrist sprain.\nFollow-up: Symptoms improving.\n",
+        "model_version": "deberta-v3-base-section-v1",
+        "edits": [
+          {
+            "start": 143,
+            "end": 155,
+            "label": "PERSON",
+            "action": "ALIAS",
+            "replacement": "[PERSON_1]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          },
+          {
+            "start": 200,
+            "end": 209,
+            "label": "ACCOUNT_ID",
+            "action": "PLACEHOLDER",
+            "replacement": "[ACCOUNT_ID]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          },
+          {
+            "start": 217,
+            "end": 241,
+            "label": "EMAIL",
+            "action": "PLACEHOLDER",
+            "replacement": "[EMAIL]",
+            "reason": "direct_identifier_policy",
+            "score": null
+          }
+        ],
+        "retained_sensitive": [],
+        "review_reasons": [
+          "experimental_model_not_release_validated",
+          "unconfirmed_detection_requires_review"
+        ],
+        "coverage": {
+          "scanned_characters": 713,
+          "total_characters": 713,
+          "complete": true,
+          "offset_unit": "unicode_code_point",
+          "history_messages_scanned": 0,
+          "task_scanned": true
+        },
+        "protected_task": "Explain what cetirizine is used for and how it relates to the runny nose and sneezing recorded at the most recent visit.",
+        "protected_history": [],
+        "pending_reviews": [
+          {
+            "start": 171,
+            "end": 183,
+            "label": "DATE",
+            "reason": "unconfirmed_entity_shape"
+          },
+          {
+            "start": 251,
+            "end": 266,
+            "label": "DATE",
+            "reason": "unconfirmed_entity_shape"
+          }
+        ],
+        "context_reports": [
+          {
+            "component": "task",
+            "index": null,
+            "edits": [],
+            "retained_sensitive": [],
+            "pending_reviews": [
+              {
+                "start": 13,
+                "end": 23,
+                "label": "HEALTH",
+                "reason": "unconfirmed_context_boundary"
+              },
+              {
+                "start": 62,
+                "end": 119,
+                "label": "HEALTH",
+                "reason": "unconfirmed_context_boundary"
+              }
+            ],
+            "coverage": {
+              "scanned_characters": 120,
+              "total_characters": 120,
+              "complete": true,
+              "offset_unit": "unicode_code_point"
+            }
+          }
+        ],
+        "runtime_versions": {
+          "pipeline": "privacy-edit-pipeline.2",
+          "section_mode": "section-head-v1",
+          "policy": "consumer-v1-pilot.2",
+          "model_training_policy": "consumer-v1-pilot.2",
+          "model_bundle_sha256": "6b69155f87c06e4c4fac9d6f3a20acb50ef000c83a889a50023bb89dced66112"
+        },
+        "section_diagnostics": [
+          {
+            "start": 0,
+            "end": 118,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9999663829803467,
+              "unnecessary": 1.1213202924409416e-05,
+              "uncertain": 2.2375847038347274e-05
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 121,
+            "end": 136,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9987389445304871,
+              "unnecessary": 0.00011290921247564256,
+              "uncertain": 0.0011482122354209423
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 137,
+            "end": 155,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9934877157211304,
+              "unnecessary": 0.0006124941864982247,
+              "uncertain": 0.005899696610867977
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 156,
+            "end": 183,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9988784193992615,
+              "unnecessary": 0.00033856258960440755,
+              "uncertain": 0.000783071736805141
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 184,
+            "end": 209,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9401026964187622,
+              "unnecessary": 0.0002625392226036638,
+              "uncertain": 0.05963468924164772
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 210,
+            "end": 241,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9160109758377075,
+              "unnecessary": 0.0005075521185062826,
+              "uncertain": 0.08348147571086884
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 243,
+            "end": 266,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9976760745048523,
+              "unnecessary": 0.0013950314605608582,
+              "uncertain": 0.0009288204018957913
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 267,
+            "end": 307,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9998757839202881,
+              "unnecessary": 3.596638998715207e-05,
+              "uncertain": 8.819311915431172e-05
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 309,
+            "end": 342,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9999386072158813,
+              "unnecessary": 1.4085028851695824e-05,
+              "uncertain": 4.7342702600872144e-05
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 344,
+            "end": 393,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.9999449253082275,
+              "unnecessary": 1.656964377616532e-05,
+              "uncertain": 3.847909101750702e-05
+            },
+            "raw_class": "essential",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "reason": "section_not_confidently_unnecessary"
+          },
+          {
+            "start": 396,
+            "end": 421,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.0005654424894601107,
+              "unnecessary": 0.999273955821991,
+              "uncertain": 0.00016053843137342483
+            },
+            "raw_class": "unnecessary",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "nested_evidence": [
+              {
+                "start": 396,
+                "end": 582,
+                "label": "HEALTH",
+                "action": "KEEP",
+                "relevance": {
+                  "essential": 0.9825538992881775,
+                  "unnecessary": 0.01166018471121788,
+                  "uncertain": 0.005785971414297819
+                }
+              }
+            ],
+            "reason": "section_contains_retained_or_uncertain_evidence"
+          },
+          {
+            "start": 422,
+            "end": 464,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.00017649150686338544,
+              "unnecessary": 0.9997987151145935,
+              "uncertain": 2.4774000848992728e-05
+            },
+            "raw_class": "unnecessary",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "nested_evidence": [
+              {
+                "start": 396,
+                "end": 582,
+                "label": "HEALTH",
+                "action": "KEEP",
+                "relevance": {
+                  "essential": 0.9825538992881775,
+                  "unnecessary": 0.01166018471121788,
+                  "uncertain": 0.005785971414297819
+                }
+              }
+            ],
+            "reason": "section_contains_retained_or_uncertain_evidence"
+          },
+          {
+            "start": 466,
+            "end": 529,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.0002696808660402894,
+              "unnecessary": 0.9996786117553711,
+              "uncertain": 5.177042476134375e-05
+            },
+            "raw_class": "unnecessary",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "nested_evidence": [
+              {
+                "start": 396,
+                "end": 582,
+                "label": "HEALTH",
+                "action": "KEEP",
+                "relevance": {
+                  "essential": 0.9825538992881775,
+                  "unnecessary": 0.01166018471121788,
+                  "uncertain": 0.005785971414297819
+                }
+              }
+            ],
+            "reason": "section_contains_retained_or_uncertain_evidence"
+          },
+          {
+            "start": 530,
+            "end": 581,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.00020307079830672592,
+              "unnecessary": 0.9997703433036804,
+              "uncertain": 2.663640771061182e-05
+            },
+            "raw_class": "unnecessary",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "nested_evidence": [
+              {
+                "start": 396,
+                "end": 582,
+                "label": "HEALTH",
+                "action": "KEEP",
+                "relevance": {
+                  "essential": 0.9825538992881775,
+                  "unnecessary": 0.01166018471121788,
+                  "uncertain": 0.005785971414297819
+                }
+              }
+            ],
+            "reason": "section_contains_retained_or_uncertain_evidence"
+          },
+          {
+            "start": 584,
+            "end": 603,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.00018199138867203146,
+              "unnecessary": 0.9997712969779968,
+              "uncertain": 4.673328294302337e-05
+            },
+            "raw_class": "unnecessary",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "nested_evidence": [
+              {
+                "start": 584,
+                "end": 712,
+                "label": "HEALTH",
+                "action": "KEEP",
+                "relevance": {
+                  "essential": 0.9805430769920349,
+                  "unnecessary": 0.013575945049524307,
+                  "uncertain": 0.0058809383772313595
+                }
+              }
+            ],
+            "reason": "section_contains_retained_or_uncertain_evidence"
+          },
+          {
+            "start": 604,
+            "end": 654,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.00014679000014439225,
+              "unnecessary": 0.9998283386230469,
+              "uncertain": 2.4789553208393045e-05
+            },
+            "raw_class": "unnecessary",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "nested_evidence": [
+              {
+                "start": 584,
+                "end": 712,
+                "label": "HEALTH",
+                "action": "KEEP",
+                "relevance": {
+                  "essential": 0.9805430769920349,
+                  "unnecessary": 0.013575945049524307,
+                  "uncertain": 0.0058809383772313595
+                }
+              }
+            ],
+            "reason": "section_contains_retained_or_uncertain_evidence"
+          },
+          {
+            "start": 656,
+            "end": 680,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.00012262580276001245,
+              "unnecessary": 0.9998592138290405,
+              "uncertain": 1.8091344827553257e-05
+            },
+            "raw_class": "unnecessary",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "nested_evidence": [
+              {
+                "start": 584,
+                "end": 712,
+                "label": "HEALTH",
+                "action": "KEEP",
+                "relevance": {
+                  "essential": 0.9805430769920349,
+                  "unnecessary": 0.013575945049524307,
+                  "uncertain": 0.0058809383772313595
+                }
+              }
+            ],
+            "reason": "section_contains_retained_or_uncertain_evidence"
+          },
+          {
+            "start": 682,
+            "end": 711,
+            "candidate_mode": "section-head-v1",
+            "raw_relevance": {
+              "essential": 0.00017673405818641186,
+              "unnecessary": 0.9997920393943787,
+              "uncertain": 3.123619899270125e-05
+            },
+            "raw_class": "unnecessary",
+            "threshold": 0.9,
+            "outcome": "KEEP",
+            "scores_calibrated": false,
+            "nested_evidence": [
+              {
+                "start": 584,
+                "end": 712,
+                "label": "HEALTH",
+                "action": "KEEP",
+                "relevance": {
+                  "essential": 0.9805430769920349,
+                  "unnecessary": 0.013575945049524307,
+                  "uncertain": 0.0058809383772313595
+                }
+              }
+            ],
+            "reason": "section_contains_retained_or_uncertain_evidence"
+          }
+        ],
+        "receiving_ai_instruction": "Privacy note: Labels such as [PERSON_1] represent redacted references. You may use these labels verbatim in your reply. Do not guess or invent the hidden values."
+      },
+      "application_status": "needs_review",
+      "application_preview_matches_engine": true
+    }
+  ],
+  "limitations": [
+    "Synthetic training-demo diagnostic, not held-out validation.",
+    "No live browser or provider API was exercised; browser task extraction is reproduced through the matching Python pipeline.",
+    "Specific task changes only the task field; source medical record is unchanged."
+  ]
+}
